@@ -13,6 +13,7 @@ import AboutPage from './components/AboutPage';
 import PathwaysPage from './components/PathwaysPage';
 import FoundingFamiliesPage from './components/FoundingFamiliesPage';
 import PartnershipsPage from './components/PartnershipsPage';
+import ForSchoolsPage from './components/ForSchoolsPage';
 import FAQPage from './components/FAQPage';
 import ContactPage from './components/ContactPage';
 import PricingPage from './components/PricingPage';
@@ -112,6 +113,13 @@ export default function App() {
             awardXP={awardXP}
           />
         );
+      case '/schools':
+        return (
+          <ForSchoolsPage 
+            onNavigate={handleNavigate}
+            awardXP={awardXP}
+          />
+        );
       case '/pricing':
         return (
           <PricingPage 
@@ -162,6 +170,7 @@ export default function App() {
     { label: 'Learning Pathways', path: '/pathways' },
     { label: 'Pricing', path: '/pricing' },
     { label: 'Founding Families', path: '/founding-families' },
+    { label: 'For Schools', path: '/schools' },
     { label: 'Partnerships', path: '/partnerships' },
     { label: 'FAQ', path: '/faq' },
     { label: 'Contact', path: '/contact' }

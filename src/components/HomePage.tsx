@@ -10,6 +10,7 @@ import LearningAcademies from './LearningAcademies';
 import HowItWorks from './HowItWorks';
 import MascotCard from './MascotCard';
 import FoundingFamilyProgressCounter from './FoundingFamilyProgressCounter';
+import ParentFeatures from './ParentFeatures';
 
 interface HomePageProps {
   onNavigate: (path: string) => void;
@@ -230,6 +231,8 @@ export default function HomePage({
 
       {/* 6. GAMIFIED ROADMAP */}
       <HowItWorks />
+
+      <ParentFeatures />
 
       {/* 7. KOBE & CHIBI PREVIEW */}
       <section 

@@ -19,7 +19,7 @@ export default function MascotCard({ initialMascot = 'Kobe' }: MascotProps) {
     badgeColor: 'bg-teal-50 text-teal-700 border-teal-200/50',
     accentText: 'text-teal-600 hover:text-teal-800',
     avatar: '/assets/images/kobe_boy_character_avatar_1780168907812.png',
-    description: 'A brilliant 10-year-old child companion waving with his tablet! Kobe helps children unlock key tech ideas, making digital literacy feel like a fun playtime quest with friends.',
+    description: 'Kobe is an Interactive AI Tutor! Kids can chat with him directly inside the app to unlock key tech ideas, making digital literacy feel like a fun playtime quest with friends.',
     speech: [
       "Hello! I am Kobe! Ready to turn passive screen time into future-ready coding power? 🚀",
       "I love explaining how neural networks work using simple building blocks and fun virtual pizza slices! 🍕",
@@ -41,7 +41,7 @@ export default function MascotCard({ initialMascot = 'Kobe' }: MascotProps) {
     badgeColor: 'bg-purple-50 $10 text-purple-700 border-purple-200/50',
     accentText: 'text-purple-650 text-purple-600 hover:text-purple-800',
     avatar: '/assets/images/chibi_girl_character_avatar_1780169038873.png',
-    description: 'A delightful 5-year-old child companion waving with double-puff ponytails! Chibi inspires high emotional confidence, slow-paced visual puzzles, and accessible play, making future skills perfectly approachable for Early Explorers and early learners.',
+    description: 'Chibi is an Interactive AI Tutor for early learners! She inspires high emotional confidence, slow-paced visual puzzles, and accessible play, making future skills perfectly approachable.',
     speech: [
       "Hi! I'm Chibi! Ready to play with colorful puzzles, safe digital drawing blocks, and magical patterns together? 🌸",
       "I love explaining how preschool computer basics work using smiling cartoon cards and floating 3D lightbulbs! 💡",
@@ -79,10 +79,10 @@ export default function MascotCard({ initialMascot = 'Kobe' }: MascotProps) {
       <div className="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 border-b border-slate-100 pb-6 relative z-10">
         <div className="text-center md:text-left">
           <h4 className="text-slate-900 font-bold text-xl flex items-center justify-center md:justify-start gap-2">
-            <Sparkles className="w-5 h-5 text-amber-550 text-amber-500 animate-[bounce_2s_infinite] shrink-0" />
-            Meet Our Guide Companions
+            <Sparkles className="w-5 h-5 text-amber-500 animate-[bounce_2s_infinite] shrink-0" />
+            Meet Our Interactive AI Tutors
           </h4>
-          <p className="text-slate-500 text-xs mt-0.5">Click a companion to switch guides and play dynamic quests together!</p>
+          <p className="text-slate-500 text-xs mt-0.5">Real AI companions that children can actually chat with safely inside the app to learn future-tech skills.</p>
         </div>
         
         {/* Toggle Option Pills */}
