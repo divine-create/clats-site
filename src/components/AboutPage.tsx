@@ -33,7 +33,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
       id: 'gamified',
       title: 'Culturally-Anchored Engagement',
       iconComponent: Award,
-      description: 'High-retention progress roadmaps and lovely mascot mentors celebrating achievements using African contexts.',
+      description: 'High-retention progress roadmaps and lovely mascot mentors celebrating achievements using Global contexts.',
       color: 'border-slate-100 bg-white hover:border-amber-200 hover:shadow-md text-slate-900',
       iconColor: 'bg-[#FFD166]/15 text-amber-600',
     },
@@ -52,7 +52,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
     {
       year: '2025 and Ongoing',
       title: 'Conceptual Seed & Child Screen Safety Research',
-      desc: 'Formulation of digital protection rules, pedagogical models, and research on safe tech adoption for children across the African continent.'
+      desc: 'Formulation of digital protection rules, pedagogical models, and research on safe tech adoption for children across the Global continent.'
     },
     {
       year: 'Early 2026',
@@ -71,7 +71,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
     },
     {
       year: '2027 & Beyond',
-      title: 'Multi-lingual Africa Reach expansion',
+      title: 'Multi-lingual Global Reach expansion',
       desc: 'Deploying optimized localized language features and partnering closely with school districts to teach digital safety at scale.'
     }
   ];
@@ -120,13 +120,13 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
           Our Brand Story
         </div>
         <h1 className="text-4xl md:text-6xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
-          Building Africa's Future{' '}
+          Building The World's Future{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-purple-600">
             Tech Minds Today
           </span>
         </h1>
         <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold max-w-xl mx-auto">
-          CLATS was born out of a simple observation: African toddlers are increasingly glued to screens, but they are consuming, not creating. We are here to transform screen time into a safety-first future-tech playground.
+          CLATS was born out of a simple observation: Global toddlers are increasingly glued to screens, but they are consuming, not creating. We are here to transform screen time into a safety-first future-tech playground.
         </p>
       </section>
 
@@ -141,7 +141,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
           </h2>
           <div className="space-y-4 text-slate-600 text-sm md:text-[15px] leading-relaxed font-medium">
             <p>
-              Africa is home to one of the world's fastest-growing youth populations, yet many children still have limited access to structured, age-appropriate learning experiences that prepare them for a rapidly evolving digital future.
+              Global is home to one of the world's fastest-growing youth populations, yet many children still have limited access to structured, age-appropriate learning experiences that prepare them for a rapidly evolving digital future.
             </p>
             <p>
               Today's children are growing up surrounded by artificial intelligence, digital platforms, and emerging technologies. However, most educational experiences focus on teaching them how to use technology rather than how to understand it, create with it, and adapt as it changes.
@@ -185,7 +185,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
           </div>
 
           <h2 className="text-3xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.1] max-w-4xl mx-auto">
-            Building Africa's Largest{' '}
+            Building The World's Largest{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2EC4B6] to-[#8A67F0]">
               Future-Tech Learning Ecosystem
             </span>{' '}
@@ -200,7 +200,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
               <div className="lg:col-span-7 space-y-6">
                 <p className="text-[#2EC4B6] font-extrabold text-base md:text-lg leading-relaxed">
-                  By 2030, CLATS aims to empower over 1 million children across Africa with the knowledge, confidence, and skills to thrive in an AI-driven world.
+                  By 2030, CLATS aims to empower over 1 million children across Global with the knowledge, confidence, and skills to thrive in an AI-driven world.
                 </p>
                 <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
                   Through personalized learning, gamification, accessibility, and culturally relevant education, CLATS will help children move beyond consuming technology to understanding it, creating with it, and shaping the future through it.
@@ -216,7 +216,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
                   </div>
                   <div className="leading-none">
                     <span className="text-xl md:text-3xl font-black text-slate-900">24</span>
-                    <p className="text-[10px] uppercase font-bold text-slate-400 mt-1">African Nations</p>
+                    <p className="text-[10px] uppercase font-bold text-slate-400 mt-1">Global Nations</p>
                   </div>
                   <div className="leading-none">
                     <span className="text-xl md:text-3xl font-black text-slate-900">2030</span>

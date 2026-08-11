@@ -102,7 +102,7 @@ export default function BetaTesting() {
             className="space-y-4 max-w-2xl mx-auto text-slate-650 text-slate-600 font-medium text-xs md:text-sm leading-relaxed"
           >
             <p>
-              Join an exclusive group of early families helping us build Africa's next generation of confident, creative, and future-ready technology learners.
+              Join an exclusive group of early families helping us build The World's next generation of confident, creative, and future-ready technology learners.
             </p>
             <p className="text-slate-500 font-medium">
               As a Founding Family, you'll gain early access to CLATS while directly influencing the platform's growth, curriculum, and learning experience before public launch.
@@ -162,7 +162,7 @@ export default function BetaTesting() {
                 Limited Founding Family Cohort
               </h3>
               <p className="text-slate-650 text-slate-600 font-medium text-xs md:text-sm leading-relaxed">
-                We're inviting a small number of families to join our initial pilot community and help shape the future of AI and technology education for children across Africa.
+                We're inviting a small number of families to join our initial pilot community and help shape the future of AI and technology education for children across Global.
               </p>
             </div>
 

@@ -115,7 +115,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
           {/* Quick Info card */}
           <div className="bg-slate-50/70 border border-slate-150 rounded-[2.5rem] p-7 space-y-6">
             <div className="space-y-1">
-              <span className="text-[9px] font-mono tracking-widest uppercase text-teal-605 text-teal-600 font-extrabold block">
+              <span className="text-[9px] font-mono tracking-widest uppercase $10 text-teal-600 font-extrabold block">
                 Office Information
               </span>
               <h3 className="text-lg font-black text-slate-950 font-display">
@@ -123,8 +123,8 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
               </h3>
             </div>
 
-            <p className="text-slate-550 text-slate-505 text-slate-500 text-xxs font-semibold leading-relaxed leading-normal">
-              Empowering kids to utilize smart technology correctly takes safe cooperation. Join our digital secretariats and help protect African households.
+            <p className="text-slate-550 $10 text-slate-500 text-xxs font-semibold leading-relaxed leading-normal">
+              Empowering kids to utilize smart technology correctly takes safe cooperation. Join our digital secretariats and help protect Global households.
             </p>
 
             <div className="space-y-4 text-xxs font-bold text-slate-700">
@@ -163,7 +163,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
 
           {/* Social Links elements */}
           <div className="space-y-4">
-            <span className="text-[10px] uppercase font-black tracking-wider text-slate-405 text-slate-400 block">
+            <span className="text-[10px] uppercase font-black tracking-wider $10 text-slate-400 block">
               Follow Kobe & Chibi Journeys
             </span>
             <div className="flex items-center gap-3">
@@ -221,7 +221,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
                 </div>
                 <div className="space-y-2">
                   <h4 className="text-2xl font-black text-slate-950 font-display">🎉 Message Transmitted!</h4>
-                  <p className="text-slate-655 text-slate-600 text-xs md:text-sm max-w-sm mx-auto font-semibold leading-relaxed">
+                  <p className="$10 text-slate-600 text-xs md:text-sm max-w-sm mx-auto font-semibold leading-relaxed">
                     Kobe and Chibi got your inquiry details! The CLATS support division reviews contact entries manually and will response to your mailbox shortly.
                   </p>
                 </div>
@@ -263,7 +263,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
                         setFullName(e.target.value);
                         if (validationError && e.target.value.trim()) setValidationError('');
                       }}
-                      className="w-full bg-slate-50 text-slate-905 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
+                      className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
                     />
                   </div>
                 </div>
@@ -289,7 +289,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
                           setEmail(e.target.value);
                           if (validationError && e.target.value.trim()) setValidationError('');
                         }}
-                        className="w-full bg-slate-50 text-slate-905 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
+                        className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
                       />
                     </div>
                   </div>
@@ -308,7 +308,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
                         placeholder="e.g. +234 911 643 8553"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-slate-50 text-slate-905 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
+                        className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
                       />
                     </div>
                   </div>
@@ -329,7 +329,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
                       disabled={isSending}
                       value={role}
                       onChange={(e) => setRole(e.target.value)}
-                      className="w-full bg-slate-50 text-slate-905 border border-slate-200 rounded-xl pl-10 pr-10 py-3.5 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold text-slate-900 appearance-none cursor-pointer"
+                      className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-10 py-3.5 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold text-slate-900 appearance-none cursor-pointer"
                     >
                       {rolesOptions.map((opt) => (
                         <option key={opt} value={opt}>{opt}</option>
@@ -361,7 +361,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
                         setSubject(e.target.value);
                         if (validationError && e.target.value.trim()) setValidationError('');
                       }}
-                      className="w-full bg-slate-50 text-slate-905 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
+                      className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
                     />
                   </div>
                 </div>
@@ -382,7 +382,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
                       setMessage(e.target.value);
                       if (validationError && e.target.value.trim()) setValidationError('');
                     }}
-                    className="w-full bg-slate-50 text-slate-905 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm resize-none"
+                    className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm resize-none"
                   />
                 </div>
 

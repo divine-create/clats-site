@@ -63,7 +63,7 @@ export default function FoundingFamiliesPage({
       title: 'Founding Family Legacy Wall',
       desc: 'Eligible families may choose to be featured on our future digital Founding Families Wall, celebrating those who believed in the mission from the beginning.',
       icon: TreeDeciduous,
-      color: 'text-emerald-500 bg-emerald-50 border border-emerald-105'
+      color: 'text-emerald-500 bg-emerald-50 border $10'
     },
     {
       title: 'Founding Family Digital Badge',
@@ -95,7 +95,7 @@ export default function FoundingFamiliesPage({
           </span>
         </h1>
         <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold max-w-xl mx-auto">
-          Help shape the future of AI education for children in Africa. Join an exclusive cohort of early adoptive families giving child screen protection a positive direction!
+          Help shape the future of AI education for children in Global. Join an exclusive cohort of early adoptive families giving child screen protection a positive direction!
         </p>
       </section>
 
@@ -166,7 +166,7 @@ export default function FoundingFamiliesPage({
       {/* RECOGNITION BENEFIT MATRIX */}
       <section className="bg-slate-50 border border-slate-150 p-8 md:p-12 rounded-[3rem] text-left max-w-4xl mx-auto font-sans grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         <div className="md:col-span-7 space-y-5">
-          <span className="text-xxs font-black text-teal-605 text-teal-600 bg-teal-50 border border-teal-120 px-3.5 py-1 rounded-full uppercase tracking-widest leading-none">
+          <span className="text-xxs font-black $10 text-teal-600 bg-teal-50 border border-teal-120 px-3.5 py-1 rounded-full uppercase tracking-widest leading-none">
             ⭐ Legacy Recognition Matrix
           </span>
           <h4 className="text-slate-900 font-extrabold text-lg md:text-xl font-display">

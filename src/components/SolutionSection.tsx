@@ -37,7 +37,7 @@ export default function SolutionSection() {
       category: 'core',
       badge: 'Core Tech',
       iconComponent: BookOpen,
-      iconBg: 'text-blue-600 bg-blue-50 border border-blue-105'
+      iconBg: 'text-blue-600 bg-blue-50 border $10'
     },
     {
       id: 'parent_dashboard',

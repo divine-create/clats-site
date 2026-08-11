@@ -448,7 +448,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
               <div className="bg-amber-50 border-b border-amber-100 px-6 py-3.5 flex gap-2 text-[10px] leading-relaxed font-bold text-amber-900 select-none">
                 <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-extrabold text-amber-955 block">🔧 INTERNAL DEVELOPER NOTE:</span>
+                  <span className="font-extrabold $10 block">🔧 INTERNAL DEVELOPER NOTE:</span>
                   The checkout flow is currently a demonstration-only experience used for validation, presentations, and investor demonstrations. No real payment processing should occur until Payment integration is implemented.
                 </div>
               </div>
@@ -497,7 +497,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                           placeholder="parent@example.com"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl text-slate-905 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
+                          className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl $10 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
                         />
                       </div>
                     </div>
@@ -512,7 +512,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                           placeholder="e.g. Kobe Jnr"
                           value={childName}
                           onChange={(e) => setChildName(e.target.value)}
-                          className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl text-slate-905 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
+                          className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl $10 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
                         />
                       </div>
                     </div>
@@ -529,7 +529,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                         placeholder="John Doe"
                         value={cardName}
                         onChange={(e) => setCardName(e.target.value)}
-                        className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl text-slate-905 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
+                        className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl $10 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
                       />
                     </div>
                   </div>
@@ -545,7 +545,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                         placeholder="0000 0000 0051 0000"
                         value={cardNumber}
                         onChange={(e) => handleCardNumberChange(e.target.value)}
-                        className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl text-slate-905 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
+                        className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl $10 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
                       />
                     </div>
                   </div>
@@ -562,7 +562,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                           placeholder="MM/YY"
                           value={expiry}
                           onChange={(e) => handleExpiryChange(e.target.value)}
-                          className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl text-slate-905 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
+                          className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl $10 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
                         />
                       </div>
                     </div>
@@ -578,7 +578,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                           placeholder="123"
                           value={cvv}
                           onChange={(e) => setCvv(e.target.value.replace(/\D/g, ''))}
-                          className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl text-slate-905 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
+                          className="w-full bg-slate-50 border-2 border-slate-200 py-2.5 pl-10 pr-4 rounded-xl $10 outline-none focus:border-[#2EC4B6] focus:bg-white text-xs font-semibold transition-all"
                         />
                       </div>
                     </div>

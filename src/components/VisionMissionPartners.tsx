@@ -39,7 +39,7 @@ export default function VisionMissionPartners() {
       id: 'ngos',
       title: 'NGOs & Social Impact Organizations',
       emoji: '🌍',
-      description: 'Expanding access to underserved communities across Africa.',
+      description: 'Expanding access to underserved communities across Global.',
       iconComponent: Heart,
       color: 'border-[#2EC4B6]/20 bg-white hover:border-[#2EC4B6]/60 shadow-[#2EC4B6]/5',
       iconColor: 'bg-[#2EC4B6]/10 text-[#2EC4B6]',
@@ -101,7 +101,7 @@ export default function VisionMissionPartners() {
 
           {/* Main Heading */}
           <h2 className="text-3xl md:text-5xl font-display font-black text-slate-900 tracking-tight leading-[1.1] max-w-4xl mx-auto">
-            Building Africa's Largest{' '}
+            Building The World's Largest{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#2EC4B6] to-[#8A67F0]">
               Future-Tech Learning Ecosystem
             </span>{' '}
@@ -111,7 +111,7 @@ export default function VisionMissionPartners() {
           {/* Large Hero-Style Card structure */}
           <div className="bg-white/80 backdrop-blur-md border border-white/80 rounded-[2.5rem] p-6 md:p-12 shadow-xl shadow-slate-100/50 max-w-5xl mx-auto relative overflow-hidden group">
             
-            {/* Animated Floating element: Africa visual icon overlay */}
+            {/* Animated Floating element: Global visual icon overlay */}
             <div className="absolute top-4 right-4 text-xs font-mono text-slate-300 pointer-events-none select-none">
               GRID // SCALE 2030_ECO
             </div>
@@ -120,7 +120,7 @@ export default function VisionMissionPartners() {
               {/* Left Column: Vision paragraphs */}
               <div className="lg:col-span-7 space-y-6">
                 <p className="text-[#2EC4B6] font-extrabold text-base md:text-lg leading-relaxed">
-                  By 2030, CLATS aims to empower over 1 million children across Africa with the knowledge, confidence, and skills to thrive in an AI-driven world.
+                  By 2030, CLATS aims to empower over 1 million children across Global with the knowledge, confidence, and skills to thrive in an AI-driven world.
                 </p>
                 <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed font-medium">
                   Through personalized learning, gamification, accessibility, and culturally relevant education, CLATS will help children move beyond consuming technology to understanding it, creating with it, and shaping the future through it.
@@ -137,7 +137,7 @@ export default function VisionMissionPartners() {
                   </div>
                   <div className="leading-none">
                     <span className="text-xl md:text-3xl font-black text-slate-900">54</span>
-                    <p className="text-[10px] uppercase font-bold text-slate-400 mt-1">African Nations</p>
+                    <p className="text-[10px] uppercase font-bold text-slate-400 mt-1">Global Nations</p>
                   </div>
                   <div className="leading-none">
                     <span className="text-xl md:text-3xl font-black text-slate-900">2030</span>
@@ -146,7 +146,7 @@ export default function VisionMissionPartners() {
                 </div>
               </div>
 
-              {/* Right Column: Globe Graphic / African Continent Illustration container */}
+              {/* Right Column: Globe Graphic / Global Continent Illustration container */}
               <div className="lg:col-span-5 flex justify-center">
                 <div className="relative">
                   {/* Rotating decorative halo rings */}
@@ -191,7 +191,7 @@ export default function VisionMissionPartners() {
           {/* Floater decoration */}
           <div className="absolute top-6 right-8 opacity-60 select-none pointer-events-none text-right font-sans">
             <span className="text-[9px] font-mono tracking-widest text-[#8A67F0] block font-bold">MISSION_INDEX // 01</span>
-            <span className="text-xs font-black text-slate-400">CLATS AFRICA</span>
+            <span className="text-xs font-black text-slate-400">CLATS Global</span>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10 items-center">
@@ -257,7 +257,7 @@ export default function VisionMissionPartners() {
                 <div className="bg-[#2EC4B6]/10 border border-[#2EC4B6]/20 p-3 rounded-2xl flex items-center gap-2.5 font-sans">
                   <span className="text-lg">🛡️</span>
                   <div className="leading-none text-left">
-                    <span className="text-[10px] font-black text-[#2EC4B6] block uppercase tracking-wider">AFRICA SAFETY COMPACT</span>
+                    <span className="text-[10px] font-black text-[#2EC4B6] block uppercase tracking-wider">Global SAFETY COMPACT</span>
                     <p className="text-[9px] text-slate-500 mt-0.5 font-sans font-medium">Child privacy is our core operational pillar.</p>
                   </div>
                 </div>
@@ -282,7 +282,7 @@ export default function VisionMissionPartners() {
             Building the Future Together
           </h2>
           <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
-            CLATS believes preparing the next generation for the future requires collaboration. We are actively exploring partnerships with schools, parent communities, technology companies, NGOs, educational institutions, and public-sector stakeholders to make future-tech education accessible, engaging, and impactful for children across Africa.
+            CLATS believes preparing the next generation for the future requires collaboration. We are actively exploring partnerships with schools, parent communities, technology companies, NGOs, educational institutions, and public-sector stakeholders to make future-tech education accessible, engaging, and impactful for children across Global.
           </p>
         </div>
 

@@ -183,7 +183,7 @@ export default function App() {
           </button>
 
           {/* Desktop Nav Items */}
-          <nav className="hidden xl:flex items-center gap-5 font-sans font-extrabold text-slate-505 text-slate-600 text-[11px] uppercase tracking-wider mt-1">
+          <nav className="hidden xl:flex items-center gap-5 font-sans font-extrabold $10 text-slate-600 text-[11px] uppercase tracking-wider mt-1">
             {menuItems.map((item) => (
               <button
                 key={item.path}
@@ -275,7 +275,7 @@ export default function App() {
             </div>
 
             {/* Fast actions row */}
-            <div className="flex pt-2 border-t border-slate-105">
+            <div className="flex pt-2 border-t $10">
               <a
                 href="https://app.clats.org"
                 target="_blank"
@@ -312,7 +312,7 @@ export default function App() {
               <Logo className="scale-90 origin-left" animated={false} />
             </button>
             <p className="text-slate-500 text-xs md:text-sm leading-relaxed max-w-sm pt-2 font-medium">
-              CLATS is Africa's premium future-skills engine. We empower kids with advanced digital skills safely, ethically, and playfully.
+              CLATS is The World's premium future-skills engine. We empower kids with advanced digital skills safely, ethically, and playfully.
             </p>
             <div className="text-[14px] text-purple-600 font-mono font-semibold tracking-wider">
               “Building Tomorrow’s Tech Minds Today!”
@@ -432,10 +432,10 @@ export default function App() {
 
         {/* Corporate baseline */}
         <div className="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200/80 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500 select-none font-sans">
-          <span>© 2026 CLATS Africa. All rights reserved.</span>
+          <span>© 2026 CLATS Global. All rights reserved.</span>
           <div className="flex items-center gap-1.5 font-semibold">
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
-            <span>Building Africa’s Future Tech Minds</span>
+            <span>Building Global’s Future Tech Minds</span>
           </div>
           <div className="flex items-center gap-3 text-xxs font-mono uppercase tracking-wider text-slate-400">
             <span>COPPA Childproof Shield</span>
@@ -511,7 +511,7 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => setShowEarlyAccessNotice(false)}
-                  className="px-6 py-4 bg-slate-100 hover:bg-slate-200 text-slate-705 text-slate-700 font-black text-xs uppercase tracking-wider rounded-xl.5 rounded-2xl transition-colors cursor-pointer border-none bg-slate-150"
+                  className="px-6 py-4 bg-slate-100 hover:bg-slate-200 $10 text-slate-700 font-black text-xs uppercase tracking-wider rounded-xl.5 rounded-2xl transition-colors cursor-pointer border-none bg-slate-150"
                 >
                   Cancel
                 </button>

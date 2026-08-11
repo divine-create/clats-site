@@ -68,7 +68,7 @@ export default function ParentTrust() {
                 
                 {/* Description content */}
                 <div className="space-y-1.5">
-                  <h3 className="text-slate-905 text-slate-900 font-extrabold text-lg group-hover:text-teal-600 transition-colors">
+                  <h3 className="$10 text-slate-900 font-extrabold text-lg group-hover:text-teal-600 transition-colors">
                     {point.title}
                   </h3>
                   <p className="text-slate-600 text-xs md:text-sm leading-relaxed">
@@ -84,7 +84,7 @@ export default function ParentTrust() {
         <div className="mt-16 border-t border-slate-100 pt-10 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 text-center select-none text-slate-400 text-xs font-sans tracking-widest uppercase font-bold">
           <span>🛡️ GDPR & COPPA Compliant Guidance</span>
           <span>🔒 256-bit Student Activity Encryption</span>
-          <span>🌍 Designed for African Cellular Speeds</span>
+          <span>🌍 Designed for Global Cellular Speeds</span>
           <span>🌱 100% KidSafe Certified Blueprint</span>
         </div>
 

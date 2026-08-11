@@ -180,7 +180,7 @@ export default function PartnershipsPage({ onNavigate, awardXP }: PartnershipsPa
                   </div>
 
                   <div className="space-y-2 text-left">
-                    <h4 className="text-slate-905 text-slate-900 font-extrabold text-[15px] md:text-base leading-snug tracking-tight">
+                    <h4 className="$10 text-slate-900 font-extrabold text-[15px] md:text-base leading-snug tracking-tight">
                       {category.title}
                     </h4>
                     <p className="text-slate-550 text-slate-500 text-xxs font-semibold leading-relaxed leading-normal">
@@ -253,7 +253,7 @@ export default function PartnershipsPage({ onNavigate, awardXP }: PartnershipsPa
                       setOrgName(e.target.value);
                       if (validationError && e.target.value.trim()) setValidationError('');
                     }}
-                    className="w-full bg-slate-50 text-slate-905 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
+                    className="w-full bg-slate-50 $10 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
                   />
                 </div>
 
@@ -271,7 +271,7 @@ export default function PartnershipsPage({ onNavigate, awardXP }: PartnershipsPa
                       setContactName(e.target.value);
                       if (validationError && e.target.value.trim()) setValidationError('');
                     }}
-                    className="w-full bg-slate-50 text-slate-905 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
+                    className="w-full bg-slate-50 $10 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
                   />
                 </div>
               </div>
@@ -292,7 +292,7 @@ export default function PartnershipsPage({ onNavigate, awardXP }: PartnershipsPa
                       setEmail(e.target.value);
                       if (validationError && e.target.value.trim()) setValidationError('');
                     }}
-                    className="w-full bg-slate-50 text-slate-905 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
+                    className="w-full bg-slate-50 $10 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
                   />
                 </div>
 
@@ -306,7 +306,7 @@ export default function PartnershipsPage({ onNavigate, awardXP }: PartnershipsPa
                       disabled={isSubmitting}
                       value={partnerType}
                       onChange={(e) => setPartnerType(e.target.value)}
-                      className="w-full bg-slate-50 text-slate-905 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 focus:border-[#2EC4B6] focus:bg-white UI focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold appearance-none cursor-pointer"
+                      className="w-full bg-slate-50 $10 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 focus:border-[#2EC4B6] focus:bg-white UI focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold appearance-none cursor-pointer"
                     >
                       <option value="School / Educational Institution">School / Educational Institution</option>
                       <option value="Non-Governmental Organization (NGO)">Non-Governmental Organization (NGO)</option>
@@ -337,7 +337,7 @@ export default function PartnershipsPage({ onNavigate, awardXP }: PartnershipsPa
                     setMessage(e.target.value);
                     if (validationError && e.target.value.trim()) setValidationError('');
                   }}
-                  className="w-full bg-slate-50 text-slate-905 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm resize-none"
+                  className="w-full bg-slate-50 $10 text-slate-900 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm resize-none"
                 />
               </div>
 
@@ -346,7 +346,7 @@ export default function PartnershipsPage({ onNavigate, awardXP }: PartnershipsPa
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#2EC4B6] text-slate-950 hover:bg-[#25B4A6] disabled:bg-slate-300 disabled:border-slate-305 disabled:text-slate-550 font-black text-xs md:text-sm uppercase tracking-wider py-4 rounded-xl.5 rounded-2xl shadow-lg transition-transform duration-200 cursor-pointer border border-[#2EC4B6]"
+                  className="w-full bg-[#2EC4B6] text-slate-950 hover:bg-[#25B4A6] disabled:bg-slate-300 disabled:$10 disabled:text-slate-550 font-black text-xs md:text-sm uppercase tracking-wider py-4 rounded-xl.5 rounded-2xl shadow-lg transition-transform duration-200 cursor-pointer border border-[#2EC4B6]"
                 >
                   <Send className="w-4 h-4 inline-block mr-1.5 stroke-[2.5]" />
                   <span>{isSubmitting ? 'Transmitting details...' : 'Submit Partnership Application'}</span>

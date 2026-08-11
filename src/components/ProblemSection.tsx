@@ -29,10 +29,10 @@ export default function ProblemSection() {
     },
     {
       id: 'left_behind',
-      title: 'African Tech Divide Gap',
+      title: 'Global Tech Divide Gap',
       description: 'If children in Lagos, Nairobi, Johannesburg, and Accra miss out on foundational AI skills now, the global economic gap will divide further. Our children deserve equal tech leadership.',
       icon: Globe2,
-      color: 'text-blue-600 bg-blue-50 border border-blue-105',
+      color: 'text-blue-600 bg-blue-50 border $10',
       badge: 'Continental Dividends'
     }
   ];
@@ -54,7 +54,7 @@ export default function ProblemSection() {
           </div>
           <h2 className="text-3xl md:text-5xl font-sans font-bold tracking-tight text-slate-900 leading-[1.15]">
             Children Consume Technology Daily, But Few{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-amber-505 from-rose-650 via-rose-600 to-amber-600 font-extrabold">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 $10 from-rose-650 via-rose-600 to-amber-600 font-extrabold">
               Understand It!
             </span>
           </h2>
@@ -86,7 +86,7 @@ export default function ProblemSection() {
 
                   {/* Problem Description */}
                   <div className="space-y-2">
-                    <h3 className="text-slate-905 text-slate-900 font-extrabold text-lg leading-snug transition-colors group-hover:text-rose-600">
+                    <h3 className="$10 text-slate-900 font-extrabold text-lg leading-snug transition-colors group-hover:text-rose-600">
                       {problem.title}
                     </h3>
                     <p className="text-slate-600 text-xs lg:text-sm leading-relaxed">

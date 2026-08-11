@@ -560,7 +560,7 @@ export default function AskKobeChibi() {
                 {/* Nice bonus enhancement under the contact form */}
                 <div className="mt-5 pt-4 border-t border-slate-100 flex items-start gap-1.5 text-[15px] text-slate-500 font-mediumLight">
                   <span className="shrink-0 text-xs">💡</span>
-                  <span>We love hearing from parents, teachers, and community members. Your feedback helps us build a better learning experience for African children.</span>
+                  <span>We love hearing from parents, teachers, and community members. Your feedback helps us build a better learning experience for Global children.</span>
                 </div>
 
               </div>

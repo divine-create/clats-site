@@ -38,7 +38,7 @@ export default function MascotCard({ initialMascot = 'Kobe' }: MascotProps) {
     title: 'The Playful Inclusive Companion',
     bgColor: 'bg-purple-50/50 border-purple-200/60',
     borderColor: 'border-purple-100',
-    badgeColor: 'bg-purple-50 text-purple-705 text-purple-700 border-purple-200/50',
+    badgeColor: 'bg-purple-50 $10 text-purple-700 border-purple-200/50',
     accentText: 'text-purple-650 text-purple-600 hover:text-purple-800',
     avatar: '/assets/images/chibi_girl_character_avatar_1780169038873.png',
     description: 'A delightful 5-year-old child companion waving with double-puff ponytails! Chibi inspires high emotional confidence, slow-paced visual puzzles, and accessible play, making future skills perfectly approachable for Early Explorers and early learners.',
@@ -96,7 +96,7 @@ export default function MascotCard({ initialMascot = 'Kobe' }: MascotProps) {
             className={`px-4 py-2.5 rounded-xl text-xs font-extrabold flex items-center gap-2 transition-all duration-300 cursor-pointer ${
               activeMascot === 'Kobe'
                 ? 'bg-teal-500 text-white shadow-md shadow-teal-500/20 border border-teal-600/10'
-                : 'text-slate-550 text-slate-505 hover:text-slate-800 hover:bg-slate-100/50'
+                : 'text-slate-550 $10 hover:text-slate-800 hover:bg-slate-100/50'
             }`}
           >
             <div className="flex items-center gap-1.5">
@@ -175,7 +175,7 @@ export default function MascotCard({ initialMascot = 'Kobe' }: MascotProps) {
             
             {/* Interactive bubble indicator */}
             <div className="absolute -bottom-2 -left-2 bg-white border border-slate-100 rounded-lg px-2.5 py-1 text-[10px] font-black text-slate-600 flex items-center gap-1 shadow-md">
-              <span className={`w-1.5 h-1.5 rounded-full ${activeMascot === 'Kobe' ? 'bg-emerald-555 bg-emerald-500 animate-ping' : 'bg-purple-555 bg-purple-500 animate-ping'}`} />
+              <span className={`w-1.5 h-1.5 rounded-full ${activeMascot === 'Kobe' ? '$10 bg-emerald-500 animate-ping' : '$10 bg-purple-500 animate-ping'}`} />
               READY TO PLAY
             </div>
           </div>

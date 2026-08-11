@@ -80,7 +80,7 @@ export default function PricingSuccessPage({ onNavigate, awardXP }: PricingSucce
           <div className="bg-amber-50 rounded-2xl p-4 flex gap-2.5 text-left text-xxs font-bold text-amber-900 select-none">
             <ShieldAlert className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
-              <span className="font-extrabold uppercase text-amber-955 block">Internal Developer Note:</span>
+              <span className="font-extrabold uppercase $10 block">Internal Developer Note:</span>
               The checkout flow is currently a demonstration-only experience used for validation, presentations, and investor demonstrations. No real payment processing should occur until Payment integration is implemented.
             </p>
           </div>

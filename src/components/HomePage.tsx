@@ -51,7 +51,7 @@ export default function HomePage({
             {/* Playful Floating XP Incentive */}
             <div className="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 text-[10px] sm:text-xs font-bold px-4 py-2 rounded-full border border-teal-100 uppercase tracking-widest font-sans max-w-xl mx-auto lg:mx-0 text-center">
               <Sparkles className="w-3.5 h-3.5 text-teal-600 animate-pulse shrink-0" />
-              Empowering African children aged 2–18 with AI, digital citizenship, cybersecurity, design, and innovation skills through safe, personalized, and gamified future-tech education.
+              Empowering Global children aged 2–18 with AI, digital citizenship, cybersecurity, design, and innovation skills through safe, personalized, and gamified future-tech education.
             </div>
             
             {/* Primary Display Title */}
@@ -288,9 +288,9 @@ export default function HomePage({
                     Help Shape the Future of Technology Education for Children
                   </h4>
 
-                  <div className="space-y-4 text-slate-505 text-slate-500 text-xs md:text-sm font-semibold leading-relaxed">
+                  <div className="space-y-4 $10 text-slate-500 text-xs md:text-sm font-semibold leading-relaxed">
                     <p>
-                      Join an exclusive community of forward-thinking parents helping build Africa's next generation of creators, innovators, and problem-solvers.
+                      Join an exclusive community of forward-thinking parents helping build The World's next generation of creators, innovators, and problem-solvers.
                     </p>
                     <p>
                       As a CLATS Founding Family, you'll receive early access to our learning platform, opportunities to test new features, and a direct voice in shaping the future of children's AI and technology education.
@@ -345,11 +345,11 @@ export default function HomePage({
                   </div>
                   
                   <div className="mt-8 border-t border-slate-150/60 pt-6 space-y-3.5">
-                    <div className="flex items-center gap-2.5 text-slate-605 text-slate-600 text-xs font-bold leading-none">
+                    <div className="flex items-center gap-2.5 $10 text-slate-600 text-xs font-bold leading-none">
                       <CheckCircle className="w-4 h-4 text-[#2EC4B6] shrink-0" />
                       <span>Curriculum Grounded in Safety</span>
                     </div>
-                    <div className="flex items-center gap-2.5 text-slate-605 text-slate-600 text-xs font-bold leading-none">
+                    <div className="flex items-center gap-2.5 $10 text-slate-600 text-xs font-bold leading-none">
                       <CheckCircle className="w-4 h-4 text-[#2EC4B6] shrink-0" />
                       <span>Active Constructive Pathways</span>
                     </div>

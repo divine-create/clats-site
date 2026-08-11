@@ -207,7 +207,7 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
                 'AI in Healthcare',
                 'AI in Transportation',
                 'AI in Shopping',
-                'AI in Africa'
+                'AI in Global'
               ],
               status: 'Active'
             },
@@ -695,7 +695,7 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
                   <span className="text-[9px] font-mono tracking-wider font-extrabold uppercase text-[#8A67F0] bg-purple-50 border border-purple-100 px-3.5 py-1 rounded-full inline-block">
                     Overview
                   </span>
-                  <p className="text-xs text-slate-605 text-slate-600 font-semibold leading-relaxed">
+                  <p className="text-xs $10 text-slate-600 font-semibold leading-relaxed">
                     {activeAcademyObj.overview}
                   </p>
                 </div>
@@ -720,7 +720,7 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
                   <span className="text-[9px] font-mono tracking-wider font-extrabold uppercase text-amber-700 bg-amber-50 border border-amber-100 px-3.5 py-1 rounded-full inline-block">
                     Why This Matters
                   </span>
-                  <p className="text-xs text-slate-505 text-slate-500 font-medium leading-relaxed italic">
+                  <p className="text-xs $10 text-slate-500 font-medium leading-relaxed italic">
                     {activeAcademyObj.whyMatters}
                   </p>
                 </div>

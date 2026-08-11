@@ -264,7 +264,7 @@ export default function LearningAcademies() {
                     <span className="text-[9px] uppercase font-bold tracking-wider text-slate-400 block font-mono">
                       📚 Featured Syllabus Labs & Modules
                     </span>
-                    <div className="space-y-2 text-xs font-bold text-slate-705 text-slate-700">
+                    <div className="space-y-2 text-xs font-bold $10 text-slate-700">
                       {selectedAcademy.features.map((feat: string, idx: number) => (
                         <div key={idx} className="flex gap-2 items-start text-left bg-white p-2.5 rounded-xl border border-slate-100 shadow-sm">
                           <CheckCircle className="w-3.5 h-3.5 text-[#2EC4B6] shrink-0 mt-0.5" />

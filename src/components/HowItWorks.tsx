@@ -98,7 +98,7 @@ export default function HowItWorks() {
                       </div>
                     </div>
 
-                    <h3 className="text-slate-905 text-slate-900 font-extrabold text-xl leading-snug">
+                    <h3 className="$10 text-slate-900 font-extrabold text-xl leading-snug">
                       {step.stepNumber}. {step.title}
                     </h3>
                     
