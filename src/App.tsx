@@ -219,19 +219,18 @@ export default function App() {
               </div>
             </div>
 
-            {/* Test Live Interactive Prototype button */}
+            {/* App Link button */}
             <div className="hidden lg:flex items-center gap-2">
-              <button
-                type="button"
-                onClick={() => {
-                  awardXP(20, 'prototype_header_clicked');
-                  setShowEarlyAccessNotice(true);
-                }}
-                className="bg-slate-950 hover:bg-slate-800 text-white font-black text-xs px-4 py-2.5 rounded-2xl shadow-sm cursor-pointer transition-all font-sans flex items-center gap-1.5"
+              <a
+                href="https://app.clats.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => awardXP(20, 'prototype_header_clicked')}
+                className="bg-slate-950 hover:bg-slate-800 text-white font-black text-xs px-4 py-2.5 rounded-2xl shadow-sm cursor-pointer transition-all font-sans flex items-center gap-1.5 no-underline"
               >
                 <Sparkles className="w-3.5 h-3.5 text-[#2EC4B6] shrink-0" />
-                Test Live Interactive Prototype
-              </button>
+                Launch App
+              </a>
             </div>
 
             {/* Main Header Waitlist Pill */}
@@ -277,18 +276,19 @@ export default function App() {
 
             {/* Fast actions row */}
             <div className="flex pt-2 border-t border-slate-105">
-              <button
-                type="button"
+              <a
+                href="https://app.clats.org"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   setMobileMenuOpen(false);
                   awardXP(20, 'prototype_header_clicked');
-                  setShowEarlyAccessNotice(true);
                 }}
-                className="w-full bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2"
+                className="w-full bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs py-3.5 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 no-underline"
               >
                 <Sparkles className="w-4 h-4 text-[#2EC4B6] shrink-0" />
-                Test Live Interactive Prototype
-              </button>
+                Launch App
+              </a>
             </div>
           </div>
         )}
