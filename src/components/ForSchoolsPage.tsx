@@ -34,6 +34,43 @@ export default function ForSchoolsPage({ onNavigate, awardXP }: ForSchoolsPagePr
         </div>
       </section>
 
+      {/* WHY SCHOOLS CHOOSE CLATS */}
+      <section className="py-20 bg-slate-50 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-black mb-4">Why Schools Choose CLATS</h2>
+            <p className="text-slate-500 max-w-xl mx-auto">The core benefits that drive true educational ROI.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col gap-4">
+              <h3 className="text-xl font-bold text-slate-900">1. Instant Modernization</h3>
+              <p className="text-slate-600 text-sm">Deploy a future-tech curriculum (AI, coding, digital citizenship) overnight without hiring specialized IT teachers or rewriting your syllabi.</p>
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col gap-4">
+              <h3 className="text-xl font-bold text-slate-900">2. Effortless Parent Alignment</h3>
+              <p className="text-slate-600 text-sm">Automated PDF progress reports make it trivial to show parents exactly what their child is learning, boosting your school's reputation.</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col gap-4">
+              <h3 className="text-xl font-bold text-slate-900">3. Targeted Interventions</h3>
+              <p className="text-slate-600 text-sm">The Master Analytics dashboard shows live engagement metrics. Instantly spot students falling behind before they fail a test.</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col gap-4">
+              <h3 className="text-xl font-bold text-slate-900">4. Skyrocketing Engagement</h3>
+              <p className="text-slate-600 text-sm">Gamification, XP streaks, and AI interactive tutors keep kids glued to productive learning, reducing classroom behavioral issues.</p>
+            </div>
+
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 flex flex-col gap-4 lg:col-span-2">
+              <h3 className="text-xl font-bold text-slate-900">5. Guaranteed Child Safety</h3>
+              <p className="text-slate-600 text-sm">Eliminate the liability of open-web research. CLATS is a 100% walled-garden, ad-free environment compliant with global digital safety standards.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FEATURES */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-6">
