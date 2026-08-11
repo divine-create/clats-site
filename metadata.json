@@ -1,0 +1,6 @@
+{
+  "name": "CLATS",
+  "description": "The professional multi-page website and future-skills platform for CLATS, empowering African children with AI, Cybersecurity, and Digital Citizenship.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
