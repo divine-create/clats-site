@@ -51,21 +51,21 @@ export default function HomePage({
             {/* Playful Floating XP Incentive */}
             <div className="inline-flex items-center gap-1.5 bg-teal-50 text-teal-700 text-[10px] sm:text-xs font-bold px-4 py-2 rounded-full border border-teal-100 uppercase tracking-widest font-sans max-w-xl mx-auto lg:mx-0 text-center">
               <Sparkles className="w-3.5 h-3.5 text-teal-600 animate-pulse shrink-0" />
-              Empowering Global children aged 2–18 with AI, digital citizenship, cybersecurity, design, and innovation skills through safe, personalized, and gamified future-tech education.
+              🌍 Empowering Global youth with AI, coding, and cybersecurity skills.
             </div>
             
             {/* Primary Display Title */}
             <h1 className="text-4xl md:text-6xl font-display font-black tracking-tight text-slate-900 leading-[1.1]">
-              Transform Screen Time Into{' '}
+              Turn Screen Time Into{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-purple-600">
-                Future-Ready Productive Learning Success
+                Future-Ready Skills
               </span>
             </h1>
 
             {/* SaaS description for parent trust */}
             <div className="space-y-4 max-w-xl mx-auto lg:mx-0 text-left">
               <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed font-semibold text-center lg:text-left">
-                CLATS is a gamified future-ready learning platform that transforms children's screen time (ages 2–18) into personalized learning experiences, equipping them with AI, digital, and other future-ready skills while giving parents and schools meaningful insights into their learning progress.
+                CLATS is a gamified educational platform that turns everyday screen time into powerful skill-building. We equip children (ages 2–18) with essential skills in AI, coding, and digital citizenship—all while giving parents and schools real-time insights into their progress.
               </p>
               
               <div className="flex flex-col items-center lg:items-start">
@@ -74,19 +74,19 @@ export default function HomePage({
                     <div className="w-5 h-5 rounded-full bg-teal-50 flex items-center justify-center border border-teal-100 shrink-0 mt-0.5">
                       <Sparkles className="w-3 h-3 text-teal-600" />
                     </div>
-                    <span>No tech background required.</span>
+                    <span><strong>Built for Everyone:</strong> No prior tech experience needed.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-indigo-50 flex items-center justify-center border border-indigo-100 shrink-0 mt-0.5">
                       <Star className="w-3 h-3 text-indigo-600" />
                     </div>
-                    <span>Lightweight, data-optimized streaming.</span>
+                    <span><strong>Data-Friendly:</strong> Lightweight streaming optimized for low bandwidth.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-purple-50 flex items-center justify-center border border-purple-100 shrink-0 mt-0.5">
                       <Heart className="w-3 h-3 text-purple-600" />
                     </div>
-                    <span>A curriculum that grows with your child from preschool to university prep.</span>
+                    <span><strong>Adaptive Learning:</strong> A curriculum that evolves from preschool to university prep.</span>
                   </li>
                 </ul>
               </div>
@@ -103,7 +103,7 @@ export default function HomePage({
                 }}
                 className="w-full sm:w-auto text-center bg-teal-500 text-white hover:bg-teal-400 font-extrabold text-sm px-8 py-4.5 rounded-2xl shadow-xl shadow-teal-500/20 hover:shadow-teal-500/35 transform hover:-translate-y-0.5 transition-all cursor-pointer border-0"
               >
-                Get Started
+                Start Your Child's Journey
               </button>
               <button
                 onClick={() => {
@@ -118,8 +118,13 @@ export default function HomePage({
               </button>
             </div>
 
-            {/* Bottom trust banner metrics */}
+            {/* B2B / Trust Banner */}
             <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-center lg:justify-start gap-y-3 gap-x-6 text-[11px] sm:text-[13px] text-slate-500 font-bold select-none font-sans uppercase tracking-wider">
+              <span className="flex items-center gap-1.5 text-[#2EC4B6]">
+                <CheckCircle className="w-3.5 h-3.5 shrink-0" />
+                Trusted by modern educators
+              </span>
+              <span className="text-slate-200">|</span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle className="w-3.5 h-3.5 text-teal-600 shrink-0" />
                 100% Safe Ad-Free Space
