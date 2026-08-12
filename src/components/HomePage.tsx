@@ -1,6 +1,6 @@
 import React from 'react';
 import { 
-  Sparkles, Star, ChevronRight, CheckCircle, Mail, Phone, Heart, Lock, Users 
+  Sparkles, Star, ChevronRight, CheckCircle, Mail, Phone, Heart, Lock, Users, X 
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import ProblemSection from './ProblemSection';
@@ -35,6 +35,8 @@ export default function HomePage({
   // Offical mascot avatars
   const kobeAvatar = '/assets/images/kobe_boy_character_avatar_1780168907812.png';
   const chibiAvatar = '/assets/images/chibi_girl_character_avatar_1780169038873.png';
+
+  const [showHeroVideo, setShowHeroVideo] = React.useState(false);
 
   return (
     <div className="animate-fadeIn">
@@ -174,33 +176,52 @@ export default function HomePage({
               </div>
 
               {/* Generated Illustration Frame element */}
-              <div className="relative rounded-3xl overflow-hidden border-2 border-purple-50 shadow-lg bg-[#ffffff] p-1.5 group">
-                <img
-                  src="/assets/images/clats_kids_hero_illustration_1780169484342.png"
-                  alt="CLATS"
-                  referrerPolicy="no-referrer"
-                  className="w-full h-auto object-cover rounded-2xl transform scale-[1.01] transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Floating Video Play Overlay */}
-                <button
-                  onClick={() => {
-                    const videoSection = document.getElementById('lesson-demo-video-section');
-                    if (videoSection) {
-                      videoSection.scrollIntoView({ behavior: 'smooth' });
-                      awardXP(50, 'hero_video_clicked');
-                    }
-                  }}
-                  className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/40 flex items-center justify-center transition-all duration-300 cursor-pointer border-0"
-                >
-                  <div className="w-16 h-16 rounded-full bg-white text-teal-600 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300 border-2 border-teal-100">
-                    <svg className="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24">
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
+              <div className="relative rounded-3xl overflow-hidden border-2 border-purple-50 shadow-lg bg-[#ffffff] p-1.5 group w-full aspect-[4/3] sm:aspect-[1.4]">
+                {showHeroVideo ? (
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden bg-slate-950">
+                    <iframe
+                      src="https://www.youtube.com/embed/bHDcP9ao4wk?rel=0&autoplay=1"
+                      title="CLATS Lesson Demo Video"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full border-0 rounded-2xl"
+                    />
+                    {/* Close / Return to Image Button */}
+                    <button
+                      onClick={() => setShowHeroVideo(false)}
+                      className="absolute top-3 right-3 w-8 h-8 rounded-full bg-slate-950/80 hover:bg-slate-900 border border-white/10 flex items-center justify-center text-white cursor-pointer transition-colors shadow-md z-20 border-none"
+                      title="Close Video"
+                    >
+                      <X className="w-4 h-4 text-white" />
+                    </button>
                   </div>
-                  <span className="absolute bottom-6 bg-slate-950/80 text-white font-extrabold text-xs px-4 py-2 rounded-xl backdrop-blur-sm border border-white/10 uppercase tracking-wider shadow-md transform group-hover:translate-y-[-4px] transition-transform duration-300">
-                    Play Lesson Demo 🎬
-                  </span>
-                </button>
+                ) : (
+                  <div className="relative w-full h-full">
+                    <img
+                      src="/assets/images/clats_kids_hero_illustration_1780169484342.png"
+                      alt="CLATS"
+                      referrerPolicy="no-referrer"
+                      className="w-full h-full object-cover rounded-2xl transform scale-[1.01] transition-transform duration-700 group-hover:scale-105"
+                    />
+                    {/* Floating Video Play Overlay */}
+                    <button
+                      onClick={() => {
+                        setShowHeroVideo(true);
+                        awardXP(50, 'hero_video_clicked');
+                      }}
+                      className="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/40 flex items-center justify-center transition-all duration-300 cursor-pointer border-0"
+                    >
+                      <div className="w-16 h-16 rounded-full bg-white text-teal-600 flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform duration-300 border-2 border-teal-100">
+                        <svg className="w-6 h-6 fill-current translate-x-0.5" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <span className="absolute bottom-6 bg-slate-950/80 text-white font-extrabold text-xs px-4 py-2 rounded-xl backdrop-blur-sm border border-white/10 uppercase tracking-wider shadow-md transform group-hover:translate-y-[-4px] transition-transform duration-300">
+                        Play Lesson Demo 🎬
+                      </span>
+                    </button>
+                  </div>
+                )}
               </div>
 
             </div>
