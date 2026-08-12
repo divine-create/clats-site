@@ -124,7 +124,7 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
             </div>
 
             <p className="text-slate-550 $10 text-slate-500 text-xxs font-semibold leading-relaxed leading-normal">
-              Empowering kids to utilize smart technology correctly takes safe cooperation. Join our digital secretariats and help protect Global households.
+              Empowering kids to utilize smart technology correctly takes safe cooperation. Join our digital secretariats and help protect households worldwide.
             </p>
 
             <div className="space-y-4 text-xxs font-bold text-slate-700">

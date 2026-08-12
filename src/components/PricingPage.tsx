@@ -275,6 +275,11 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
 
       </section>
 
+      {/* PRICING FOOTNOTE */}
+      <div className="text-center pt-4 text-[11px] text-slate-500 font-medium">
+        * Pricing is displayed in Nigerian Naira (₦). International credit and debit cards are supported at checkout.
+      </div>
+
       {/* 3. FOUNDING FAMILY OFFER SECTION */}
       <section className="bg-gradient-to-br from-teal-50/40 via-white to-purple-50/40 border-2 border-[#2EC4B6]/30 rounded-[2.5rem] p-8 md:p-12 shadow-md max-w-5xl mx-auto relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#2EC4B6]/5 rounded-full blur-3xl pointer-events-none" />

@@ -197,13 +197,16 @@ export default function App() {
               <button
                 key={item.path}
                 onClick={() => handleNavigate(item.path)}
-                className={`transition-colors border-none bg-transparent font-black tracking-widest uppercase text-xxs pb-0.5 cursor-pointer outline-none ${
+                className={`transition-colors border-none bg-transparent font-black tracking-widest uppercase text-xxs pb-0.5 cursor-pointer outline-none relative group ${
                   currentPathNormalized === item.path 
-                    ? 'text-purple-650 text-purple-700 border-b-2 border-purple-600' 
+                    ? 'text-purple-700' 
                     : 'text-slate-600 hover:text-purple-600'
                 }`}
               >
                 {item.label}
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-purple-600 transition-all ${
+                  currentPathNormalized === item.path ? 'w-full' : 'w-0 group-hover:w-full'
+                }`} />
               </button>
             ))}
           </nav>
@@ -432,7 +435,7 @@ export default function App() {
           <span>© 2026 CLATS Global. All rights reserved.</span>
           <div className="flex items-center gap-1.5 font-semibold">
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500" />
-            <span>Building Global’s Future Tech Minds</span>
+            <span>Building Global Future Tech Minds</span>
           </div>
           <div className="flex items-center gap-3 text-xxs font-mono uppercase tracking-wider text-slate-400">
             <span>COPPA Childproof Shield</span>
@@ -527,8 +530,8 @@ export default function App() {
             <Sparkles className="w-5 h-5 text-[#2EC4B6] animate-pulse" />
           </div>
           <div className="space-y-0.5 leading-none text-left">
-            <span className="text-xs font-black block text-white">Space Portal Activated! 🚀</span>
-            <span className="text-[10px] text-slate-300 font-bold block mt-0.5">Explorer sandbox launching safely. (+100 XP awarded)</span>
+            <span className="text-xs font-black block text-white">Launching the CLATS Sandbox... 🚀</span>
+            <span className="text-[10px] text-slate-300 font-bold block mt-0.5">Transitioning safely to your dashboard. (+100 XP awarded)</span>
           </div>
         </div>
       )}

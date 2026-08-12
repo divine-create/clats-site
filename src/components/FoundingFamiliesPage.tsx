@@ -94,7 +94,7 @@ export default function FoundingFamiliesPage({
           </span>
         </h1>
         <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold max-w-xl mx-auto">
-          Help shape the future of AI education for children in Global. Join an exclusive cohort of early adoptive families giving child screen protection a positive direction!
+          Help shape the future of AI education for children globally. Join an exclusive cohort of early adoptive families giving child screen protection a positive direction!
         </p>
       </section>
 

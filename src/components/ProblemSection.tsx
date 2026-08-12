@@ -29,7 +29,7 @@ export default function ProblemSection() {
     },
     {
       id: 'left_behind',
-      title: 'Global Tech Divide Gap',
+      title: 'The Digital Access Gap',
       description: 'If children in Lagos, Nairobi, Johannesburg, and Accra miss out on foundational AI skills now, the global economic gap will divide further. Our children deserve equal tech leadership.',
       icon: Globe2,
       color: 'text-blue-600 bg-blue-50 border $10',

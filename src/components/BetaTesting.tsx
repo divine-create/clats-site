@@ -162,7 +162,7 @@ export default function BetaTesting() {
                 Limited Founding Family Cohort
               </h3>
               <p className="text-slate-650 text-slate-600 font-medium text-xs md:text-sm leading-relaxed">
-                We're inviting a small number of families to join our initial pilot community and help shape the future of AI and technology education for children across Global.
+                We're inviting a small number of families to join our initial pilot community and help shape the future of AI and technology education for children globally.
               </p>
             </div>
 

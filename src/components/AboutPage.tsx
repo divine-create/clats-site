@@ -17,7 +17,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
       id: 'safety',
       title: 'Safety-First & Privacy Protection',
       iconComponent: Shield,
-      description: 'Strictly zero ads, family-controlled parameters, and offline-resilience complying with global child safety frameworks.',
+      description: 'Zero advertisements, comprehensive parental controls, and offline resilience, all built to exceed global child safety standards.',
       color: 'border-slate-100 bg-white hover:border-teal-200 hover:shadow-md text-slate-900',
       iconColor: 'bg-[#2EC4B6]/10 text-[#2EC4B6]',
     },
@@ -25,7 +25,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
       id: 'accessibility',
       title: 'Accessibility & Low Bandwidth',
       iconComponent: Globe,
-      description: 'Custom optimized asset weights ensuring toddlers on older smartphones or fluctuating networks can learn lag-free.',
+      description: 'Highly optimized, lightweight infrastructure ensures children on older devices or fluctuating networks can learn seamlessly without lag.',
       color: 'border-slate-100 bg-white hover:border-purple-200 hover:shadow-md text-slate-900',
       iconColor: 'bg-[#B8A0FF]/15 text-[#8A67F0]',
     },
@@ -33,7 +33,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
       id: 'gamified',
       title: 'Culturally-Anchored Engagement',
       iconComponent: Award,
-      description: 'High-retention progress roadmaps and lovely mascot mentors celebrating achievements using Global contexts.',
+      description: 'Engaging progress roadmaps and friendly mascot mentors that celebrate achievements using diverse, real-world contexts.',
       color: 'border-slate-100 bg-white hover:border-amber-200 hover:shadow-md text-slate-900',
       iconColor: 'bg-[#FFD166]/15 text-amber-600',
     },
@@ -41,7 +41,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
       id: 'empowerment',
       title: 'Active Constructive Play',
       iconComponent: Rocket,
-      description: 'Transforming passive screen distraction into active logic modeling, security posture design, and prompt creation.',
+      description: 'Transforming passive screen time into active, constructive engagement through logic modeling, creative coding, and secure design.',
       color: 'border-slate-100 bg-white hover:border-teal-200 hover:shadow-md text-slate-900',
       iconColor: 'bg-[#2EC4B6]/10 text-[#2EC4B6]',
     }
@@ -51,28 +51,28 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
   const timelineMilestones = [
     {
       year: '2025 and Ongoing',
-      title: 'Conceptual Seed & Child Screen Safety Research',
-      desc: 'Formulation of digital protection rules, pedagogical models, and research on safe tech adoption for children across the Global continent.'
+      title: 'Foundational Research & Pedagogical Design',
+      desc: 'Collaborating with global educators and psychologists to formulate robust digital protection frameworks and pioneering pedagogical models for safe tech adoption.'
     },
     {
       year: 'Early 2026',
-      title: 'Kobe & Chibi Space Guide Designs',
-      desc: 'Creation of expressive companion coach sprites (Kobe & Chibi) and the layout of our five cornerstone digital syllabus pillars.'
+      title: 'Designing Our Learning Companions',
+      desc: 'Creation of our expressive companion guides, Kobe & Chibi, alongside the development of our five cornerstone digital syllabus pillars.'
     },
     {
       year: 'Mid 2026 (Now)',
-      title: 'Production Phase: Platform Launch & Live Portal Access',
-      desc: 'Initiating direct public platform registration and preparing database layers, local mock sandboxes, and early adopter surveys.'
+      title: 'Platform Launch & Live Portal Access',
+      desc: 'Opening direct public platform registration, deploying our secure sandbox environments, and gathering crucial early-adopter feedback.'
     },
     {
       year: 'Late 2026',
-      title: 'Interactive Block-Syllabus Beta portal',
-      desc: 'Launches exclusive sandbox accounts for founding family cohort, revealing immersive visual AI logs and secure password simulators.'
+      title: 'Advanced Interactive Syllabus Beta',
+      desc: 'Launching exclusive sandbox accounts for our Founding Family cohort, featuring immersive visual AI learning logs and security simulators.'
     },
     {
       year: '2027 & Beyond',
-      title: 'Multi-lingual Global Reach expansion',
-      desc: 'Deploying optimized localized language features and partnering closely with school districts to teach digital safety at scale.'
+      title: 'Multi-lingual Global Expansion',
+      desc: 'Rolling out localized language support and partnering closely with global school districts to teach digital safety and AI at scale.'
     }
   ];
 
@@ -126,7 +126,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
           </span>
         </h1>
         <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold max-w-xl mx-auto">
-          CLATS was born out of a simple observation: Global toddlers are increasingly glued to screens, but they are consuming, not creating. We are here to transform screen time into a safety-first future-tech playground.
+          CLATS was founded on a pivotal observation: children globally are spending more time on screens, yet remain passive consumers. Our mission is to transform passive screen time into an active, safety-first playground for future-tech innovation.
         </p>
       </section>
 
@@ -141,16 +141,16 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
           </h2>
           <div className="space-y-4 text-slate-600 text-sm md:text-[15px] leading-relaxed font-medium">
             <p>
-              Global is home to one of the world's fastest-growing youth populations, yet many children still have limited access to structured, age-appropriate learning experiences that prepare them for a rapidly evolving digital future.
+              We live in a rapidly evolving digital era, yet millions of children worldwide still lack access to the structured, age-appropriate education required to confidently navigate and lead in a technology-driven landscape.
             </p>
             <p>
-              Today's children are growing up surrounded by artificial intelligence, digital platforms, and emerging technologies. However, most educational experiences focus on teaching them how to use technology rather than how to understand it, create with it, and adapt as it changes.
+              While today's youth are surrounded by artificial intelligence and emerging software, traditional education often focuses on merely <em>using</em> technology. We believe children must learn to fundamentally understand it, create with it, and safely adapt to its continuous changes.
             </p>
             <p className="font-extrabold text-[#8A67F0] border-l-4 border-[#8A67F0] pl-4 italic">
-              The future belongs to learners who can think critically, solve problems creatively, embrace change, and continuously learn.
+              The future belongs to agile learners who can think critically, solve complex problems creatively, and design solutions with empathy.
             </p>
             <p>
-              Through personalized pathways, gamified learning experiences, learning companions, and future-tech education, CLATS helps children develop the confidence, adaptability, and skills needed to become creators, innovators, and responsible digital citizens.
+              Through AI-driven personalized pathways, culturally inclusive gamification, and robust safety frameworks, CLATS empowers children globally to evolve from digital consumers into the next generation of visionary creators and responsible digital citizens.
             </p>
           </div>
         </div>
@@ -163,7 +163,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
               CLATS Cognitive Shield
             </h4>
             <p className="text-slate-500 text-xs leading-relaxed font-medium text-left">
-              "We shield child awareness through safe training. They learn how to tell the difference between machine generated illustrations, safe code, and bad web scams."
+              "We safeguard young minds through proactive, guided training. Our proprietary ecosystem teaches children to confidently navigate digital risks, distinguish machine-generated content, and practice safe online habits."
             </p>
             <div className="flex gap-2 text-[10px] uppercase font-bold tracking-wider text-[#2EC4B6]">
               <span>✓ COPPA Certified</span>
@@ -200,13 +200,13 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
               <div className="lg:col-span-7 space-y-6">
                 <p className="text-[#2EC4B6] font-extrabold text-base md:text-lg leading-relaxed">
-                  By 2030, CLATS aims to empower over 1 million children across Global with the knowledge, confidence, and skills to thrive in an AI-driven world.
+                  By 2030, CLATS aims to empower over 1 million children worldwide, equipping them with the knowledge, confidence, and technical fluency to thrive in an AI-driven economy.
                 </p>
-                <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
-                  Through personalized learning, gamification, accessibility, and culturally relevant education, CLATS will help children move beyond consuming technology to understanding it, creating with it, and shaping the future through it.
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
+                  We are building an accessible, highly scalable digital learning infrastructure. By blending advanced personalization, immersive gamification, and universal cultural relevance, we provide an unparalleled educational standard that transcends borders.
                 </p>
-                <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
-                  Our vision is to ensure that every child, regardless of background, location, or socioeconomic status has access to world-class future-tech education that prepares them for the opportunities of tomorrow.
+                <p className="text-slate-600 text-sm md:text-base leading-relaxed font-semibold">
+                  Our ultimate vision is absolute democratization of future-tech education. Regardless of geography or socioeconomic background, every child deserves the tools to build, lead, and shape the technologies of tomorrow.
                 </p>
 
                 <div className="pt-4 grid grid-cols-3 gap-4 border-t border-slate-100">
@@ -216,7 +216,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
                   </div>
                   <div className="leading-none">
                     <span className="text-xl md:text-3xl font-black text-slate-900">24</span>
-                    <p className="text-[10px] uppercase font-bold text-slate-400 mt-1">Global Nations</p>
+                    <p className="text-[10px] uppercase font-bold text-slate-400 mt-1">Nations Reached</p>
                   </div>
                   <div className="leading-none">
                     <span className="text-xl md:text-3xl font-black text-slate-900">2030</span>
@@ -234,7 +234,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
                     <div className="absolute top-6 md:top-8 text-[7rem] md:text-[9rem] leading-none select-none animate-pulse">🌍</div>
                     
                     <div className="relative z-10 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm border border-white/50 px-4 py-3 rounded-2xl shadow-sm text-center mx-4 mt-20 md:mt-24">
-                      <span className="text-xs uppercase font-black text-slate-800 tracking-widest leading-none">CLATS Global hub</span>
+                      <span className="text-xs uppercase font-black text-slate-800 tracking-widest leading-none">CLATS Global Hub</span>
                       <span className="text-[10px] font-mono text-purple-600 font-extrabold bg-purple-50 px-2 py-0.5 rounded-full border border-purple-100 mt-1.5 animate-pulse">Continental Reach</span>
                     </div>
                   </div>
@@ -329,7 +329,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
       <section className="space-y-12">
         <div className="text-center max-w-xl mx-auto space-y-4">
           <span className="text-[#2EC4B6] text-xxs font-black bg-teal-50 border border-teal-150 px-3 py-1 rounded-full uppercase tracking-widest font-sans inline-block">
-            🌱 United Nations Accord
+            🌱 Global Impact
           </span>
           <h2 className="text-3xl font-display font-black text-slate-900 tracking-tight">
             SDG Alliance Alignment
@@ -373,7 +373,7 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
           Ready to Discover Kobe & Chibi's Syllabus?
         </h3>
         <p className="text-white/80 text-xs md:text-sm font-semibold max-w-lg mx-auto">
-          We organize our curriculum academies dynamically around age cohorts so toddlers and teenagers learn at their precise conceptual levels.
+          Our curriculum is dynamically structured around age cohorts, ensuring every child—from early explorers to future builders—learns at their precise conceptual level.
         </p>
         <button
           onClick={() => {

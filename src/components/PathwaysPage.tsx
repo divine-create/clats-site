@@ -207,7 +207,7 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
                 'AI in Healthcare',
                 'AI in Transportation',
                 'AI in Shopping',
-                'AI in Global'
+                'AI in the Global Context'
               ],
               status: 'Active'
             },

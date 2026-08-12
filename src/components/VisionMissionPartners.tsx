@@ -120,7 +120,7 @@ export default function VisionMissionPartners() {
               {/* Left Column: Vision paragraphs */}
               <div className="lg:col-span-7 space-y-6">
                 <p className="text-[#2EC4B6] font-extrabold text-base md:text-lg leading-relaxed">
-                  By 2030, CLATS aims to empower over 1 million children across Global with the knowledge, confidence, and skills to thrive in an AI-driven world.
+                  By 2030, CLATS aims to empower over 1 million children globally with the knowledge, confidence, and skills to thrive in an AI-driven world.
                 </p>
                 <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed font-medium">
                   Through personalized learning, gamification, accessibility, and culturally relevant education, CLATS will help children move beyond consuming technology to understanding it, creating with it, and shaping the future through it.
@@ -137,7 +137,7 @@ export default function VisionMissionPartners() {
                   </div>
                   <div className="leading-none">
                     <span className="text-xl md:text-3xl font-black text-slate-900">54</span>
-                    <p className="text-[10px] uppercase font-bold text-slate-400 mt-1">Global Nations</p>
+                    <p className="text-[10px] uppercase font-bold text-slate-400 mt-1">Nations Reached</p>
                   </div>
                   <div className="leading-none">
                     <span className="text-xl md:text-3xl font-black text-slate-900">2030</span>
@@ -160,7 +160,7 @@ export default function VisionMissionPartners() {
                     
                     {/* Content overlay, now cleanly positioned underneath the main body of the globe */}
                     <div className="relative z-10 flex flex-col items-center justify-center bg-white/90 backdrop-blur-sm border border-white/50 px-4 py-3 rounded-2xl shadow-sm text-center mx-4 mt-20 md:mt-24">
-                      <span className="text-xs uppercase font-black text-slate-800 tracking-widest leading-none">CLATS Global hub</span>
+                      <span className="text-xs uppercase font-black text-slate-800 tracking-widest leading-none">CLATS Global Hub</span>
                       <span className="text-[10px] font-mono text-purple-600 font-extrabold bg-purple-50 px-2 py-0.5 rounded-full border border-purple-100 mt-1.5 animate-pulse">Continental Reach</span>
                     </div>
                   </div>
@@ -282,7 +282,7 @@ export default function VisionMissionPartners() {
             Building the Future Together
           </h2>
           <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed max-w-xl mx-auto">
-            CLATS believes preparing the next generation for the future requires collaboration. We are actively exploring partnerships with schools, parent communities, technology companies, NGOs, educational institutions, and public-sector stakeholders to make future-tech education accessible, engaging, and impactful for children across Global.
+            CLATS believes preparing the next generation for the future requires collaboration. We are actively exploring partnerships with schools, parent communities, technology companies, NGOs, educational institutions, and public-sector stakeholders to make future-tech education accessible, engaging, and impactful for children globally.
           </p>
         </div>
 
