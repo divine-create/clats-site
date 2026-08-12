@@ -142,15 +142,11 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
               </span>
             </div>
             
-            <div className="pt-2 border-t border-slate-100 space-y-1">
+            <div className="pt-2 border-t border-slate-100">
               <div className="flex items-baseline gap-2">
-                <span className="text-xs text-slate-400 font-extrabold line-through">{currency === 'NGN' ? '₦10,000' : '$15'}</span>
-                <span className="text-3xl font-black text-slate-900">{currency === 'NGN' ? '₦6,000' : '$10'}</span>
+                <span className="text-3xl font-black text-slate-900">{currency === 'NGN' ? '₦10,000' : '$15'}</span>
                 <span className="text-xs text-slate-500 font-bold"> / Child / Month</span>
               </div>
-              <span className="inline-block text-[10px] font-black text-emerald-600 bg-emerald-50 border border-emerald-100/80 px-2.5 py-0.5 rounded-full">
-                Launch Offer: {currency === 'NGN' ? '₦6,000' : '$10'} / Child / Month
-              </span>
             </div>
 
             <p className="text-xs text-slate-600 font-semibold leading-relaxed">

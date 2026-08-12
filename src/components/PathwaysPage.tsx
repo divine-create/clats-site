@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
-  Sparkles, Bot, Lock, Palette, Rocket, X, CheckCircle, ChevronRight, GraduationCap, 
+  Sparkles, Bot, Lock, Palette, Rocket, X, CheckCircle, ChevronRight, ChevronDown, GraduationCap, 
   BookOpen, Terminal, Shield, MessageSquare, Compass, Eye, Filter 
 } from 'lucide-react';
 
@@ -14,6 +14,11 @@ interface PathwaysPageProps {
 export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: PathwaysPageProps) {
   const [selectedAcademyId, setSelectedAcademyId] = useState('ai-emerging');
   const [selectedAgeCohort, setSelectedAgeCohort] = useState('young-innovators');
+  const [expandedModuleIdx, setExpandedModuleIdx] = useState<number | null>(0);
+
+  useEffect(() => {
+    setExpandedModuleIdx(0);
+  }, [selectedAgeCohort, selectedAcademyId]);
 
   const ageCohorts = [
     { id: 'early-explorers', name: 'Early Explorers', ages: 'Ages 2–5', icon: Compass, color: 'text-teal-600' },
@@ -705,13 +710,18 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
                   <span className="text-[9px] font-mono tracking-wider font-extrabold uppercase text-teal-600 bg-teal-50 border border-teal-100 px-3.5 py-1 rounded-full inline-block">
                     Learning Outcomes
                   </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xxs font-bold text-slate-600">
-                    {activeAcademyObj.outcomes.map((otc: string, oIdx: number) => (
-                      <div key={oIdx} className="flex gap-2 items-start">
-                        <CheckCircle className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
-                        <span className="leading-snug">{otc}</span>
+                  <div className="flex flex-wrap gap-2 text-xxs font-bold text-slate-700">
+                    {activeAcademyObj.outcomes.slice(0, 4).map((otc: string, oIdx: number) => (
+                      <div key={oIdx} className="bg-white border border-slate-200 px-2.5 py-1 rounded-xl flex items-center gap-1.5 shadow-xxs">
+                        <CheckCircle className="w-3 h-3 text-teal-500 shrink-0" />
+                        <span className="leading-snug truncate max-w-[200px]">{otc}</span>
                       </div>
                     ))}
+                    {activeAcademyObj.outcomes.length > 4 && (
+                      <div className="bg-slate-100 border border-slate-200 px-2.5 py-1 rounded-xl flex items-center shadow-xxs text-slate-500">
+                        +{activeAcademyObj.outcomes.length - 4} more
+                      </div>
+                    )}
                   </div>
                 </div>
               )}
@@ -720,8 +730,8 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
                   <span className="text-[9px] font-mono tracking-wider font-extrabold uppercase text-amber-700 bg-amber-50 border border-amber-100 px-3.5 py-1 rounded-full inline-block">
                     Why This Matters
                   </span>
-                  <p className="text-xs $10 text-slate-500 font-medium leading-relaxed italic">
-                    {activeAcademyObj.whyMatters}
+                  <p className="text-xs $10 text-slate-500 font-medium leading-relaxed italic line-clamp-2">
+                    "{activeAcademyObj.whyMatters}"
                   </p>
                 </div>
               )}
@@ -737,46 +747,65 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
               </p>
             </div>
           ) : (
-            <div className="space-y-6">
-              {activeSyllabus.map((mod, mIdx) => (
-                <div key={mIdx} className="bg-slate-50/70 border border-slate-100 p-5 rounded-2.5xl rounded-3xl space-y-4 relative">
-                  
-                  {/* Status label top-right */}
-                  <span className={`absolute top-4 right-4 text-[8px] font-mono uppercase font-black tracking-wider px-2 py-0.5 rounded-md border select-none ${
-                    mod.status === 'Active' 
-                      ? 'bg-emerald-50 text-emerald-850 border-emerald-200' 
-                      : 'bg-indigo-50 text-indigo-700 border-indigo-100'
-                  }`}>
-                    {mod.status === 'Active' ? '✓ Previewable' : '🔒 Locked / Com. Soon'}
-                  </span>
-
-                  <div className="space-y-1 text-left">
-                    <span className="text-[8px] font-mono text-slate-400 font-bold block uppercase tracking-widest leading-none">
-                      Module 0{mIdx + 1}
+            <div className="space-y-4">
+              {activeSyllabus.map((mod, mIdx) => {
+                const isExpanded = expandedModuleIdx === mIdx;
+                return (
+                  <div key={mIdx} className={`border border-slate-100 p-5 rounded-3xl relative transition-all ${isExpanded ? 'bg-slate-50/70 shadow-sm' : 'bg-white hover:border-[#2EC4B6]/40 shadow-xxs'}`}>
+                    
+                    {/* Status label top-right */}
+                    <span className={`absolute top-4 right-4 text-[8px] font-mono uppercase font-black tracking-wider px-2 py-0.5 rounded-md border select-none ${
+                      mod.status === 'Active' 
+                        ? 'bg-emerald-50 text-emerald-850 border-emerald-200' 
+                        : 'bg-indigo-50 text-indigo-700 border-indigo-100'
+                    }`}>
+                      {mod.status === 'Active' ? '✓ Previewable' : '🔒 Locked'}
                     </span>
-                    <h4 className="text-slate-900 font-extrabold text-[15px] font-display">
-                      {mod.moduleTitle}
-                    </h4>
-                  </div>
 
-                  {/* List of lessons */}
-                  <div className="space-y-2 border-t border-slate-200/50 pt-3">
-                    {mod.lessons.map((les, lIdx) => (
-                      <div key={lIdx} className="flex gap-2 text-xs font-bold text-slate-650 text-slate-600 font-sans">
-                        <CheckCircle className="w-3.5 h-3.5 text-teal-600 mt-0.5 shrink-0" />
-                        <span className="leading-normal">{les}</span>
+                    <button 
+                      onClick={() => setExpandedModuleIdx(isExpanded ? null : mIdx)} 
+                      className="w-full text-left bg-transparent border-none outline-none cursor-pointer flex justify-between items-center pr-24 md:pr-32"
+                    >
+                      <div className="space-y-1">
+                        <span className="text-[8px] font-mono text-slate-400 font-bold block uppercase tracking-widest leading-none">
+                          Module 0{mIdx + 1}
+                        </span>
+                        <h4 className="text-slate-900 font-extrabold text-[15px] font-display">
+                          {mod.moduleTitle}
+                        </h4>
                       </div>
-                    ))}
+                      <ChevronDown className={`w-5 h-5 text-slate-400 shrink-0 transition-transform duration-300 ${isExpanded ? 'rotate-180 text-[#2EC4B6]' : ''}`} />
+                    </button>
+
+                    <AnimatePresence>
+                      {isExpanded && (
+                        <motion.div 
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: 'auto', opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="overflow-hidden"
+                        >
+                          {/* List of lessons */}
+                          <div className="space-y-2 border-t border-slate-200/70 pt-4 mt-4">
+                            {mod.lessons.map((les, lIdx) => (
+                              <div key={lIdx} className="flex gap-2 text-xs font-bold text-slate-650 text-slate-600 font-sans">
+                                <CheckCircle className="w-3.5 h-3.5 text-teal-600 mt-0.5 shrink-0" />
+                                <span className="leading-normal">{les}</span>
+                              </div>
+                            ))}
+                          </div>
+
+                          {mod.note && (
+                            <div className="mt-3.5 pt-3 border-t border-slate-250/30 bg-amber-500/5 border border-amber-300/10 p-3.5 rounded-2xl text-[11px] font-semibold text-amber-900/90 leading-relaxed text-left">
+                              {mod.note}
+                            </div>
+                          )}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </div>
-
-                  {mod.note && (
-                    <div className="mt-3.5 pt-3 border-t border-slate-250/30 bg-amber-500/5 border border-amber-300/10 p-3.5 rounded-2xl text-[11px] font-semibold text-amber-900/90 leading-relaxed text-left">
-                      {mod.note}
-                    </div>
-                  )}
-
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
 
