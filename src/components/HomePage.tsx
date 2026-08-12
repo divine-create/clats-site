@@ -267,9 +267,6 @@ export default function HomePage({
             <h2 className="text-3xl md:text-4xl font-display font-black text-slate-900 tracking-tight leading-tight">
               See a Lesson in Action
             </h2>
-            <p className="text-slate-500 text-xs md:text-sm font-medium">
-              Watch a quick walkthrough of how Kobe and Chibi guide kids through interactive technology quests, coding puzzles, and safe digital playgrounds.
-            </p>
           </div>
 
           {/* Video Player Box */}
