@@ -809,7 +809,7 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
             <button
               onClick={() => {
                 awardXP(100, 'pathways_portal_launched');
-                window.open('https://clats-app-8zv7.vercel.app/', '_blank', 'noopener,noreferrer');
+                window.open('https://app.clats.org/', '_blank', 'noopener,noreferrer');
                 onOpenPortal();
               }}
               className="bg-slate-950 hover:bg-slate-800 text-white font-extrabold text-xs uppercase tracking-widest px-8 py-4.5 rounded-2xl shadow-xl hover:shadow-slate-900/30 transition-all cursor-pointer border-0 inline-flex items-center gap-1.5"

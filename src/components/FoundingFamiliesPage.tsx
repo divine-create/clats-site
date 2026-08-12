@@ -4,7 +4,6 @@ import {
   Rocket, Target, Users, Gift, FlaskConical, Trophy, TreeDeciduous, Award, 
   Sparkles, ChevronRight, CheckCircle, Smartphone, Mail, ShieldCheck, MapPin, AlertCircle, Send, Heart 
 } from 'lucide-react';
-import WaitlistForm from './WaitlistForm';
 import FoundingFamilyProgressCounter from './FoundingFamilyProgressCounter';
 
 interface FoundingFamiliesPageProps {
@@ -148,18 +147,50 @@ export default function FoundingFamiliesPage({
               Register Your Household
             </h3>
             <p className="text-slate-500 text-xs md:text-sm font-medium">
-              Provide your details below to submit your Founding Family credentials. We process queues manually and will write to you via safe electronic mail.
+              The CLATS platform is now fully live and ready! Click below to create your child's profile and claim your pioneer Supporter benefits.
             </p>
           </div>
 
-          <WaitlistForm 
-            onSubmitWaitlist={(item) => {
-              if (setSlotsJoined) {
-                setSlotsJoined((prev: number) => Math.min(prev + 1, 100));
-              }
-              awardXP(150, 'waitlist_registration_completed');
-            }} 
-          />
+          <div className="max-w-2xl mx-auto bg-white rounded-[2.5rem] p-8 md:p-10 border-2 border-teal-500/25 shadow-2xl relative overflow-hidden text-center space-y-6">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-teal-500/5 rounded-full blur-2xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/5 rounded-full blur-2xl pointer-events-none" />
+
+            <div className="w-16 h-16 bg-[#2EC4B6]/10 border-2 border-[#2EC4B6]/20 text-[#2EC4B6] rounded-full flex items-center justify-center mx-auto shadow-sm animate-pulse">
+              <Rocket className="w-8 h-8 stroke-[2.2]" />
+            </div>
+
+            <div className="space-y-2">
+              <h4 className="text-xl md:text-2xl font-display font-black text-slate-950">
+                CLATS Platform Access is Live! 🚀
+              </h4>
+              <p className="text-slate-500 text-xs md:text-sm max-w-md mx-auto font-semibold leading-relaxed">
+                Direct self-registration is now active at <span className="font-mono text-purple-700">app.clats.org</span>. Create your account directly in the app to lock in your supporter rewards!
+              </p>
+            </div>
+
+            <div className="pt-2">
+              <a
+                href="https://app.clats.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (setSlotsJoined) {
+                    setSlotsJoined((prev: number) => Math.min(prev + 1, 100));
+                  }
+                  awardXP(150, 'waitlist_registration_completed');
+                }}
+                className="inline-flex bg-gradient-to-r from-[#2EC4B6] to-teal-500 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-black text-xs md:text-sm uppercase tracking-wider px-10 py-4.5 rounded-2xl shadow-xl shadow-teal-500/10 hover:shadow-teal-500/25 transition-all cursor-pointer no-underline border-none"
+              >
+                Launch App & Register →
+              </a>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-6 text-slate-400 text-[10px] font-mono uppercase tracking-widest pt-4 border-t border-slate-100">
+              <span className="flex items-center gap-1.5"><ShieldCheck className="w-3.5 h-3.5 text-teal-600" /> Instant Access</span>
+              <span className="text-slate-200">|</span>
+              <span className="flex items-center gap-1.5"><Smartphone className="w-3.5 h-3.5 text-teal-600" /> Web & Mobile Optimized</span>
+            </div>
+          </div>
         </div>
       </section>
 

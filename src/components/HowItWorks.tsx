@@ -6,7 +6,7 @@ export default function HowItWorks() {
     {
       stepNumber: 1,
       title: 'Parents Sign Up',
-      description: 'Fill in the basic waitlist contact below. Choose your child’s customized tech track to reserve their Founding family pilot slot.',
+      description: 'Create your account directly on the live CLATS platform. Choose your child’s customized tech track to reserve their Founding family pilot slot.',
       detailBadge: 'Register Slot • +100 XP',
       icon: UserPlus,
       color: 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-md shadow-emerald-250/20',

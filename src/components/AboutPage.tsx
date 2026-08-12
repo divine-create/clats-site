@@ -61,8 +61,8 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
     },
     {
       year: 'Mid 2026 (Now)',
-      title: 'Production Phase: Waitlist Rollout & Secure API Nodes',
-      desc: 'Initiation of open registrations and preparation of developer-accessible database layers, local mock sandboxes, and early adopter surveys.'
+      title: 'Production Phase: Platform Launch & Live Portal Access',
+      desc: 'Initiating direct public platform registration and preparing database layers, local mock sandboxes, and early adopter surveys.'
     },
     {
       year: 'Late 2026',

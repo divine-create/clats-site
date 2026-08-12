@@ -97,14 +97,14 @@ export default function FAQPage({ onNavigate, awardXP }: FAQPageProps) {
       id: 8,
       category: 'founding-families',
       question: 'Is CLATS available now?',
-      answer: 'CLATS is currently in active development and testing.\n\nFamilies can join the Founding Families Program to receive updates, early access opportunities, and pilot invitations.',
+      answer: 'Yes! The CLATS platform is now fully live and available for registration.\n\nFamilies can sign up directly at app.clats.org to create their accounts, configure their learning pathways, and start exploring instantly.',
       responder: 'Chibi' as const
     },
     {
       id: 9,
       category: 'founding-families',
       question: 'What is the Founding Families Program?',
-      answer: 'The Founding Families Program gives selected families early access to CLATS while helping shape the platform through testing and feedback.\n\nParticipants may receive launch benefits and priority access to future releases.',
+      answer: 'The Founding Families Program is an exclusive cohort for our early adopting supporters. By registering during our launch phase, you secure lifetime pricing immunity, exclusive digital badges, and a direct channel to shape our upcoming features and curriculum pathways.',
       responder: 'Chibi' as const
     },
     {

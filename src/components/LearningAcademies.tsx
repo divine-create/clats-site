@@ -277,11 +277,13 @@ export default function LearningAcademies() {
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-2 pt-1 font-sans">
                     <a
-                      href="#waitlist-section"
+                      href="https://app.clats.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={handleClose}
-                      className="flex-1 text-center bg-[#2EC4B6] hover:bg-[#25B4A6] text-slate-950 font-black text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl shadow-md transition-colors cursor-pointer flex items-center justify-center gap-1 border-0"
+                      className="flex-1 text-center bg-[#2EC4B6] hover:bg-[#25B4A6] text-slate-950 font-black text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl shadow-md transition-colors cursor-pointer flex items-center justify-center gap-1 border-0 no-underline"
                     >
-                      <span>Join Academy Waitlist</span>
+                      <span>Launch Course in App</span>
                       <ChevronRight className="w-3.5 h-3.5 shrink-0" />
                     </a>
                     <button

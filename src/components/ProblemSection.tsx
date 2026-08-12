@@ -118,10 +118,12 @@ export default function ProblemSection() {
             </p>
           </div>
           <a
-            href="#waitlist-section"
-            className="shrink-0 bg-teal-500 text-white hover:bg-teal-400 text-xs font-bold px-6 py-3.5 rounded-xl transition-all shadow-lg cursor-pointer uppercase tracking-wider"
+            href="https://app.clats.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 bg-teal-500 hover:bg-teal-400 text-slate-950 font-black text-xs px-6 py-3.5 rounded-xl transition-all shadow-lg cursor-pointer uppercase tracking-wider no-underline"
           >
-            How We Fix It ↓
+            Launch CLATS Platform
           </a>
         </div>
 

@@ -228,31 +228,19 @@ export default function App() {
               </div>
             </div>
 
-            {/* App Link button */}
-            <div className="hidden lg:flex items-center gap-2">
-              <a
-                href="https://app.clats.org"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => awardXP(20, 'prototype_header_clicked')}
-                className="bg-slate-950 hover:bg-slate-800 text-white font-black text-xs px-4 py-2.5 rounded-2xl shadow-sm cursor-pointer transition-all font-sans flex items-center gap-1.5 no-underline"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-[#2EC4B6] shrink-0" />
-                Launch App
-              </a>
-            </div>
-
-            {/* Main Header Waitlist Pill */}
-            <button
+            {/* Main Header Launch App Button */}
+            <a
+              href="https://app.clats.org"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 awardXP(30, 'header_cta_clicked');
-                handleNavigate('/founding-families');
               }}
-              className="hidden sm:inline-flex bg-gradient-to-r from-[#2EC4B6] to-teal-500 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-black text-xs px-4 py-2.5 sm:px-4.5 sm:py-3 rounded-2xl shadow-md cursor-pointer items-center gap-1 transition-all border-none"
+              className="hidden sm:inline-flex bg-gradient-to-r from-[#2EC4B6] to-teal-500 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-black text-xs px-4 py-2.5 sm:px-4.5 sm:py-3 rounded-2xl shadow-md cursor-pointer items-center gap-1 transition-all border-none no-underline"
             >
-              Join Waitlist
+              Launch App
               <ChevronRight className="w-3.5 h-3.5 shrink-0" />
-            </button>
+            </a>
 
             {/* Mobile burger button */}
             <button
@@ -508,7 +496,7 @@ export default function App() {
                     setShowEarlyAccessNotice(false);
                     setShowLaunchPortalSuccess(true);
                     awardXP(100, 'portal_opened_access');
-                    window.open('https://clats-app-8zv7.vercel.app/', '_blank', 'noopener,noreferrer');
+                    window.open('https://app.clats.org/', '_blank', 'noopener,noreferrer');
                     setTimeout(() => {
                       setShowLaunchPortalSuccess(false);
                     }, 4000);

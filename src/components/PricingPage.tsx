@@ -145,15 +145,17 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
           </div>
 
           <div className="pt-8">
-            <button
+            <a
+              href="https://app.clats.org"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 awardXP(30, 'secure_founding_access_clicked');
-                onNavigate('/founding-families');
               }}
-              className="w-full bg-slate-950 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none"
+              className="w-full bg-slate-950 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none text-center block no-underline border-none"
             >
-              Secure Founding Family Access
-            </button>
+              Start Free Trial
+            </a>
           </div>
         </div>
 
@@ -203,15 +205,17 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
           </div>
 
           <div className="pt-8">
-            <button
+            <a
+              href="https://app.clats.org"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 awardXP(20, 'premium_waitlist_clicked');
-                onNavigate('/founding-families');
               }}
-              className="w-full bg-gradient-to-r from-[#B8A0FF] to-purple-600 hover:opacity-90 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none"
+              className="w-full bg-gradient-to-r from-[#B8A0FF] to-purple-600 hover:opacity-90 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none text-center block no-underline border-none"
             >
-              Join Premium Waitlist
-            </button>
+              Launch App & Register
+            </a>
           </div>
         </div>
 
@@ -255,15 +259,17 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
           </div>
 
           <div className="pt-8">
-            <button
+            <a
+              href="https://app.clats.org"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => {
                 awardXP(20, 'elite_waitlist_clicked');
-                onNavigate('/founding-families');
               }}
-              className="w-full bg-slate-900 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none"
+              className="w-full bg-slate-900 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none text-center block no-underline border-none"
             >
-              Join Elite Waitlist
-            </button>
+              Launch App & Register
+            </a>
           </div>
         </div>
 
@@ -313,16 +319,18 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
               <div className="px-4 py-2 rounded-xl bg-orange-50 border border-orange-200 text-orange-850 text-xxs font-black uppercase tracking-wider inline-flex items-center gap-1.5 shadow-sm">
                 <span>🔥</span> Limited to 100 Families
               </div>
-              <button
+              <a
+                href="https://app.clats.org"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => {
                   awardXP(40, 'founding_early_program_access');
-                  onNavigate('/founding-families');
                 }}
-                className="bg-[#2EC4B6] hover:bg-[#25baa8] text-slate-950 font-black text-xs uppercase tracking-widest px-6 py-3.5 rounded-2xl shadow-md cursor-pointer transition-all border-none flex items-center gap-1 leading-none"
+                className="bg-[#2EC4B6] hover:bg-[#25baa8] text-slate-950 font-black text-xs uppercase tracking-widest px-6 py-3.5 rounded-2xl shadow-md cursor-pointer transition-all border-none flex items-center gap-1 leading-none no-underline"
               >
                 Secure Early Access Slots
                 <ChevronRight className="w-4 h-4 stroke-[3]" />
-              </button>
+              </a>
             </div>
           </div>
 

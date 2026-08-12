@@ -189,18 +189,20 @@ export default function BetaTesting() {
                   
                   {/* Slots warning */}
                   <div className="flex items-center gap-2 text-slate-600 text-[14px] font-bold">
-                    <Users className="w-4 h-4 text-amber-500 animate-pulse shrink-0" />
-                    <span>Only <span className="text-amber-600">55 slots</span> remaining for early-access founding status.</span>
+                    <Users className="w-4 h-4 text-emerald-500 animate-pulse shrink-0" />
+                    <span>Launch the app today to secure your founding family status.</span>
                   </div>
                 </div>
 
                 {/* Main Action CTA Button */}
                 <div className="pt-2">
                   <a
-                    href="#waitlist-section"
-                    className="w-full text-center bg-[#2EC4B6] hover:bg-[#25b5a7] text-slate-950 font-black text-xs md:text-sm uppercase tracking-wider py-4 rounded-xl.5 rounded-2xl shadow-lg shadow-[#2EC4B6]/15 hover:shadow-[#2EC4B6]/30 transform active:translate-y-px duration-200 transition-all cursor-pointer flex items-center justify-center gap-2"
+                    href="https://app.clats.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-center bg-[#2EC4B6] hover:bg-[#25b5a7] text-slate-950 font-black text-xs md:text-sm uppercase tracking-wider py-4 rounded-xl.5 rounded-2xl shadow-lg shadow-[#2EC4B6]/15 hover:shadow-[#2EC4B6]/30 transform active:translate-y-px duration-200 transition-all cursor-pointer flex items-center justify-center gap-2 no-underline"
                   >
-                    🚀 Join the Founding Families Waitlist
+                    🚀 Launch App & Claim Access
                     <ChevronRight className="w-4 h-4 shrink-0 transition-transform group-hover:translate-x-1" />
                   </a>
                 </div>

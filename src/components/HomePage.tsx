@@ -101,7 +101,7 @@ export default function HomePage({
                 onClick={() => {
                   setHasInteractedWithHero(true);
                   awardXP(100, 'hero_get_started_clicked');
-                  window.open('https://clats-app-8zv7.vercel.app/', '_blank', 'noopener,noreferrer');
+                  window.open('https://app.clats.org/', '_blank', 'noopener,noreferrer');
                   onOpenPortal();
                 }}
                 className="w-full sm:w-auto text-center bg-teal-500 text-white hover:bg-teal-400 font-extrabold text-sm px-8 py-4.5 rounded-2xl shadow-xl shadow-teal-500/20 hover:shadow-teal-500/35 transform hover:-translate-y-0.5 transition-all cursor-pointer border-0"
@@ -159,7 +159,7 @@ export default function HomePage({
                   <Star className="w-3.5 h-3.5 text-slate-950 fill-amber-500 stroke-[2.5]" />
                 </div>
                 <div className="leading-none text-left">
-                  <span className="text-[10px] text-amber-600 font-black font-display uppercase tracking-wider">PILOT ACTIVE</span>
+                  <span className="text-[10px] text-amber-600 font-black font-display uppercase tracking-wider">PLATFORM LIVE</span>
                   <p className="text-[9px] text-slate-400 block uppercase font-extrabold mt-0.5">Explore & Gain Stars</p>
                 </div>
               </div>
@@ -350,32 +350,34 @@ export default function HomePage({
                   </div>
                 </div>
 
-                {/* Limited Early Access Callout Block */}
-                <div className="bg-amber-500/5 border border-amber-300/30 p-5 rounded-2xl space-y-2">
-                  <span className="text-[10px] font-mono tracking-wider font-extrabold text-amber-700 uppercase block">
-                    ⚡ LIMITED EARLY ACCESS
+                {/* Live Access Callout Block */}
+                <div className="bg-emerald-500/5 border border-emerald-300/30 p-5 rounded-2xl space-y-2 text-left">
+                  <span className="text-[10px] font-mono tracking-wider font-extrabold text-emerald-700 uppercase block">
+                    ⚡ PLATFORM IS LIVE
                   </span>
                   <p className="text-slate-600 text-xs font-semibold leading-relaxed">
-                    We are onboarding a small number of families during our development and testing phase to ensure we build a learning experience that truly meets the needs of children and parents.
+                    Direct self-registration is now active! Launch the app today to create your child's profile and start learning future-ready technology skills.
                   </p>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4.5 pt-2">
-                  <button
+                  <a
+                    href="https://app.clats.org"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => {
                       awardXP(100, 'waitlist_registration_completed');
-                      onNavigate('/founding-families');
                     }}
-                    className="bg-[#2EC4B6] hover:bg-[#25b5a7] text-slate-950 font-black text-xs uppercase tracking-wider px-8 py-4 px-7 rounded-2xl shadow-lg shadow-[#2EC4B6]/15 hover:shadow-[#2EC4B6]/30 transition-all cursor-pointer border-0 inline-flex items-center justify-center gap-2"
+                    className="bg-[#2EC4B6] hover:bg-[#25b5a7] text-slate-950 font-black text-xs uppercase tracking-wider px-8 py-4 px-7 rounded-2xl shadow-lg shadow-[#2EC4B6]/15 hover:shadow-[#2EC4B6]/30 transition-all cursor-pointer border-0 inline-flex items-center justify-center gap-2 no-underline text-center"
                   >
-                    Join Founding Families →
-                  </button>
+                    Launch Live App →
+                  </a>
                   <button
                     onClick={() => onNavigate('/founding-families')}
-                    className="text-slate-500 hover:text-slate-800 font-extrabold text-xs uppercase tracking-wider transition-colors py-3 underline cursor-pointer text-center"
+                    className="text-slate-500 hover:text-slate-800 font-extrabold text-xs uppercase tracking-wider transition-colors py-3 underline cursor-pointer text-center bg-transparent border-none"
                   >
-                    Learn More About Founding Families
+                    Learn About Supporter Perks
                   </button>
                 </div>
               </div>
