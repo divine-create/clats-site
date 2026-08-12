@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Check, HelpCircle, ChevronDown, ChevronRight, Sparkles, ShieldCheck, CreditCard, Lock, User, Mail, Calendar, Key, AlertTriangle 
@@ -14,6 +14,20 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
   // Modal / Checkout flow toggle state
   const [showCheckoutModal, setShowCheckoutModal] = useState(false);
   const [openFaqId, setOpenFaqId] = useState<number | null>(1);
+  const [currency, setCurrency] = useState<'NGN' | 'USD'>('NGN');
+
+  useEffect(() => {
+    fetch('https://ipapi.co/json/')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.country_code && data.country_code !== 'NG') {
+          setCurrency('USD');
+        }
+      })
+      .catch(err => {
+        console.error('Failed to detect location for pricing', err);
+      });
+  }, []);
 
   // Mock Payment Form state
   const [cardName, setCardName] = useState('');
@@ -94,6 +108,24 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
         </p>
       </section>
 
+      {/* CURRENCY TOGGLE */}
+      <div className="flex justify-center pt-2 -mb-2">
+        <div className="bg-slate-100 p-1 rounded-xl inline-flex shadow-inner">
+          <button 
+            onClick={() => setCurrency('NGN')}
+            className={`px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all border-none ${currency === 'NGN' ? 'bg-white text-slate-900 shadow-sm' : 'bg-transparent text-slate-500 hover:text-slate-700 cursor-pointer'}`}
+          >
+            NGN (₦)
+          </button>
+          <button 
+            onClick={() => setCurrency('USD')}
+            className={`px-4 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all border-none ${currency === 'USD' ? 'bg-white text-slate-900 shadow-sm' : 'bg-transparent text-slate-500 hover:text-slate-700 cursor-pointer'}`}
+          >
+            USD ($)
+          </button>
+        </div>
+      </div>
+
       {/* 2. PRICING CARDS SECTION */}
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4">
         
@@ -112,12 +144,12 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
             
             <div className="pt-2 border-t border-slate-100 space-y-1">
               <div className="flex items-baseline gap-2">
-                <span className="text-xs text-slate-400 font-extrabold line-through">₦10,000</span>
-                <span className="text-3xl font-black text-slate-900">₦6,000</span>
-                <span className="text-xs text-slate-500 font-bold"> / Month</span>
+                <span className="text-xs text-slate-400 font-extrabold line-through">{currency === 'NGN' ? '₦10,000' : '$15'}</span>
+                <span className="text-3xl font-black text-slate-900">{currency === 'NGN' ? '₦6,000' : '$10'}</span>
+                <span className="text-xs text-slate-500 font-bold"> / Child / Month</span>
               </div>
               <span className="inline-block text-[10px] font-black text-emerald-600 bg-emerald-50 border border-emerald-100/80 px-2.5 py-0.5 rounded-full">
-                Launch Offer: ₦6,000 / Month
+                Launch Offer: {currency === 'NGN' ? '₦6,000' : '$10'} / Child / Month
               </span>
             </div>
 
@@ -177,8 +209,8 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
             </div>
 
             <div className="pt-2 border-t border-slate-100">
-              <span className="text-3xl font-black text-slate-900">₦22,000</span>
-              <span className="text-xs text-slate-500 font-bold"> / Month</span>
+              <span className="text-3xl font-black text-slate-900">{currency === 'NGN' ? '₦22,000' : '$35'}</span>
+              <span className="text-xs text-slate-500 font-bold"> / Child / Month</span>
             </div>
 
             <p className="text-xs text-slate-600 font-semibold leading-relaxed">
@@ -233,7 +265,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
             </div>
 
             <div className="pt-2 border-t border-slate-100">
-              <span className="text-3xl font-black text-slate-900">₦40,000</span>
+              <span className="text-3xl font-black text-slate-900">{currency === 'NGN' ? '₦40,000' : '$60'}</span>
               <span className="text-xs text-slate-500 font-bold"> / 6-Week Sprint</span>
             </div>
 
@@ -277,7 +309,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
 
       {/* PRICING FOOTNOTE */}
       <div className="text-center pt-4 text-[11px] text-slate-500 font-medium">
-        * Pricing is displayed in Nigerian Naira (₦). International credit and debit cards are supported at checkout.
+        * Pricing is displayed in {currency === 'NGN' ? 'Nigerian Naira (₦)' : 'US Dollars ($)'}. International credit and debit cards are supported at checkout.
       </div>
 
       {/* 3. FOUNDING FAMILY OFFER SECTION */}
@@ -347,13 +379,13 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
         </div>
       </section>
 
-      {/* 4. PARTNER PRICING SECTION */}
+      {/* 4. ENTERPRISE PRICING SECTION */}
       <section className="bg-slate-50 border border-slate-150 rounded-[2.5rem] p-8 md:p-12 text-center max-w-4xl mx-auto space-y-6 relative overflow-hidden shadow-sm select-none">
         <h3 className="text-2xl md:text-3xl font-display font-black text-slate-950">
-          Looking To Partner With CLATS?
+          Enterprise & Schools Plan
         </h3>
         <p className="text-slate-600 text-sm font-bold max-w-xl mx-auto">
-          We also provide customized pricing and deployment models for:
+          We provide customized pricing and scalable deployment models for:
         </p>
 
         <div className="flex flex-wrap justify-center gap-2.5 max-w-2xl mx-auto pt-2">
@@ -377,12 +409,12 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
         <div className="pt-6">
           <button
             onClick={() => {
-              awardXP(30, 'explore_pricing_partnerships_clicked');
-              onNavigate('/partnerships');
+              awardXP(30, 'contact_sales_clicked');
+              window.location.href = 'mailto:sales@clats.org';
             }}
             className="bg-slate-950 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-md transition-all cursor-pointer border-none inline-flex items-center gap-1.5"
           >
-            Explore Partnership Opportunities
+            Contact Sales
             <ChevronRight className="w-4 h-4 text-[#2EC4B6] stroke-[2.5]" />
           </button>
         </div>
@@ -485,7 +517,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                     Founding Family Early Access Price
                   </span>
                   <div className="flex justify-between items-baseline">
-                    <span className="text-3xl font-black text-slate-900">₦5,100</span>
+                    <span className="text-3xl font-black text-slate-900">{currency === 'NGN' ? '₦5,100' : '$8.50'}</span>
                     <span className="text-[9px] font-extrabold uppercase text-slate-400 bg-white border px-2 py-0.5 rounded">
                       Promo Code Applied
                     </span>
@@ -616,7 +648,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                           <span>Processing Sandbox...</span>
                         </>
                       ) : (
-                        <span>Pay ₦5,100</span>
+                        <span>Pay {currency === 'NGN' ? '₦5,100' : '$8.50'}</span>
                       )}
                     </button>
                     <button
