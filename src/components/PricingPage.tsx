@@ -127,7 +127,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
       </div>
 
       {/* 2. PRICING CARDS SECTION */}
-      <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch pt-4">
+      <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 items-stretch pt-4">
         
         {/* Card 1: CLATS Basic */}
         <div className="bg-white rounded-[2rem] border-2 border-slate-100 hover:border-[#2EC4B6]/40 p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative">
@@ -305,6 +305,54 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
           </div>
         </div>
 
+        {/* Card 4: Enterprise & Schools */}
+        <div className="bg-white rounded-[2rem] border-2 border-slate-100 hover:border-[#2EC4B6]/40 p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-all relative">
+          <div className="space-y-6">
+            <div className="flex justify-between items-start">
+              <div>
+                <h3 className="text-xl font-black font-display text-slate-900">Enterprise</h3>
+                <p className="text-[11px] text-slate-500 font-semibold mt-1">For educational institutions</p>
+              </div>
+            </div>
+
+            <div className="pt-2 border-t border-slate-100">
+              <span className="text-3xl font-black text-slate-900">Custom</span>
+            </div>
+
+            <p className="text-xs text-slate-600 font-semibold leading-relaxed">
+              Customized pricing and scalable deployment models for Private Schools, NGOs, and Agencies.
+            </p>
+
+            <ul className="space-y-3 pt-4 border-t border-slate-50">
+              {[
+                "Custom branded learning portals",
+                "Dedicated account manager",
+                "Comprehensive school analytics",
+                "Bulk student onboarding",
+                "Teacher training & support",
+                "API integrations"
+              ].map((feat, idx) => (
+                <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 font-medium">
+                  <Check className="w-4 h-4 text-[#2EC4B6] shrink-0 stroke-[3.5] mt-0.5" />
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="pt-8">
+            <a
+              href="mailto:sales@clats.org"
+              onClick={() => {
+                awardXP(30, 'contact_sales_clicked');
+              }}
+              className="w-full bg-slate-150 hover:bg-slate-200 text-slate-900 font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none text-center block no-underline border-none"
+            >
+              Contact Sales
+            </a>
+          </div>
+        </div>
+
       </section>
 
       {/* PRICING FOOTNOTE */}
@@ -379,46 +427,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
         </div>
       </section>
 
-      {/* 4. ENTERPRISE PRICING SECTION */}
-      <section className="bg-slate-50 border border-slate-150 rounded-[2.5rem] p-8 md:p-12 text-center max-w-4xl mx-auto space-y-6 relative overflow-hidden shadow-sm select-none">
-        <h3 className="text-2xl md:text-3xl font-display font-black text-slate-950">
-          Enterprise & Schools Plan
-        </h3>
-        <p className="text-slate-600 text-sm font-bold max-w-xl mx-auto">
-          We provide customized pricing and scalable deployment models for:
-        </p>
 
-        <div className="flex flex-wrap justify-center gap-2.5 max-w-2xl mx-auto pt-2">
-          {[
-            "Private Schools",
-            "Educational Institutions",
-            "NGOs",
-            "Government Agencies",
-            "CSR Programs",
-            "Community Learning Initiatives"
-          ].map((inst, index) => (
-            <span 
-              key={index} 
-              className="px-4.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-800 text-xxs font-black uppercase tracking-wider shadow-xxs block"
-            >
-              {inst}
-            </span>
-          ))}
-        </div>
-
-        <div className="pt-6">
-          <button
-            onClick={() => {
-              awardXP(30, 'contact_sales_clicked');
-              window.location.href = 'mailto:sales@clats.org';
-            }}
-            className="bg-slate-950 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-md transition-all cursor-pointer border-none inline-flex items-center gap-1.5"
-          >
-            Contact Sales
-            <ChevronRight className="w-4 h-4 text-[#2EC4B6] stroke-[2.5]" />
-          </button>
-        </div>
-      </section>
 
       {/* 5. PRICING FAQs SECTION */}
       <section className="max-w-3xl mx-auto space-y-8 text-left">
