@@ -137,11 +137,11 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
 
         {/* Middle Content: Value Prop & Countdown */}
         <div className="relative z-10 p-8 md:p-12 text-white space-y-6">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black leading-[1.1] drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-black leading-[1.1] drop-shadow-lg">
             Empowering<br/>Tomorrow's<br/>Tech Leaders.
           </h1>
           
-          <p className="text-teal-50 font-semibold max-w-lg text-lg md:text-xl leading-relaxed drop-shadow-md opacity-90">
+          <p className="text-teal-50 font-semibold max-w-md text-base md:text-lg leading-relaxed drop-shadow-md opacity-90">
             Join the exclusive founding cohort. We are building a secure, gamified ecosystem where kids learn advanced digital skills safely and playfully.
           </p>
 
@@ -149,8 +149,8 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
           <div className="pt-6">
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-5 md:p-6 inline-block shadow-2xl">
               <div className="flex items-center gap-2 mb-4 text-teal-300 drop-shadow-md">
-                <Timer className="w-5 h-5" />
-                <span className="text-xs md:text-sm font-black uppercase tracking-widest">Platform Launching In</span>
+                <Timer className="w-4 h-4" />
+                <span className="text-[10px] md:text-xs font-black uppercase tracking-widest">Platform Launching In</span>
               </div>
               
               <div className="flex items-center gap-2 md:gap-4 text-center">
@@ -158,7 +158,7 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-slate-900/40 rounded-xl md:rounded-2xl border border-white/10 flex items-center justify-center backdrop-blur-sm shadow-inner">
                     <span className="text-2xl md:text-3xl font-black text-white font-mono">{timeLeft.days}</span>
                   </div>
-                  <span className="text-[10px] md:text-xs text-teal-100 font-bold uppercase tracking-widest mt-2">Days</span>
+                  <span className="text-[9px] md:text-[10px] text-teal-100 font-bold uppercase tracking-widest mt-2">Days</span>
                 </div>
                 <span className="text-lg md:text-2xl text-teal-500/70 font-black pb-5 md:pb-6">:</span>
                 
@@ -166,7 +166,7 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-slate-900/40 rounded-xl md:rounded-2xl border border-white/10 flex items-center justify-center backdrop-blur-sm shadow-inner">
                     <span className="text-2xl md:text-3xl font-black text-white font-mono">{String(timeLeft.hours).padStart(2, '0')}</span>
                   </div>
-                  <span className="text-[10px] md:text-xs text-teal-100 font-bold uppercase tracking-widest mt-2">Hours</span>
+                  <span className="text-[9px] md:text-[10px] text-teal-100 font-bold uppercase tracking-widest mt-2">Hours</span>
                 </div>
                 <span className="text-lg md:text-2xl text-teal-500/70 font-black pb-5 md:pb-6">:</span>
                 
@@ -174,7 +174,7 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-slate-900/40 rounded-xl md:rounded-2xl border border-white/10 flex items-center justify-center backdrop-blur-sm shadow-inner">
                     <span className="text-2xl md:text-3xl font-black text-white font-mono">{String(timeLeft.minutes).padStart(2, '0')}</span>
                   </div>
-                  <span className="text-[10px] md:text-xs text-teal-100 font-bold uppercase tracking-widest mt-2">Mins</span>
+                  <span className="text-[9px] md:text-[10px] text-teal-100 font-bold uppercase tracking-widest mt-2">Mins</span>
                 </div>
                 <span className="text-lg md:text-2xl text-teal-500/70 font-black pb-5 md:pb-6">:</span>
                 
@@ -200,11 +200,11 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
             
             {/* The Special Offer & Header */}
             <div className="space-y-4">
-              <span className="text-xs font-black text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-1.5 w-max shadow-sm">
-                <Gift className="w-4 h-4" /> 50% Off First Month/Year Plan
+              <span className="text-[10px] font-black text-amber-600 bg-amber-50 border border-amber-200 px-3 py-1.5 rounded-full uppercase tracking-widest inline-flex items-center gap-1.5 w-max shadow-sm">
+                <Gift className="w-3.5 h-3.5" /> 50% Off First Month/Year Plan
               </span>
-              <h2 className="text-4xl md:text-5xl font-black text-slate-900 font-display tracking-tight">Secure Your Spot</h2>
-              <p className="text-slate-500 font-semibold text-base max-w-lg leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 font-display tracking-tight">Secure Your Spot</h2>
+              <p className="text-slate-500 font-semibold text-sm max-w-md leading-relaxed">
                 Join the waitlist today and lock in your early parent rewards. We'll notify you the moment enrollment opens.
               </p>
             </div>
@@ -245,50 +245,50 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex justify-between">
+                      <label className="text-[11px] font-black text-slate-900 uppercase tracking-wider flex justify-between">
                         <span>First Name</span><span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
                           <User className="w-4 h-4" />
                         </div>
-                        <input type="text" required disabled={isSending} value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="e.g. Sarah" className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3.5 text-base font-semibold focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-400/10 outline-none transition-all" />
+                        <input type="text" required disabled={isSending} value={firstName} onChange={e => setFirstName(e.target.value)} placeholder="e.g. Sarah" className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-sm font-semibold focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-400/10 outline-none transition-all" />
                       </div>
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex justify-between">
+                      <label className="text-[11px] font-black text-slate-900 uppercase tracking-wider flex justify-between">
                         <span>Last Name</span><span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
                           <User className="w-4 h-4" />
                         </div>
-                        <input type="text" required disabled={isSending} value={lastName} onChange={e => setLastName(e.target.value)} placeholder="e.g. Connor" className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3.5 text-base font-semibold focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-400/10 outline-none transition-all" />
+                        <input type="text" required disabled={isSending} value={lastName} onChange={e => setLastName(e.target.value)} placeholder="e.g. Connor" className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-sm font-semibold focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-400/10 outline-none transition-all" />
                       </div>
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex justify-between">
+                      <label className="text-[11px] font-black text-slate-900 uppercase tracking-wider flex justify-between">
                         <span>Email Address</span><span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
                           <Mail className="w-4 h-4" />
                         </div>
-                        <input type="email" required disabled={isSending} value={email} onChange={e => setEmail(e.target.value)} placeholder="you@domain.com" className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3.5 text-base font-semibold focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-400/10 outline-none transition-all" />
+                        <input type="email" required disabled={isSending} value={email} onChange={e => setEmail(e.target.value)} placeholder="you@domain.com" className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-sm font-semibold focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-400/10 outline-none transition-all" />
                       </div>
                     </div>
                     <div className="space-y-1.5">
-                      <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex justify-between">
+                      <label className="text-[11px] font-black text-slate-900 uppercase tracking-wider flex justify-between">
                         <span>Phone Number</span><span className="text-red-500">*</span>
                       </label>
                       <div className="relative">
                         <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
                           <Phone className="w-4 h-4" />
                         </div>
-                        <input type="tel" required disabled={isSending} value={phone} onChange={e => setPhone(e.target.value)} placeholder="+1 234 567 890" className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3.5 text-base font-semibold focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-400/10 outline-none transition-all" />
+                        <input type="tel" required disabled={isSending} value={phone} onChange={e => setPhone(e.target.value)} placeholder="+1 234 567 890" className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-4 py-3 text-sm font-semibold focus:border-teal-400 focus:bg-white focus:ring-4 focus:ring-teal-400/10 outline-none transition-all" />
                       </div>
                     </div>
                   </div>
@@ -313,21 +313,21 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
                           <CheckCircle className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100" />
                         </div>
                       </div>
-                      <span className="text-sm font-bold text-slate-500 leading-snug group-hover:text-slate-800 transition-colors">
+                      <span className="text-[11px] font-bold text-slate-500 leading-snug group-hover:text-slate-800 transition-colors">
                         Keep me updated with CLATS news and promotional offers.
                       </span>
                     </label>
                   </div>
 
                   <div className="pt-4">
-                    <button type="submit" disabled={isSending} className="w-full bg-slate-950 hover:bg-slate-800 text-white disabled:opacity-70 disabled:cursor-not-allowed font-extrabold text-base uppercase tracking-widest py-4 rounded-xl transition-all cursor-pointer border-0 flex items-center justify-center gap-2 shadow-lg shadow-slate-900/15">
-                      <Send className="w-5 h-5 shrink-0" />
+                    <button type="submit" disabled={isSending} className="w-full bg-slate-950 hover:bg-slate-800 text-white disabled:opacity-70 disabled:cursor-not-allowed font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl transition-all cursor-pointer border-0 flex items-center justify-center gap-2 shadow-lg shadow-slate-900/15">
+                      <Send className="w-4 h-4 shrink-0" />
                       <span>{isSending ? 'Transmitting...' : 'Join the Wait-list Group'}</span>
                     </button>
                   </div>
                   
-                  <div className="flex items-center justify-center gap-1.5 text-slate-400 text-xs font-mono uppercase tracking-widest pt-3">
-                    <ShieldCheck className="w-4 h-4 text-teal-500" /> 256-bit Secure Submission
+                  <div className="flex items-center justify-center gap-1.5 text-slate-400 text-[10px] font-mono uppercase tracking-widest pt-2">
+                    <ShieldCheck className="w-3.5 h-3.5 text-teal-500" /> 256-bit Secure Submission
                   </div>
                 </form>
               )}
