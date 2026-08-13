@@ -4,7 +4,6 @@ import {
   Rocket, Target, Users, Gift, FlaskConical, Trophy, TreeDeciduous, Award, 
   Sparkles, ChevronRight, CheckCircle, Smartphone, Mail, ShieldCheck, MapPin, AlertCircle, Send, Heart 
 } from 'lucide-react';
-import FoundingFamilyProgressCounter from './FoundingFamilyProgressCounter';
 
 interface FoundingFamiliesPageProps {
   onNavigate: (path: string) => void;
@@ -97,9 +96,6 @@ export default function FoundingFamiliesPage({
           Help shape the future of AI education for children globally. Join an exclusive cohort of early adoptive families giving child screen protection a positive direction!
         </p>
       </section>
-
-      {/* LIVE SUPABASE CONNECTED PROGRESS COUNTER */}
-      <FoundingFamilyProgressCounter />
 
       {/* DETAILED EARLY BENEFIT GRID */}
       <section className="space-y-12">

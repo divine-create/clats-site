@@ -9,7 +9,7 @@ import GrowsWithChild from './GrowsWithChild';
 import LearningAcademies from './LearningAcademies';
 import HowItWorks from './HowItWorks';
 import MascotCard from './MascotCard';
-import FoundingFamilyProgressCounter from './FoundingFamilyProgressCounter';
+import KobeAvatar from '../assets/kobe-avatar.png';
 import ParentFeatures from './ParentFeatures';
 
 interface HomePageProps {
@@ -414,8 +414,6 @@ export default function HomePage({
             </div>
           </div>
 
-          {/* Realtime Supabase connected Founding Family Progress Counter */}
-          <FoundingFamilyProgressCounter />
 
         </div>
       </section>

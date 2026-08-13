@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { 
   Check, HelpCircle, ChevronDown, ChevronRight, Sparkles, ShieldCheck, CreditCard, Lock, User, Mail, Calendar, Key, AlertTriangle 
 } from 'lucide-react';
-import FoundingFamilyProgressCounter from './FoundingFamilyProgressCounter';
 
 interface PricingPageProps {
   onNavigate: (path: string) => void;
@@ -415,10 +414,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
             </div>
           </div>
 
-          {/* Connected live counter */}
-          <div className="lg:col-span-5 w-full">
-            <FoundingFamilyProgressCounter capacity={100} />
-          </div>
+
 
         </div>
       </section>
