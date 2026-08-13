@@ -18,6 +18,7 @@ import FAQPage from './components/FAQPage';
 import ContactPage from './components/ContactPage';
 import PricingPage from './components/PricingPage';
 import PricingSuccessPage from './components/PricingSuccessPage';
+import WaitlistPage from './components/WaitlistPage';
 
 export default function App() {
   // Path routing state
@@ -148,6 +149,7 @@ export default function App() {
             awardXP={awardXP}
           />
         );
+      // Waitlist is handled via a standalone early return below
       default:
         // Graceful redirecting to Home if page is not found
         return (
@@ -169,6 +171,7 @@ export default function App() {
     { label: 'About', path: '/about' },
     { label: 'Learning Pathways', path: '/pathways' },
     { label: 'Pricing', path: '/pricing' },
+    { label: 'Waitlist', path: '/waitlist' },
     { label: 'Founding Families', path: '/founding-families' },
     { label: 'For Schools', path: '/schools' },
     { label: 'Partnerships', path: '/partnerships' },
@@ -177,6 +180,18 @@ export default function App() {
   ];
 
   const currentPathNormalized = currentPath === '/' ? '/' : currentPath.replace(/\/$/, '');
+
+  // Render standalone waitlist page without header, footer, or navigation
+  if (currentPathNormalized === '/waitlist') {
+    return (
+      <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-teal-100 selection:text-teal-900 flex flex-col">
+        <WaitlistPage 
+          onNavigate={handleNavigate}
+          awardXP={awardXP}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-[#fafbff] text-slate-800 font-sans selection:bg-teal-100 selection:text-teal-900 flex flex-col justify-between">
