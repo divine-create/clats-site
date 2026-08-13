@@ -22,8 +22,8 @@ export default function FoundingFamiliesPage({
 
   const benefits = [
     {
-      title: 'Early Access to New Learning Academies',
-      desc: 'Explore new AI and future-tech learning experiences before public release.',
+      title: 'Priority Access to New Learning Academies',
+      desc: 'Explore new AI and future-tech learning experiences as they are released.',
       icon: Rocket,
       color: 'text-[#2EC4B6] bg-[#2EC4B6]/10 border border-[#2EC4B6]/20'
     },
@@ -74,7 +74,7 @@ export default function FoundingFamiliesPage({
   const recognitionBenefits = [
     'Listed on the CLATS pioneer digital credits board within the app dashboard.',
     'Invites to quarterly online child tech forums with founders and educators.',
-    'VIP beta access for up to 3 additional cousins or family friends later on.',
+    'VIP complimentary access for up to 3 additional cousins or family friends later on.',
     'Lifetime "Founding Supporter" status on user billing cycles.'
   ];
 
@@ -84,7 +84,7 @@ export default function FoundingFamiliesPage({
       {/* HEADER SECTION */}
       <section className="text-center max-w-3xl mx-auto space-y-5 pt-6">
         <span className="text-xxs font-black text-[#8A67F0] bg-purple-50 border border-purple-150 px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block select-none">
-          🌟 Early Access Legacy Cohort
+          🌟 Founding Families Legacy Cohort
         </span>
         <h1 className="text-4xl md:text-6xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
           Become a CLATS{' '}
@@ -97,7 +97,7 @@ export default function FoundingFamiliesPage({
         </p>
       </section>
 
-      {/* DETAILED EARLY BENEFIT GRID */}
+      {/* DETAILED BENEFIT GRID */}
       <section className="space-y-12">
         <div className="text-center max-w-xl mx-auto space-y-4">
           <h3 className="text-2xl font-display font-black text-slate-900 tracking-tight leading-tight">
@@ -133,8 +133,8 @@ export default function FoundingFamiliesPage({
         </div>
       </section>
 
-      {/* WAITLIST REGISTRATION PORTAL */}
-      <section id="waitlist-sect" className="relative">
+      {/* REGISTRATION PORTAL */}
+      <section id="registration-sect" className="relative">
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-teal-400/5 blur-3xl pointer-events-none" />
         
         <div className="space-y-8">
@@ -173,7 +173,7 @@ export default function FoundingFamiliesPage({
                   if (setSlotsJoined) {
                     setSlotsJoined((prev: number) => Math.min(prev + 1, 100));
                   }
-                  awardXP(150, 'waitlist_registration_completed');
+                  awardXP(150, 'app_registration_completed');
                 }}
                 className="inline-flex bg-gradient-to-r from-[#2EC4B6] to-teal-500 hover:from-teal-400 hover:to-teal-500 text-slate-950 font-black text-xs md:text-sm uppercase tracking-wider px-10 py-4.5 rounded-2xl shadow-xl shadow-teal-500/10 hover:shadow-teal-500/25 transition-all cursor-pointer no-underline border-none"
               >

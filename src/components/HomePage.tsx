@@ -324,7 +324,7 @@ export default function HomePage({
                   <div className="flex flex-wrap gap-2.5 items-center">
                     {/* Small Badge: EARLY ACCESS PROGRAM in light purple pill */}
                     <span className="text-[10px] font-black tracking-widest text-[#8A67F0] bg-[#B8A0FF]/15 px-3.5 py-1.5 rounded-full uppercase border border-[#B8A0FF]/25 font-sans">
-                      EARLY ACCESS PROGRAM
+                      START YOUR JOURNEY
                     </span>
                     {/* Early Access Badge (Yellow accent allowed) */}
                     <span className="text-[10px] font-sans font-extrabold text-[#9A7D0A] bg-amber-500/10 border border-amber-500/20 px-3.5 py-1.5 rounded-full uppercase tracking-wider flex items-center gap-1.5">
@@ -345,7 +345,7 @@ export default function HomePage({
                       Join an exclusive community of forward-thinking parents helping build The World's next generation of creators, innovators, and problem-solvers.
                     </p>
                     <p>
-                      As a CLATS Founding Family, you'll receive early access to our learning platform, opportunities to test new features, and a direct voice in shaping the future of children's AI and technology education.
+                      As a CLATS Founding Family, you'll receive exclusive lifetime benefits, premium resources, and a direct voice in shaping the future of children's AI and technology education.
                     </p>
                   </div>
                 </div>
@@ -367,7 +367,7 @@ export default function HomePage({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => {
-                      awardXP(100, 'waitlist_registration_completed');
+                      awardXP(100, 'app_registration_completed');
                     }}
                     className="bg-[#2EC4B6] hover:bg-[#25b5a7] text-slate-950 font-black text-xs uppercase tracking-wider px-8 py-4 px-7 rounded-2xl shadow-lg shadow-[#2EC4B6]/15 hover:shadow-[#2EC4B6]/30 transition-all cursor-pointer border-0 inline-flex items-center justify-center gap-2 no-underline text-center"
                   >

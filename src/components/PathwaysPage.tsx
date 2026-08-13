@@ -741,9 +741,9 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
           {activeSyllabus.length === 0 ? (
             <div className="p-10 rounded-2xl bg-amber-50/50 border border-amber-100 text-center space-y-3">
               <span className="text-2xl">🚧</span>
-              <p className="font-extrabold text-sm uppercase text-amber-800">Syllabus In Preparation</p>
+              <p className="font-extrabold text-sm uppercase text-amber-800">Check Back For Updates</p>
               <p className="text-xs text-slate-500 max-w-sm mx-auto font-semibold">
-                We are actively polishing modules for this specific age level with child pedagogues.
+                We are actively adding new modules for this specific age level.
               </p>
             </div>
           ) : (
@@ -753,14 +753,6 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
                 return (
                   <div key={mIdx} className={`border border-slate-100 p-5 rounded-3xl relative transition-all ${isExpanded ? 'bg-slate-50/70 shadow-sm' : 'bg-white hover:border-[#2EC4B6]/40 shadow-xxs'}`}>
                     
-                    {/* Status label top-right */}
-                    <span className={`absolute top-4 right-4 text-[8px] font-mono uppercase font-black tracking-wider px-2 py-0.5 rounded-md border select-none ${
-                      mod.status === 'Active' 
-                        ? 'bg-emerald-50 text-emerald-850 border-emerald-200' 
-                        : 'bg-indigo-50 text-indigo-700 border-indigo-100'
-                    }`}>
-                      {mod.status === 'Active' ? '✓ Previewable' : '🔒 Locked'}
-                    </span>
 
                     <button 
                       onClick={() => setExpandedModuleIdx(isExpanded ? null : mIdx)} 

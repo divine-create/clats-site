@@ -93,8 +93,8 @@ export default function AskKobeChibi() {
     },
     {
       id: 8,
-      question: 'How do I join the beta program?',
-      answer: "Simply submit your registration on the founding family registry below and our team will notify you immediately once early access becomes available.",
+      question: 'How do I register my child?',
+      answer: "Simply launch the live app and create an account! You can choose a plan and start learning right away.",
       responder: 'Chibi',
       category: 'Registration',
       icon: Sparkles
@@ -516,7 +516,7 @@ export default function AskKobeChibi() {
                       <input
                         type="text"
                         required
-                        placeholder="What would you like to ask us about? (e.g. Beta Testing, Partnership, Curriculum)"
+                        placeholder="What would you like to ask us about? (e.g. Account setup, Partnership, Curriculum)"
                         value={subject}
                         onChange={(e) => setSubject(e.target.value)}
                         className="w-full bg-white text-slate-900 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs font-semibold focus:border-[#30D5C8] focus:ring-1 focus:ring-[#30D5C8]/20 outline-none"

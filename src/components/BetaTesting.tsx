@@ -105,7 +105,7 @@ export default function BetaTesting() {
               Join an exclusive group of early families helping us build The World's next generation of confident, creative, and future-ready technology learners.
             </p>
             <p className="text-slate-500 font-medium">
-              As a Founding Family, you'll gain early access to CLATS while directly influencing the platform's growth, curriculum, and learning experience before public launch.
+              As a Founding Family, you'll gain exclusive lifetime access to CLATS while directly influencing the platform's growth, curriculum, and learning experience.
             </p>
           </motion.div>
         </div>

@@ -443,7 +443,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* 12. CLATS EARLY ACCESS INTUITIVE NOTICE MODAL */}
+      {/* 12. CLATS WELCOME NOTICE MODAL */}
       {showEarlyAccessNotice && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 select-none animate-fadeIn">
           {/* Backdrop trigger */}
@@ -474,13 +474,13 @@ export default function App() {
                   <ShieldAlert className="w-5 h-5 text-[#8A67F0]" />
                 </div>
                 <h3 className="text-xl font-black text-slate-950 font-display">
-                  CLATS Is Currently In Early Access
+                  Welcome to CLATS
                 </h3>
               </div>
 
               {/* Main Content Body */}
               <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-semibold">
-                CLATS is currently in active development and pilot testing. As an early participant, you are warmly invited to test our live interactive prototype dashboard, discover secure sandbox logs, and help us refine tomorrow's child protection systems!
+                You are warmly invited to test our live interactive dashboard, discover secure sandbox logs, and help us refine tomorrow's child protection systems!
               </p>
 
               {/* Interactive Info Sheet */}

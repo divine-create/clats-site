@@ -66,8 +66,8 @@ export default function AboutPage({ onNavigate, awardXP }: AboutPageProps) {
     },
     {
       year: 'Late 2026',
-      title: 'Advanced Interactive Syllabus Beta',
-      desc: 'Launching exclusive sandbox accounts for our Founding Family cohort, featuring immersive visual AI learning logs and security simulators.'
+      title: 'Advanced Interactive Syllabus Rollout',
+      desc: 'Launching comprehensive sandbox accounts across all plans, featuring immersive visual AI learning logs and security simulators.'
     },
     {
       year: '2027 & Beyond',

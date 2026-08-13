@@ -51,7 +51,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
     {
       id: 3,
       question: "What happens after I join the Founding Families Program?",
-      answer: "Once accepted into the Founding Families Program, you'll receive early access to CLATS before the public launch, opportunities to test new features, provide product feedback, enjoy priority onboarding, and unlock your exclusive lifetime discount on eligible monthly subscription plans after launch."
+      answer: "Once you become a Founding Family, you'll receive immediate access to CLATS, exclusive premium resources, opportunities to provide product feedback, priority onboarding, and unlock your exclusive lifetime discount on eligible monthly subscription plans."
     }
   ];
 
@@ -91,7 +91,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
       {/* 1. HERO SECTION */}
       <section className="text-center max-w-4xl mx-auto space-y-6 pt-8">
         <span className="text-xxs font-black text-[#2EC4B6] bg-[#2EC4B6]/10 border border-[#2EC4B6]/20 px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block">
-          CLATS Launch Offer
+          CLATS Membership
         </span>
         <h1 className="text-4xl md:text-5.5xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
           Flexible Learning Plans For Every{' '}
@@ -136,9 +136,6 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                 <h3 className="text-xl font-black font-display text-slate-900">CLATS Basic</h3>
                 <p className="text-[11px] text-slate-500 font-semibold mt-1">Self-paced explorers</p>
               </div>
-              <span className="bg-[#2EC4B6]/10 text-[#2EC4B6] text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full border border-[#2EC4B6]/20 shadow-xxs">
-                Coming Soon
-              </span>
             </div>
             
             <div className="pt-2 border-t border-slate-100">
@@ -198,9 +195,6 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                 <h3 className="text-xl font-black font-display text-slate-900">CLATS Premium</h3>
                 <p className="text-[11px] text-purple-600 font-semibold mt-1">Mentor-guided creators</p>
               </div>
-              <span className="bg-[#B8A0FF]/10 text-[#B8A0FF] text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full border border-[#B8A0FF]/25 shadow-xxs">
-                Coming Soon
-              </span>
             </div>
 
             <div className="pt-2 border-t border-slate-100">
@@ -237,7 +231,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                awardXP(20, 'premium_waitlist_clicked');
+                awardXP(20, 'premium_register_clicked');
               }}
               className="w-full bg-gradient-to-r from-[#B8A0FF] to-purple-600 hover:opacity-90 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none text-center block no-underline border-none"
             >
@@ -254,9 +248,6 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                 <h3 className="text-xl font-black font-display text-slate-900">CLATS Elite Cohorts</h3>
                 <p className="text-[11px] text-slate-500 font-semibold mt-1">Intensive specialists</p>
               </div>
-              <span className="bg-[#2EC4B6]/10 text-[#2EC4B6] text-[10px] font-black uppercase tracking-wider px-3 py-1 rounded-full border border-[#2EC4B6]/20 shadow-xxs">
-                Coming Soon
-              </span>
             </div>
 
             <div className="pt-2 border-t border-slate-100">
@@ -291,7 +282,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                awardXP(20, 'elite_waitlist_clicked');
+                awardXP(20, 'elite_register_clicked');
               }}
               className="w-full bg-slate-900 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none text-center block no-underline border-none"
             >
@@ -364,11 +355,11 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
           
           <div className="lg:col-span-7 space-y-6 text-left">
             <span className="bg-[#2EC4B6]/10 text-[#2EC4B6] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#2EC4B6]/25 inline-block">
-              Founding Families Early Access Program
+              Founding Families Lifetime Program
             </span>
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3.5xl font-display font-black text-slate-900 tracking-tight leading-none">
-                Founding Families Early Access Program
+                Founding Families Lifetime Program
               </h2>
               <p className="text-slate-600 text-sm font-semibold pt-1">
                 Join the first generation of families helping shape the future of CLATS.
@@ -381,11 +372,11 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
               </span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                 {[
-                  "Early platform access",
-                  "Product testing opportunities",
-                  "Product feedback opportunities",
-                  "Priority onboarding",
-                  "An additional lifetime 15% discount on eligible monthly subscription plans after launch"
+                  "Lifetime platform access options",
+                  "Exclusive premium resources",
+                  "Direct influence on curriculum",
+                  "Priority support and onboarding",
+                  "An additional lifetime 15% discount on eligible monthly subscription plans"
                 ].map((perk, n) => (
                   <div key={n} className="flex items-start gap-2 text-xs text-slate-750 font-medium">
                     <Check className="w-4 h-4 text-[#2EC4B6] stroke-[3.5] shrink-0 mt-0.5" />
@@ -408,7 +399,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                 }}
                 className="bg-[#2EC4B6] hover:bg-[#25baa8] text-slate-950 font-black text-xs uppercase tracking-widest px-6 py-3.5 rounded-2xl shadow-md cursor-pointer transition-all border-none flex items-center gap-1 leading-none no-underline"
               >
-                Secure Early Access Slots
+                Secure Founding Family Slot
                 <ChevronRight className="w-4 h-4 stroke-[3]" />
               </a>
             </div>
