@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
 import { 
-  Mail, MessageSquare, Phone, User, Info, FileText, Send, CheckCircle, AlertCircle, Sparkles, HelpCircle, Twitter, Instagram, Facebook, Youtube
+  Mail, Phone, AlertCircle, CheckCircle, Send, Twitter, Instagram, Facebook, Youtube
 } from 'lucide-react';
 import { isSupabaseConfigured, insertInquiryRecord } from '../lib/supabase';
 
@@ -11,7 +10,6 @@ interface ContactPageProps {
 }
 
 export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
-  // Contact Form Inputs
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -19,25 +17,25 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
   const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
 
-  // UX state triggers
   const [validationError, setValidationError] = useState('');
   const [isSending, setIsSending] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const rolesOptions = [
     'Parent / Guardian',
-    'School Principal / Administrator',
+    'School Administrator',
     'NGO Coordinator',
     'Tech Vendor / Developer',
-    'Curious Technology Explorer'
+    'Press / Media',
+    'Other'
   ];
 
   const validateForm = () => {
-    if (!fullName.trim()) return 'Please enter your Full Name.';
-    if (!email.trim()) return 'Please enter your Email Address.';
+    if (!fullName.trim()) return 'Please enter your full name.';
+    if (!email.trim()) return 'Please enter your email address.';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return 'Please enter a valid email format.';
-    if (!subject.trim()) return 'Please specify a Subject line.';
-    if (!message.trim()) return 'Please write down your custom message.';
+    if (!subject.trim()) return 'Please specify a subject.';
+    if (!message.trim()) return 'Please write your message.';
     return null;
   };
 
@@ -55,6 +53,28 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
     setIsSending(true);
 
     try {
+      const response = await fetch("https://formsubmit.co/ajax/admin@clats.org", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            name: fullName.trim(),
+            email: email.trim(),
+            phone: phone.trim(),
+            role: role,
+            subject: subject.trim(),
+            message: message.trim(),
+            _captcha: "false",
+            _template: "table"
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send email. Please try again.");
+      }
+
       if (isSupabaseConfigured) {
         await insertInquiryRecord({
           full_name: fullName.trim(),
@@ -63,17 +83,12 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
           role: role,
           subject: subject.trim(),
           message: message.trim()
-        });
-      } else {
-        // Simulated local fallback delay
-        console.warn('Supabase is not configured yet. Fallback simulation on contacts...');
-        await new Promise((resolve) => setTimeout(resolve, 800));
+        }).catch(err => console.warn("Supabase backup failed, but email was sent:", err));
       }
 
       setIsSubmitted(true);
-      awardXP(150, 'contact_form_inquiry_sent');
+      awardXP(50, 'contact_form_inquiry_sent');
       
-      // Clear fields
       setFullName('');
       setEmail('');
       setPhone('');
@@ -88,315 +103,198 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 space-y-16 animate-fadeIn font-sans">
+    <div className="bg-white text-dark font-sans animate-fadeIn min-h-[calc(100vh-100px)] pb-24">
       
-      {/* PAGE HEADER */}
-      <section className="text-center max-w-3xl mx-auto space-y-5 pt-6">
-        <span className="text-xxs font-black text-[#8A67F0] bg-purple-50 border border-purple-150 px-3.5 py-1.5 rounded-full uppercase tracking-widest inline-block select-none">
-          Support Terminal
-        </span>
-        <h1 className="text-4xl md:text-6xl font-display font-black text-slate-900 tracking-tight leading-[1.1]">
-          Get in Touch{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-purple-600">
-            With CLATS Team
-          </span>
-        </h1>
-        <p className="text-slate-650 text-slate-600 text-sm md:text-base leading-relaxed font-semibold max-w-xl mx-auto">
-          We love hearing from parents, instructors, advocates, and tech explorers alike. Drop us a secure line below and our support coordinators will get back to you immediately!
-        </p>
+      {/* HEADER SECTION */}
+      <section className="pt-24 pb-16 px-6 text-center bg-soft border-b border-gray-100">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-dark tracking-tight">
+            How can we help you?
+          </h1>
+          <p className="text-lg text-dark-light font-medium leading-relaxed max-w-2xl mx-auto">
+            Whether you are a parent exploring our platform, a school looking to integrate CLATS, or a potential partner, our team is ready to assist you.
+          </p>
+        </div>
       </section>
 
-      {/* DUAL CONTACT ROW LAYOUT */}
-      <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start max-w-5xl mx-auto text-left">
+      {/* MAIN CONTENT */}
+      <section className="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-12 gap-16">
         
-        {/* Left Column: Helpdesk details and support links */}
-        <div className="lg:col-span-5 space-y-8">
+        {/* LEFT COLUMN: Contact Info */}
+        <div className="lg:col-span-5 space-y-12">
           
-          {/* Quick Info card */}
-          <div className="bg-slate-50/70 border border-slate-150 rounded-[2.5rem] p-7 space-y-6">
-            <div className="space-y-1">
-              <span className="text-[9px] font-mono tracking-widest uppercase $10 text-teal-600 font-extrabold block">
-                Office Information
-              </span>
-              <h3 className="text-lg font-black text-slate-950 font-display">
-                CLATS HQ Secretariat
-              </h3>
-            </div>
-
-            <p className="text-slate-550 $10 text-slate-500 text-xxs font-semibold leading-relaxed leading-normal">
-              Empowering kids to utilize smart technology correctly takes safe cooperation. Join our digital secretariats and help protect households worldwide.
+          <div>
+            <h3 className="text-sm font-bold text-turquoise tracking-widest uppercase mb-4">Contact Information</h3>
+            <h2 className="text-3xl font-display font-bold text-dark mb-6">Get in touch with our team</h2>
+            <p className="text-dark-light leading-relaxed mb-8">
+              Fill out the form and our support team will get back to you within 24 hours. For immediate assistance, you can reach us via our direct channels below.
             </p>
-
-            <div className="space-y-4 text-xxs font-bold text-slate-700">
-              {/* Electronic Mail Address Desk */}
-              <div className="flex gap-3.5 items-center pb-4 border-b border-slate-200/50">
-                <div className="w-9 h-9 rounded-xl bg-teal-50 border border-teal-120 flex items-center justify-center text-teal-600">
-                  <Mail className="w-4 h-4 shrink-0" />
+            
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-soft rounded-xl flex items-center justify-center text-turquoise shrink-0">
+                  <Mail className="w-6 h-6" />
                 </div>
-                <div className="leading-none select-all">
-                  <span className="text-[9px] text-slate-400 block font-mono">Email Helpdesk</span>
-                  <a href="mailto:clatstechnologies@gmail.com" className="text-slate-800 hover:text-[#2EC4B6] font-extrabold block mt-1.5">
-                    clatstechnologies@gmail.com
+                <div>
+                  <p className="text-sm font-semibold text-dark-light mb-1">Email Us</p>
+                  <a href="mailto:admin@clats.org" className="text-lg font-bold text-dark hover:text-turquoise transition-colors">
+                    admin@clats.org
                   </a>
                 </div>
               </div>
 
-              {/* WhatsApp instant support link */}
-              <div className="flex gap-3.5 items-center pb-4 border-b border-slate-200/50">
-                <div className="w-9 h-9 rounded-xl bg-purple-50 border border-purple-120 flex items-center justify-center text-purple-600">
-                  <Phone className="w-4 h-4 shrink-0" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-soft rounded-xl flex items-center justify-center text-purple shrink-0">
+                  <Phone className="w-6 h-6" />
                 </div>
-                <div className="leading-none">
-                  <span className="text-[9px] text-slate-400 block font-mono">WhatsApp Support</span>
-                  <a 
-                    href="https://wa.me/23481613567366" 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="text-slate-800 hover:text-purple-600 font-extrabold block mt-1.5"
-                  >
-                    (234) 81613567366
+                <div>
+                  <p className="text-sm font-semibold text-dark-light mb-1">Call / WhatsApp</p>
+                  <a href="https://wa.me/23481613567366" target="_blank" rel="noreferrer" className="text-lg font-bold text-dark hover:text-purple transition-colors">
+                    +234 816 135 67366
                   </a>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Social Links elements */}
-          <div className="space-y-4">
-            <span className="text-[10px] uppercase font-black tracking-wider $10 text-slate-400 block">
-              Follow Kobe & Chibi Journeys
-            </span>
-            <div className="flex items-center gap-3">
-              <a 
-                href="https://x.com/CLATSTech" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:border-[#2EC4B6] text-slate-600 hover:text-[#2EC4B6] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
-                title="Twitter / X (@CLATSTech)"
-              >
-                <Twitter className="w-4 h-4 stroke-[2.2]" />
+          <div className="pt-8 border-t border-gray-100">
+            <h3 className="text-sm font-bold text-dark tracking-widest uppercase mb-6">Follow CLATS</h3>
+            <div className="flex items-center gap-4">
+              <a href="https://x.com/CLATSTech" target="_blank" rel="noreferrer" className="w-12 h-12 bg-soft hover:bg-gray-200 text-dark rounded-full flex items-center justify-center transition-colors">
+                <Twitter className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.instagram.com/clats_technologies?igsh=MTQ1Mnphamc0NnY0eg==" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:border-purple-300 text-slate-600 hover:text-purple-600 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
-                title="Instagram (@clats_technologies)"
-              >
-                <Instagram className="w-4 h-4 stroke-[2.2]" />
+              <a href="https://www.instagram.com/clats_technologies" target="_blank" rel="noreferrer" className="w-12 h-12 bg-soft hover:bg-gray-200 text-dark rounded-full flex items-center justify-center transition-colors">
+                <Instagram className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.facebook.com/profile.php?id=61563470186914" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:border-blue-300 text-slate-600 hover:text-blue-600 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
-                title="Facebook Page"
-              >
-                <Facebook className="w-4 h-4 stroke-[2.2]" />
+              <a href="https://www.facebook.com/profile.php?id=61563470186914" target="_blank" rel="noreferrer" className="w-12 h-12 bg-soft hover:bg-gray-200 text-dark rounded-full flex items-center justify-center transition-colors">
+                <Facebook className="w-5 h-5" />
               </a>
-              <a 
-                href="https://www.youtube.com/channel/UCLdrlpGkXt1OQmb2KQMtJWA" 
-                target="_blank" 
-                rel="noreferrer" 
-                className="w-10 h-10 rounded-full bg-white border border-slate-200 hover:border-rose-300 text-slate-600 hover:text-rose-600 flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
-                title="YouTube Channel"
-              >
-                <Youtube className="w-4 h-4 stroke-[2.2]" />
+              <a href="https://www.youtube.com/channel/UCLdrlpGkXt1OQmb2KQMtJWA" target="_blank" rel="noreferrer" className="w-12 h-12 bg-soft hover:bg-gray-200 text-dark rounded-full flex items-center justify-center transition-colors">
+                <Youtube className="w-5 h-5" />
               </a>
             </div>
           </div>
 
         </div>
 
-        {/* Right Column: Interaction Form */}
-        <div className="lg:col-span-7 bg-white border-2 border-slate-150 shadow-2xl rounded-[3rem] p-1.5 md:p-2.5 relative overflow-hidden font-sans">
-          {/* Decors */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-teal-400/5 rounded-full blur-2xl pointer-events-none" />
-          
-          <div className="p-6 md:p-8 relative z-10 text-left">
+        {/* RIGHT COLUMN: Form */}
+        <div className="lg:col-span-7">
+          <div className="bg-white border border-gray-100 shadow-xl rounded-3xl p-8 md:p-10">
+            
             {isSubmitted ? (
-              <div className="py-12 text-center space-y-6">
-                <div className="w-16 h-16 bg-[#2EC4B6]/15 border-2 border-[#2EC4B6]/30 text-[#2EC4B6] rounded-full flex items-center justify-center mx-auto shadow-sm animate-bounce">
-                  <CheckCircle className="w-8 h-8 stroke-[2.5]" />
+              <div className="py-16 text-center space-y-6">
+                <div className="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto">
+                  <CheckCircle className="w-10 h-10" />
                 </div>
-                <div className="space-y-2">
-                  <h4 className="text-2xl font-black text-slate-950 font-display">🎉 Message Transmitted!</h4>
-                  <p className="$10 text-slate-600 text-xs md:text-sm max-w-sm mx-auto font-semibold leading-relaxed">
-                    Kobe and Chibi got your inquiry details! The CLATS support division reviews contact entries manually and will response to your mailbox shortly.
-                  </p>
+                <h3 className="text-2xl font-display font-bold text-dark">Message Sent Successfully</h3>
+                <p className="text-dark-light max-w-md mx-auto">
+                  Thank you for reaching out to CLATS. Our team has received your message and will respond to your email address shortly.
+                </p>
+                <div className="pt-6">
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="text-turquoise font-semibold hover:text-dark transition-colors bg-transparent border-none cursor-pointer"
+                  >
+                    Send another message
+                  </button>
                 </div>
-                <button
-                  type="button"
-                  onClick={() => setIsSubmitted(false)}
-                  className="px-5 py-2.5 bg-slate-100 hover:bg-slate-150 text-slate-707 text-slate-700 font-black text-xs uppercase tracking-wider rounded-xl transition-colors cursor-pointer"
-                >
-                  Write Another Response
-                </button>
               </div>
             ) : (
-              <form onSubmit={handleContactSubmit} className="space-y-4">
+              <form onSubmit={handleContactSubmit} className="space-y-6">
                 
                 {validationError && (
-                  <div className="p-3.5 bg-red-50 border border-red-100 text-red-650 text-red-600 rounded-2xl text-xs flex items-center gap-2.5 font-bold">
-                    <AlertCircle className="w-4 h-4 shrink-0" />
+                  <div className="p-4 bg-red-50 text-red-600 rounded-xl text-sm flex items-center gap-3 font-medium">
+                    <AlertCircle className="w-5 h-5 shrink-0" />
                     <span>{validationError}</span>
                   </div>
                 )}
 
-                {/* Name */}
-                <div>
-                  <label className="block text-[11px] font-black text-slate-900 uppercase tracking-wider mb-1 flex justify-between">
-                    <span>Full name</span>
-                    <span className="text-red-500 font-mono text-xs">*</span>
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
-                      <User className="w-4 h-4" />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-semibold text-dark">Full Name <span className="text-red-500">*</span></label>
                     <input
                       type="text"
-                      required
                       disabled={isSending}
-                      placeholder="e.g. Chinedu Obi"
+                      placeholder="Jane Doe"
                       value={fullName}
-                      onChange={(e) => {
-                        setFullName(e.target.value);
-                        if (validationError && e.target.value.trim()) setValidationError('');
-                      }}
-                      className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
+                      onChange={(e) => setFullName(e.target.value)}
+                      className="w-full bg-soft border border-gray-200 rounded-xl px-4 py-3 focus:border-turquoise focus:bg-white focus:ring-4 focus:ring-turquoise/10 outline-none transition-all"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <label className="block text-sm font-semibold text-dark">Email Address <span className="text-red-500">*</span></label>
+                    <input
+                      type="email"
+                      disabled={isSending}
+                      placeholder="jane@example.com"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full bg-soft border border-gray-200 rounded-xl px-4 py-3 focus:border-turquoise focus:bg-white focus:ring-4 focus:ring-turquoise/10 outline-none transition-all"
                     />
                   </div>
                 </div>
 
-                {/* Email and Phone Number row */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-[11px] font-black text-slate-900 uppercase tracking-wider mb-1 flex justify-between">
-                      <span>Email Address</span>
-                      <span className="text-red-500 font-mono text-xs">*</span>
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
-                        <Mail className="w-4 h-4" />
-                      </div>
-                      <input
-                        type="email"
-                        required
-                        disabled={isSending}
-                        placeholder="your@email.com"
-                        value={email}
-                        onChange={(e) => {
-                          setEmail(e.target.value);
-                          if (validationError && e.target.value.trim()) setValidationError('');
-                        }}
-                        className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
-                      />
-                    </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="block text-sm font-semibold text-dark">Phone Number</label>
+                    <input
+                      type="tel"
+                      disabled={isSending}
+                      placeholder="+1 (555) 000-0000"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      className="w-full bg-soft border border-gray-200 rounded-xl px-4 py-3 focus:border-turquoise focus:bg-white focus:ring-4 focus:ring-turquoise/10 outline-none transition-all"
+                    />
                   </div>
 
-                  <div>
-                    <label className="block text-[11px] font-black text-slate-900 uppercase tracking-wider mb-1 flex justify-between">
-                      <span>Phone Number</span>
-                    </label>
-                    <div className="relative">
-                      <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
-                        <Phone className="w-4 h-4" />
-                      </div>
-                      <input
-                        type="tel"
-                        disabled={isSending}
-                        placeholder="e.g. +234 911 643 8553"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Select Role */}
-                <div>
-                  <label className="block text-[11px] font-black text-slate-900 uppercase tracking-wider mb-1 flex justify-between">
-                    <span>I am a</span>
-                    <span className="text-red-500 font-mono text-xs">*</span>
-                  </label>
-                  <div className="relative text-slate-400">
-                    <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none">
-                      <Info className="w-4 h-4" />
-                    </div>
+                  <div className="space-y-2">
+                    <label className="block text-sm font-semibold text-dark">I am a <span className="text-red-500">*</span></label>
                     <select
-                      required
                       disabled={isSending}
                       value={role}
                       onChange={(e) => setRole(e.target.value)}
-                      className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-10 py-3.5 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold text-slate-900 appearance-none cursor-pointer"
+                      className="w-full bg-soft border border-gray-200 rounded-xl px-4 py-3 focus:border-turquoise focus:bg-white focus:ring-4 focus:ring-turquoise/10 outline-none transition-all text-dark cursor-pointer"
                     >
                       {rolesOptions.map((opt) => (
                         <option key={opt} value={opt}>{opt}</option>
                       ))}
                     </select>
-                    <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-500">
-                      ▼
-                    </div>
                   </div>
                 </div>
 
-                {/* Subject */}
-                <div>
-                  <label className="block text-[11px] font-black text-slate-900 uppercase tracking-wider mb-1 flex justify-between">
-                    <span>Subject</span>
-                    <span className="text-red-500 font-mono text-xs">*</span>
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-3.5 flex items-center pointer-events-none text-slate-400">
-                      <FileText className="w-4 h-4" />
-                    </div>
-                    <input
-                      type="text"
-                      required
-                      disabled={isSending}
-                      placeholder="e.g. Account set-up assistance request"
-                      value={subject}
-                      onChange={(e) => {
-                        setSubject(e.target.value);
-                        if (validationError && e.target.value.trim()) setValidationError('');
-                      }}
-                      className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl pl-10 pr-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm"
-                    />
-                  </div>
-                </div>
-
-                {/* Message text */}
-                <div>
-                  <label className="block text-[11px] font-black text-slate-900 uppercase tracking-wider mb-1 flex justify-between">
-                    <span>Message content</span>
-                    <span className="text-red-500 font-mono text-xs">*</span>
-                  </label>
-                  <textarea
-                    required
-                    rows={4}
+                <div className="space-y-2">
+                  <label className="block text-sm font-semibold text-dark">Subject <span className="text-red-500">*</span></label>
+                  <input
+                    type="text"
                     disabled={isSending}
-                    placeholder="Type details of your question or support request here..."
-                    value={message}
-                    onChange={(e) => {
-                      setMessage(e.target.value);
-                      if (validationError && e.target.value.trim()) setValidationError('');
-                    }}
-                    className="w-full bg-slate-50 $10 border border-slate-200 rounded-xl px-4 py-3 placeholder-slate-400 focus:border-[#2EC4B6] focus:bg-white focus:ring-4 focus:ring-[#2EC4B6]/10 outline-none text-xs md:text-sm font-semibold transition-all shadow-sm resize-none"
+                    placeholder="How can we help you?"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                    className="w-full bg-soft border border-gray-200 rounded-xl px-4 py-3 focus:border-turquoise focus:bg-white focus:ring-4 focus:ring-turquoise/10 outline-none transition-all"
                   />
                 </div>
 
-                {/* Submit button */}
-                <div className="pt-2">
-                  <button
-                    type="submit"
+                <div className="space-y-2">
+                  <label className="block text-sm font-semibold text-dark">Message <span className="text-red-500">*</span></label>
+                  <textarea
+                    rows={5}
                     disabled={isSending}
-                    className="w-full bg-slate-950 hover:bg-slate-800 text-white disabled:bg-slate-300 disabled:text-slate-500 font-extrabold text-xs uppercase tracking-widest py-4 rounded-xl transition-all cursor-pointer border-0 flex items-center justify-center gap-1.5"
-                  >
-                    <Send className="w-4 h-4 shrink-0 stroke-[2.5]" />
-                    <span>{isSending ? 'Transmitting Response...' : 'Dispatch Message To HQ'}</span>
-                  </button>
+                    placeholder="Provide details about your inquiry..."
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full bg-soft border border-gray-200 rounded-xl px-4 py-3 focus:border-turquoise focus:bg-white focus:ring-4 focus:ring-turquoise/10 outline-none transition-all resize-y"
+                  />
                 </div>
+
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className="w-full bg-turquoise hover:bg-turquoise/90 text-white disabled:bg-gray-300 disabled:text-gray-500 font-bold text-[16px] py-4 rounded-xl transition-all cursor-pointer border-none flex items-center justify-center gap-2"
+                >
+                  {isSending ? 'Sending Message...' : 'Send Message'}
+                  {!isSending && <Send className="w-5 h-5" />}
+                </button>
 
               </form>
             )}
@@ -404,7 +302,6 @@ export default function ContactPage({ onNavigate, awardXP }: ContactPageProps) {
         </div>
 
       </section>
-
     </div>
   );
 }

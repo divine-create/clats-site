@@ -95,21 +95,21 @@ export default function FAQPage({ onNavigate, awardXP }: FAQPageProps) {
     },
     {
       id: 8,
-      category: 'founding-families',
+      category: 'early-adopters',
       question: 'Is CLATS available now?',
       answer: 'Yes! The CLATS platform is now fully live and available for registration.\n\nFamilies can sign up directly at app.clats.org to create their accounts, configure their learning pathways, and start exploring instantly.',
       responder: 'Chibi' as const
     },
     {
       id: 9,
-      category: 'founding-families',
-      question: 'What is the Founding Families Program?',
-      answer: 'The Founding Families Program is an exclusive cohort for our early adopting supporters. By registering during our launch phase, you secure lifetime pricing immunity, exclusive digital badges, and a direct channel to shape our upcoming features and curriculum pathways.',
+      category: 'early-adopters',
+      question: 'What is the Early Access Program?',
+      answer: 'The Early Access Program is an exclusive cohort for our early adopting supporters. By registering during our launch phase, you secure lifetime pricing immunity, exclusive digital badges, and a direct channel to shape our upcoming features and curriculum pathways.',
       responder: 'Chibi' as const
     },
     {
       id: 10,
-      category: 'founding-families',
+      category: 'early-adopters',
       question: 'How can schools partner with CLATS?',
       answer: 'Schools, educational organizations, and community partners can contact the CLATS team to explore pilot programs, partnerships, and future implementation opportunities.',
       responder: 'Both' as const
@@ -122,7 +122,7 @@ export default function FAQPage({ onNavigate, awardXP }: FAQPageProps) {
     { id: 'safety', label: 'Safety & Kids Privacy', icon: Shield },
     { id: 'age-groups', label: 'Age Levels', icon: Smile },
     { id: 'parent-tools', label: 'Parent Dashboard', icon: Clock },
-    { id: 'founding-families', label: 'Founding Cohorts', icon: Sparkles }
+    { id: 'early-adopters', label: 'Early Access Cohorts', icon: Sparkles }
   ];
 
   const toggleAccordion = (id: number) => {

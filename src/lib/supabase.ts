@@ -22,8 +22,8 @@ export interface SupabaseWaitlistInsert {
   location: string;
   number_of_children: number;
   age_groups: string;
-  founding_family?: boolean;
-  founding_family_status: string;
+  early_adopter?: boolean;
+  early_adopter_status: string;
 }
 
 export interface SupabaseInquiryInsert {

@@ -120,8 +120,8 @@ export default function WaitlistForm({ onSubmitWaitlist, isSyncing = false }: Wa
           location: payload.location,
           number_of_children: parseInt(payload.childrenCount) || 1,
           age_groups: payload.ageGroups,
-          founding_family: true,
-          founding_family_status: 'Yes'
+          early_adopter: true,
+          early_adopter_status: 'Yes'
         });
       } else {
         // Fallback simulation when keys aren't configured yet in the environment
@@ -173,7 +173,7 @@ export default function WaitlistForm({ onSubmitWaitlist, isSyncing = false }: Wa
         <div className="flex justify-center mb-8">
           <div className="inline-flex items-center gap-1.5 bg-[#FFD166]/20 text-slate-900 text-xxs font-black px-4 py-2 rounded-full border border-[#FFD166]/45 uppercase tracking-wider select-none">
             <Sparkles className="w-3.5 h-3.5 text-[#2EC4B6] shrink-0" />
-            Join the CLATS Founding Families Waitlist
+            Join the CLATS Waitlist
           </div>
         </div>
 
@@ -191,7 +191,7 @@ export default function WaitlistForm({ onSubmitWaitlist, isSyncing = false }: Wa
                 <h4 className="text-2xl font-black text-slate-950 font-display">🎉 You're on the Waitlist!</h4>
                 <div className="text-slate-650 text-slate-800 text-xs md:text-sm max-w-lg mx-auto font-medium leading-relaxed space-y-2.5">
                   <p className="font-bold text-slate-900 text-sm md:text-base">
-                    Welcome to the CLATS Founding Families Waitlist.
+                    Welcome to the CLATS Waitlist.
                   </p>
                 </div>
               </div>

@@ -28,7 +28,7 @@ export default function BetaTesting() {
       color: 'text-purple-600 bg-purple-50 border border-purple-100'
     },
     {
-      title: 'Founding Families Community',
+      title: 'Early Access Community',
       desc: "Join a special network of pioneering parents passionate about preparing children for an AI-driven future.",
       icon: Users,
       color: 'text-indigo-600 bg-indigo-50 border border-indigo-100'
@@ -52,13 +52,13 @@ export default function BetaTesting() {
       color: 'text-yellow-600 bg-yellow-50 border border-yellow-100'
     },
     {
-      title: 'Founding Family Legacy Wall',
-      desc: 'Eligible families may choose to be featured on our future digital Founding Families Wall, celebrating those who believed in the mission from the beginning.',
+      title: 'Early Adopter Legacy Wall',
+      desc: 'Eligible families may choose to be featured on our future digital Early Adopter Wall, celebrating those who believed in the mission from the beginning.',
       icon: TreeDeciduous,
       color: 'text-emerald-500 bg-emerald-50 border border-emerald-100'
     },
     {
-      title: 'Founding Family Digital Badge',
+      title: 'Early Adopter Digital Badge',
       desc: "Receive an exclusive digital badge recognizing your contribution to helping build tomorrow's tech minds today.",
       icon: Award,
       color: 'text-pink-600 bg-pink-50 border border-pink-100'
@@ -81,7 +81,7 @@ export default function BetaTesting() {
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 bg-purple-50 text-purple-700 text-xs font-black px-4.5 py-2.5 rounded-full border border-purple-100 uppercase tracking-widest font-sans"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#B8A0FF] shrink-0" /> Become a CLATS Founding Family
+            <Sparkles className="w-3.5 h-3.5 text-[#B8A0FF] shrink-0" /> Become a CLATS Early Adopter
           </motion.div>
           
           <motion.h2 
@@ -105,7 +105,7 @@ export default function BetaTesting() {
               Join an exclusive group of early families helping us build The World's next generation of confident, creative, and future-ready technology learners.
             </p>
             <p className="text-slate-500 font-medium">
-              As a Founding Family, you'll gain exclusive lifetime access to CLATS while directly influencing the platform's growth, curriculum, and learning experience.
+              As a Early Adopter, you'll gain exclusive lifetime access to CLATS while directly influencing the platform's growth, curriculum, and learning experience.
             </p>
           </motion.div>
         </div>
@@ -156,10 +156,10 @@ export default function BetaTesting() {
             {/* Left Column - Information */}
             <div className="lg:col-span-6 space-y-4">
               <span className="flex items-center gap-1 bg-[#2EC4B6]/10 text-teal-700 text-xxs font-black px-3 py-1 rounded-full uppercase tracking-wider w-fit border border-[#2EC4B6]/20">
-                <Sparkles className="w-3.5 h-3.5" /> Founding Cohort
+                <Sparkles className="w-3.5 h-3.5" /> Early Access Cohort
               </span>
               <h3 className="text-2xl md:text-3xl font-display font-black text-slate-900 leading-tight">
-                Limited Founding Family Cohort
+                Limited Early Adopter Cohort
               </h3>
               <p className="text-slate-650 text-slate-600 font-medium text-xs md:text-sm leading-relaxed">
                 We're inviting a small number of families to join our initial pilot community and help shape the future of AI and technology education for children globally.
@@ -174,7 +174,7 @@ export default function BetaTesting() {
                 <div className="space-y-3 font-sans">
                   <div className="flex justify-between items-center text-xs md:text-sm">
                     <span className="text-slate-800 font-extrabold flex items-center gap-1">
-                      👥 Founding Family Slots
+                      👥 Early Adopter Slots
                     </span>
                     <span className="text-teal-600 font-black">45 Joined / 100 Slots Max</span>
                   </div>
@@ -190,7 +190,7 @@ export default function BetaTesting() {
                   {/* Slots warning */}
                   <div className="flex items-center gap-2 text-slate-600 text-[14px] font-bold">
                     <Users className="w-4 h-4 text-emerald-500 animate-pulse shrink-0" />
-                    <span>Launch the app today to secure your founding family status.</span>
+                    <span>Launch the app today to secure your Early Adopter status.</span>
                   </div>
                 </div>
 

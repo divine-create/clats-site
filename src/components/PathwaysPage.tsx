@@ -67,17 +67,6 @@ export default function PathwaysPage({ onNavigate, onOpenPortal, awardXP }: Path
               status: 'Active'
             },
             {
-              moduleTitle: 'Meet AI Friends',
-              lessons: [
-                'Meet Kobe',
-                'Meet Chibi',
-                'AI Can Help People',
-                'AI Helpers Everywhere',
-                'My AI Adventure'
-              ],
-              status: 'Active'
-            },
-            {
               moduleTitle: 'Learning With AI',
               lessons: [
                 'AI Can See',

@@ -50,8 +50,8 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
     },
     {
       id: 3,
-      question: "What happens after I join the Founding Families Program?",
-      answer: "Once you become a Founding Family, you'll receive immediate access to CLATS, exclusive premium resources, opportunities to provide product feedback, priority onboarding, and unlock your exclusive lifetime discount on eligible monthly subscription plans."
+      question: "What happens after I join the Early Access Program?",
+      answer: "Once you become a Early Adopter, you'll receive immediate access to CLATS, exclusive premium resources, opportunities to provide product feedback, priority onboarding, and unlock your exclusive lifetime discount on eligible monthly subscription plans."
     }
   ];
 
@@ -61,7 +61,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
     
     // Simulate payment process delay
     setTimeout(() => {
-      awardXP(100, 'founding_family_mock_checkout_completed');
+      awardXP(100, 'early_adopter_mock_checkout_completed');
       setIsSubmitting(false);
       setShowCheckoutModal(false);
       onNavigate('/pricing/success');
@@ -174,7 +174,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => {
-                awardXP(30, 'secure_founding_access_clicked');
+                awardXP(30, 'secure_early_access_clicked');
               }}
               className="w-full bg-slate-950 hover:bg-slate-800 text-white font-black text-xs uppercase tracking-wider py-4 rounded-xl shadow-md transition-all cursor-pointer leading-none text-center block no-underline border-none"
             >
@@ -346,7 +346,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
         * Pricing is displayed in {currency === 'NGN' ? 'Nigerian Naira (₦)' : 'US Dollars ($)'}. International credit and debit cards are supported at checkout.
       </div>
 
-      {/* 3. FOUNDING FAMILY OFFER SECTION */}
+      {/* 3. Early Adopter OFFER SECTION */}
       <section className="bg-gradient-to-br from-teal-50/40 via-white to-purple-50/40 border-2 border-[#2EC4B6]/30 rounded-[2.5rem] p-8 md:p-12 shadow-md max-w-5xl mx-auto relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-[#2EC4B6]/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#B8A0FF]/5 rounded-full blur-3xl pointer-events-none" />
@@ -355,11 +355,11 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
           
           <div className="lg:col-span-7 space-y-6 text-left">
             <span className="bg-[#2EC4B6]/10 text-[#2EC4B6] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full border border-[#2EC4B6]/25 inline-block">
-              Founding Families Lifetime Program
+              Early Adopters Lifetime Program
             </span>
             <div className="space-y-2">
               <h2 className="text-2xl md:text-3.5xl font-display font-black text-slate-900 tracking-tight leading-none">
-                Founding Families Lifetime Program
+                Early Adopters Lifetime Program
               </h2>
               <p className="text-slate-600 text-sm font-semibold pt-1">
                 Join the first generation of families helping shape the future of CLATS.
@@ -368,7 +368,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
 
             <div className="space-y-3.5 pt-3">
               <span className="text-xs uppercase font-extrabold tracking-wider text-slate-800 block">
-                Founding Families receive:
+                Early Adopters receive:
               </span>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
                 {[
@@ -395,11 +395,11 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  awardXP(40, 'founding_early_program_access');
+                  awardXP(40, 'early_early_program_access');
                 }}
                 className="bg-[#2EC4B6] hover:bg-[#25baa8] text-slate-950 font-black text-xs uppercase tracking-widest px-6 py-3.5 rounded-2xl shadow-md cursor-pointer transition-all border-none flex items-center gap-1 leading-none no-underline"
               >
-                Secure Founding Family Slot
+                Secure Early Adopter Slot
                 <ChevronRight className="w-4 h-4 stroke-[3]" />
               </a>
             </div>
@@ -496,17 +496,17 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                 <div className="space-y-1.5 text-left">
                   <h3 className="text-xl font-black font-display text-slate-900 flex items-center gap-2">
                     <ShieldCheck className="w-5.5 h-5.5 text-[#2EC4B6]" />
-                    Secure Your Founding Family Slot
+                    Secure Your Early Adopter Slot
                   </h3>
                   <p className="text-slate-500 text-xs font-semibold leading-relaxed">
-                    Join the CLATS Founding Families Program and help shape the future of technology education for children.
+                    Join the CLATS Early Access Program and help shape the future of technology education for children.
                   </p>
                 </div>
 
                 {/* Price Summary container */}
                 <div className="p-4.5 rounded-2xl bg-teal-50/40 border border-[#2EC4B6]/25 text-left space-y-1">
                   <span className="text-[10px] font-mono tracking-wider uppercase text-[#2EC4B6] font-extrabold block">
-                    Founding Family Early Access Price
+                    Early Adopter Early Access Price
                   </span>
                   <div className="flex justify-between items-baseline">
                     <span className="text-3xl font-black text-slate-900">{currency === 'NGN' ? '₦5,100' : '$8.50'}</span>
@@ -515,7 +515,7 @@ export default function PricingPage({ onNavigate, awardXP }: PricingPageProps) {
                     </span>
                   </div>
                   <p className="text-xxs text-slate-500 font-bold italic pt-0.5">
-                    This reflects the 15% Founding Family discount on the CLATS Basic Plan.
+                    This reflects the 15% Early Adopter discount on the CLATS Basic Plan.
                   </p>
                 </div>
 

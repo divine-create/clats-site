@@ -46,7 +46,7 @@ export default function PricingSuccessPage({ onNavigate, awardXP }: PricingSucce
             Payment Successful!
           </h1>
           <p className="text-purple-650 text-purple-700 text-sm font-extrabold max-w-md mx-auto">
-            Welcome to the CLATS Founding Families Program.
+            Welcome to the CLATS Early Access Program.
           </p>
           <p className="text-slate-500 text-xs md:text-sm font-semibold max-w-md mx-auto leading-relaxed pt-2">
             Thank you for joining the first generation of families helping shape the future of technology education.

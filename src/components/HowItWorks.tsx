@@ -6,7 +6,7 @@ export default function HowItWorks() {
     {
       stepNumber: 1,
       title: 'Parents Sign Up',
-      description: 'Create your account directly on the live CLATS platform. Choose your child’s customized tech track to reserve their Founding family pilot slot.',
+      description: 'Create your account directly on the live CLATS platform. Choose your child’s customized tech track to reserve their Early Adopter pilot slot.',
       detailBadge: 'Register Slot • +100 XP',
       icon: UserPlus,
       color: 'bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-md shadow-emerald-250/20',
@@ -136,7 +136,7 @@ export default function HowItWorks() {
                     {/* Playful visual decoration or illustration */}
                     <div className="border border-dashed border-purple-100 bg-purple-50/10 rounded-3xl p-6 flex flex-col items-center justify-center text-center space-y-2">
                       <Trophy className="w-8 h-8 text-purple-300 animate-bounce" />
-                      <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase font-bold">Founding Achievement Unlock</span>
+                      <span className="text-[10px] font-mono tracking-widest text-slate-400 uppercase font-bold">Early Achievement Unlock</span>
                     </div>
                   </div>
 

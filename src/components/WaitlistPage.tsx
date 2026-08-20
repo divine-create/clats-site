@@ -84,7 +84,7 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
           location: location.trim(),
           number_of_children: 1, 
           age_groups: 'N/A', 
-          founding_family_status: receiveUpdates ? 'waitlist_subscribed' : 'waitlist',
+          early_adopter_status: receiveUpdates ? 'waitlist_subscribed' : 'waitlist',
         });
       } else {
         await new Promise((resolve) => setTimeout(resolve, 800));
@@ -142,7 +142,7 @@ export default function WaitlistPage({ onNavigate, awardXP }: WaitlistPageProps)
           </h1>
           
           <p className="text-teal-50 font-semibold max-w-md text-base md:text-lg leading-relaxed drop-shadow-md opacity-90">
-            Join the exclusive founding cohort. We are building a secure, gamified ecosystem where kids learn advanced digital skills safely and playfully.
+            Join the exclusive Early Access Cohort. We are building a secure, gamified ecosystem where kids learn advanced digital skills safely and playfully.
           </p>
 
           {/* Beautiful Launch Countdown */}
