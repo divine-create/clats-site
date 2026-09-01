@@ -3,7 +3,6 @@ import Logo from './components/Logo';
 import { Menu, X } from 'lucide-react';
 import HomePage from './components/HomePage';
 import AboutPage from './components/AboutPage';
-import PathwaysPage from './components/PathwaysPage'; // Keep for now as /platform mapping
 import ForSchoolsPage from './components/ForSchoolsPage';
 import FAQPage from './components/FAQPage';
 import ContactPage from './components/ContactPage';
@@ -34,8 +33,6 @@ export default function App() {
     switch (normalized) {
       case '/':
         return <HomePage onNavigate={handleNavigate} />;
-      case '/platform':
-        return <PathwaysPage onNavigate={handleNavigate} awardXP={() => {}} />;
       case '/schools':
         return <ForSchoolsPage onNavigate={handleNavigate} awardXP={() => {}} />;
       case '/about':
@@ -54,7 +51,6 @@ export default function App() {
 
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'Platform', path: '/platform' },
     { label: 'For Schools', path: '/schools' },
     { label: 'About', path: '/about' },
     { label: 'FAQ', path: '/faq' }
