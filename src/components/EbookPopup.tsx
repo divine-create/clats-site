@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Download, Mail, Sparkles, BookOpen, AlertCircle } from 'lucide-react';
+import { X, Download, Mail, BookOpen, AlertCircle } from 'lucide-react';
 import { isSupabaseConfigured, insertEbookLeadRecord } from '../lib/supabase';
 
 const STORAGE_KEY = 'clats_ebook_popup_seen';
@@ -8,6 +8,7 @@ const SHOW_DELAY_MS = 5000;
 
 const EBOOK_FILE_URL = '/assets/pdfs/Future-Ready%20Kids%20Guide.pdf';
 const EBOOK_FILE_NAME = 'Future-Ready Kids Guide.pdf';
+const COVER_IMAGE_URL = '/assets/images/guide-cover-img.jpeg';
 
 export default function EbookPopup() {
   const [isOpen, setIsOpen] = useState(false);
@@ -90,22 +91,33 @@ export default function EbookPopup() {
             exit={{ opacity: 0, y: 12, scale: 0.96 }}
             transition={{ type: 'spring', damping: 22, stiffness: 260 }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-md bg-white rounded-[2rem] shadow-2xl border-2 border-[#2EC4B6]/20 overflow-hidden"
+            className="relative w-full max-w-3xl bg-white rounded-[2rem] shadow-2xl border-2 border-[#2EC4B6]/20 overflow-hidden grid grid-cols-1 md:grid-cols-2"
           >
             <button
               onClick={handleClose}
               aria-label="Close"
-              className="absolute top-4 right-4 z-10 p-1.5 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-500 hover:text-slate-700 border-none cursor-pointer transition-colors"
+              className="absolute top-4 right-4 z-20 p-1.5 rounded-full bg-white/90 hover:bg-white text-slate-500 hover:text-slate-700 border-none cursor-pointer transition-colors shadow-sm"
             >
               <X className="w-4 h-4" />
             </button>
 
-            <div className="absolute top-0 right-0 w-48 h-48 bg-[#2EC4B6]/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#8A67F0]/10 rounded-full blur-3xl pointer-events-none" />
+            {/* Cover image panel */}
+            <div className="relative h-40 md:h-auto order-1">
+              <img
+                src={COVER_IMAGE_URL}
+                alt="The Parent's Guide to Raising Future-Ready Kids in the Age of AI"
+                referrerPolicy="no-referrer"
+                className="absolute inset-0 w-full h-full object-cover object-top"
+              />
+            </div>
 
-            <div className="relative z-10 p-8 text-center">
+            {/* Form panel */}
+            <div className="relative z-10 order-2 p-8 flex flex-col justify-center text-center">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#2EC4B6]/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#8A67F0]/10 rounded-full blur-3xl pointer-events-none" />
+
               {isSubmitted ? (
-                <div className="space-y-5">
+                <div className="relative space-y-5">
                   <div className="w-16 h-16 bg-[#2EC4B6]/15 border-2 border-[#2EC4B6]/30 text-[#2EC4B6] rounded-full flex items-center justify-center mx-auto">
                     <BookOpen className="w-8 h-8 stroke-[2.5]" />
                   </div>
@@ -126,14 +138,11 @@ export default function EbookPopup() {
                   </a>
                 </div>
               ) : (
-                <div className="space-y-5">
-                  <div className="w-16 h-16 bg-[#FFD166]/20 border-2 border-[#FFD166]/40 text-slate-900 rounded-full flex items-center justify-center mx-auto">
-                    <Sparkles className="w-7 h-7 text-[#2EC4B6]" />
-                  </div>
+                <div className="relative space-y-5">
                   <div className="space-y-2">
-                    <h3 className="text-xl font-black text-slate-950 font-display">Get Our Free Ebook</h3>
+                    <h3 className="text-xl font-black text-slate-950 font-display">Get Your Free Copy</h3>
                     <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                      A free guide for parents on raising future-ready kids. Enter your email and we'll send it your way.
+                      Enter your email and we'll get your free parent's guide ready to download.
                     </p>
                   </div>
 
