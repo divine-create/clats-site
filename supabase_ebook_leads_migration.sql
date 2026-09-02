@@ -10,3 +10,7 @@ CREATE TABLE IF NOT EXISTS ebook_leads (
 );
 
 CREATE INDEX IF NOT EXISTS ebook_leads_email_idx ON ebook_leads (email);
+
+-- Allow the anonymous (frontend) key to insert leads, but not read/update/delete them.
+ALTER TABLE ebook_leads ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Allow anonymous inserts" ON ebook_leads FOR INSERT TO anon WITH CHECK (true);
