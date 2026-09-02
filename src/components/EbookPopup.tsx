@@ -102,12 +102,12 @@ export default function EbookPopup() {
             </button>
 
             {/* Cover image panel */}
-            <div className="relative h-40 md:h-auto order-1">
+            <div className="relative h-56 md:h-auto order-1">
               <img
                 src={COVER_IMAGE_URL}
                 alt="The Parent's Guide to Raising Future-Ready Kids in the Age of AI"
                 referrerPolicy="no-referrer"
-                className="absolute inset-0 w-full h-full object-cover object-top"
+                className="absolute inset-0 w-full h-full object-cover object-center"
               />
             </div>
 
