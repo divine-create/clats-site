@@ -109,8 +109,7 @@ export async function insertEbookLeadRecord(record: SupabaseEbookLeadInsert) {
 
   const { data, error } = await supabase
     .from('ebook_leads')
-    .insert([record])
-    .select();
+    .insert([record]);
 
   if (error) {
     console.error('Supabase raw ebook lead insertion failure:', error);
