@@ -35,6 +35,11 @@ export interface SupabaseInquiryInsert {
   message: string;
 }
 
+export interface SupabaseEbookLeadInsert {
+  email: string;
+  source_path: string;
+}
+
 /**
  * Inserts a new registrant into the Supabase waitlist table.
  */
@@ -88,6 +93,27 @@ export async function insertInquiryRecord(record: SupabaseInquiryInsert) {
     }
 
     console.error('Supabase raw inquiry insertion failure:', error);
+    throw error;
+  }
+
+  return data;
+}
+
+/**
+ * Inserts a new lead into the Supabase ebook_leads table.
+ */
+export async function insertEbookLeadRecord(record: SupabaseEbookLeadInsert) {
+  if (!isSupabaseConfigured) {
+    throw new Error('Supabase environment variables (VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY) are not configured.');
+  }
+
+  const { data, error } = await supabase
+    .from('ebook_leads')
+    .insert([record])
+    .select();
+
+  if (error) {
+    console.error('Supabase raw ebook lead insertion failure:', error);
     throw error;
   }
 

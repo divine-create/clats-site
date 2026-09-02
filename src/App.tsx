@@ -7,6 +7,7 @@ import ForSchoolsPage from './components/ForSchoolsPage';
 import FAQPage from './components/FAQPage';
 import ContactPage from './components/ContactPage';
 import WaitlistPage from './components/WaitlistPage';
+import EbookPopup from './components/EbookPopup';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
@@ -69,7 +70,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-dark font-sans flex flex-col justify-between selection:bg-turquoise/20 selection:text-dark">
-      
+
+      <EbookPopup />
+
       {/* HEADER */}
       <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 px-4 md:px-8 py-4 shadow-sm select-none">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
