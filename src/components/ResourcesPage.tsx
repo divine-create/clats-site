@@ -54,54 +54,57 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
     ? RESOURCES_DATA 
     : RESOURCES_DATA.filter(r => r.category === activeCategory);
 
+
   const ResourceCard = ({ resource, isFeatured = false }: { resource: Resource, isFeatured?: boolean }) => {
     const hasImage = resource.image && !resource.image.endsWith('.pdf');
     
-    return (
-      <div className={`group bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden ${isFeatured ? 'min-w-[300px] md:min-w-[400px] snap-center shrink-0' : 'h-full'}`}>
-        
-        {hasImage ? (
-          <div className={`aspect-[4/3] w-full border-b ${resource.colorClass} overflow-hidden p-6 lg:p-8 flex items-center justify-center`}>
-            <img 
-              src={resource.image} 
-              alt={resource.title} 
-              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl rounded-sm" 
-              loading="lazy" 
-            />
+    // Featured Layout (Wide Side-by-Side Card)
+    if (isFeatured) {
+      return (
+        <div className="group bg-white rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col md:flex-row overflow-hidden min-w-[85vw] md:min-w-[600px] lg:min-w-[700px] snap-center shrink-0">
+          <div className={`w-full md:w-2/5 ${resource.colorClass} border-b md:border-b-0 md:border-r border-gray-100 p-8 flex items-center justify-center min-h-[280px]`}>
+             {hasImage ? (
+                <img src={resource.image} alt={resource.title} className="w-full h-full object-contain drop-shadow-2xl rounded-md group-hover:scale-105 transition-transform duration-500 max-h-[300px]" loading="lazy" />
+             ) : (
+                <Book className="w-16 h-16 opacity-80" />
+             )}
           </div>
-        ) : (
-          <div className={`aspect-[4/3] w-full ${resource.colorClass} border-b flex flex-col items-center justify-center p-8 text-center relative overflow-hidden`}>
-            <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
-            <Book className="w-12 h-12 mb-4 relative z-10 opacity-80" />
-            <h4 className="font-display font-bold text-lg md:text-xl leading-tight relative z-10">{resource.title}</h4>
+          <div className="w-full md:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+            <span className="text-[11px] font-black uppercase tracking-widest text-gray-400 mb-4">{resource.category}</span>
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-dark mb-4 group-hover:text-turquoise transition-colors leading-tight">{resource.title}</h3>
+            <p className="text-dark-light text-base md:text-lg leading-relaxed mb-10 line-clamp-3">{resource.shortDesc}</p>
+            <a href={resource.downloadUrl} download target="_blank" rel="noreferrer" className="mt-auto w-fit bg-soft hover:bg-turquoise hover:text-white text-dark font-bold text-[13px] uppercase tracking-wider px-8 py-4 rounded-xl transition-all cursor-pointer flex items-center gap-2 border-none shadow-sm hover:shadow-md">
+              <Download className="w-4 h-4" /> Download Guide
+            </a>
           </div>
-        )}
+        </div>
+      );
+    }
 
-      <div className="p-6 md:p-8 flex flex-col flex-1">
-        <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">
-          {resource.category}
-        </span>
-        <h3 className="text-xl font-display font-bold text-dark mb-3 line-clamp-2 group-hover:text-turquoise transition-colors">
-          {resource.title}
-        </h3>
-        <p className="text-dark-light text-sm leading-relaxed mb-8 flex-1 line-clamp-3">
-          {resource.shortDesc}
-        </p>
-        
-        <a 
-          href={resource.downloadUrl}
-          download
-          target="_blank"
-          rel="noreferrer"
-          className="mt-auto w-full bg-soft hover:bg-turquoise hover:text-white text-dark font-bold text-[13px] uppercase tracking-wider py-4 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 border-none"
-        >
-          <Download className="w-4 h-4" />
-          Download Now
-        </a>
+    // Standard Layout (Stacked Card)
+    return (
+      <div className="group bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden h-full">
+        <div className={`h-56 w-full ${resource.colorClass} border-b border-gray-100 p-8 flex items-center justify-center relative overflow-hidden`}>
+          {hasImage ? (
+            <img src={resource.image} alt={resource.title} className="w-full h-full object-contain drop-shadow-xl rounded-sm group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+          ) : (
+            <>
+              <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+              <Book className="w-12 h-12 mb-4 relative z-10 opacity-80" />
+            </>
+          )}
+        </div>
+        <div className="p-6 md:p-8 flex flex-col flex-1">
+          <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">{resource.category}</span>
+          <h3 className="text-xl font-display font-bold text-dark mb-3 line-clamp-2 group-hover:text-turquoise transition-colors leading-tight">{resource.title}</h3>
+          <p className="text-dark-light text-sm leading-relaxed mb-8 flex-1 line-clamp-3">{resource.shortDesc}</p>
+          <a href={resource.downloadUrl} download target="_blank" rel="noreferrer" className="mt-auto w-full bg-soft hover:bg-turquoise hover:text-white text-dark font-bold text-[13px] uppercase tracking-wider py-4 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 border-none">
+            <Download className="w-4 h-4" /> Download Now
+          </a>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  };
 
   return (
     <div className="bg-white text-dark font-sans animate-fadeIn min-h-screen">
