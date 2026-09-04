@@ -7,6 +7,7 @@ import ForSchoolsPage from './components/ForSchoolsPage';
 import FAQPage from './components/FAQPage';
 import ContactPage from './components/ContactPage';
 import WaitlistPage from './components/WaitlistPage';
+import ResourcesPage from './components/ResourcesPage';
 import EbookPopup from './components/EbookPopup';
 
 export default function App() {
@@ -40,6 +41,8 @@ export default function App() {
         return <AboutPage onNavigate={handleNavigate} awardXP={() => {}} />;
       case '/faq':
         return <FAQPage onNavigate={handleNavigate} awardXP={() => {}} />;
+      case '/resources':
+        return <ResourcesPage onNavigate={handleNavigate} awardXP={() => {}} />;
       case '/waitlist':
       case '/get-started':
         return <WaitlistPage onNavigate={handleNavigate} awardXP={() => {}} />;
@@ -53,6 +56,7 @@ export default function App() {
   const menuItems = [
     { label: 'Home', path: '/' },
     { label: 'For Schools', path: '/schools' },
+    { label: 'Resources', path: '/resources' },
     { label: 'About', path: '/about' },
     { label: 'FAQ', path: '/faq' }
   ];
