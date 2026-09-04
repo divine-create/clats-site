@@ -26,7 +26,7 @@ const RESOURCES_DATA: Resource[] = [
     category: 'Parent Guide',
     shortDesc: 'A practical guide for parents preparing children for a rapidly changing, technology-driven world.',
     image: '/assets/resources/ai-parent-guide.pdf', // Path for the actual file
-    downloadUrl: '/assets/resources/ai-parent-guide.pdf',
+    downloadUrl: 'https://docs.google.com/document/d/1r_l2iq7OP8iWWhnv98Qszpo6JJh3hLh3CsoBqPPA2OI/export?format=pdf',
     featured: true,
     colorClass: 'bg-turquoise/10 border-turquoise/20 text-turquoise'
   },
