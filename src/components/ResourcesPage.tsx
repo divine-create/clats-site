@@ -28,7 +28,7 @@ const RESOURCES_DATA: Resource[] = [
     category: 'Parent Guide',
     shortDesc: 'A practical guide for parents preparing children for a rapidly changing, technology-driven world.',
     image: guide1Cover,
-    downloadUrl: 'https://docs.google.com/document/d/1r_l2iq7OP8iWWhnv98Qszpo6JJh3hLh3CsoBqPPA2OI/export?format=pdf',
+    downloadUrl: '/assets/pdfs/Future-Ready Kids Guide.pdf',
     featured: true,
     colorClass: 'bg-turquoise/10 border-turquoise/20 text-turquoise'
   },
@@ -38,7 +38,7 @@ const RESOURCES_DATA: Resource[] = [
     category: 'Parent Guide',
     shortDesc: 'Practical guidance for creating healthier and more purposeful technology habits at home.',
     image: guide2Cover,
-    downloadUrl: '/assets/resources/screen-time-guide.pdf',
+    downloadUrl: "/assets/pdfs/The Parent's Guide to Better Screen Time Without the Constant Battle..pdf",
     featured: true,
     colorClass: 'bg-purple/10 border-purple/20 text-purple'
   }
