@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Download, ChevronRight, Book, Shield, Bot, Layout, ArrowRight } from 'lucide-react';
+import guide1Cover from '../assets/images/guide-1-cover-image.png';
+import guide2Cover from '../assets/images/guide-2-cover-image.png';
 
 interface ResourcesPageProps {
   onNavigate: (path: string) => void;
@@ -25,7 +27,7 @@ const RESOURCES_DATA: Resource[] = [
     title: "The Parent's Guide to Raising Future-Ready Kids in the Age of AI",
     category: 'Parent Guide',
     shortDesc: 'A practical guide for parents preparing children for a rapidly changing, technology-driven world.',
-    image: '/assets/resources/ai-parent-guide.pdf', // Path for the actual file
+    image: guide1Cover,
     downloadUrl: 'https://docs.google.com/document/d/1r_l2iq7OP8iWWhnv98Qszpo6JJh3hLh3CsoBqPPA2OI/export?format=pdf',
     featured: true,
     colorClass: 'bg-turquoise/10 border-turquoise/20 text-turquoise'
@@ -35,7 +37,7 @@ const RESOURCES_DATA: Resource[] = [
     title: "The Parent's Guide to Better Screen Time Without the Constant Battle",
     category: 'Parent Guide',
     shortDesc: 'Practical guidance for creating healthier and more purposeful technology habits at home.',
-    image: '/assets/resources/screen-time-guide.pdf',
+    image: guide2Cover,
     downloadUrl: '/assets/resources/screen-time-guide.pdf',
     featured: true,
     colorClass: 'bg-purple/10 border-purple/20 text-purple'
@@ -62,15 +64,28 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
     ? RESOURCES_DATA 
     : RESOURCES_DATA.filter(r => r.category === activeCategory);
 
-  const ResourceCard = ({ resource, isFeatured = false }: { resource: Resource, isFeatured?: boolean }) => (
-    <div className={`group bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden ${isFeatured ? 'min-w-[300px] md:min-w-[400px] snap-center shrink-0' : 'h-full'}`}>
-      
-      {/* Mockup Placeholder (Will be replaced by actual image if available) */}
-      <div className={`aspect-[4/3] w-full ${resource.colorClass} border-b flex flex-col items-center justify-center p-8 text-center relative overflow-hidden`}>
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
-        <Book className="w-12 h-12 mb-4 relative z-10 opacity-80" />
-        <h4 className="font-display font-bold text-lg md:text-xl leading-tight relative z-10">{resource.title}</h4>
-      </div>
+  const ResourceCard = ({ resource, isFeatured = false }: { resource: Resource, isFeatured?: boolean }) => {
+    const hasImage = resource.image && !resource.image.endsWith('.pdf');
+    
+    return (
+      <div className={`group bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden ${isFeatured ? 'min-w-[300px] md:min-w-[400px] snap-center shrink-0' : 'h-full'}`}>
+        
+        {hasImage ? (
+          <div className="aspect-[4/3] w-full border-b bg-gray-50 overflow-hidden">
+            <img 
+              src={resource.image} 
+              alt={resource.title} 
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              loading="lazy" 
+            />
+          </div>
+        ) : (
+          <div className={`aspect-[4/3] w-full ${resource.colorClass} border-b flex flex-col items-center justify-center p-8 text-center relative overflow-hidden`}>
+            <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
+            <Book className="w-12 h-12 mb-4 relative z-10 opacity-80" />
+            <h4 className="font-display font-bold text-lg md:text-xl leading-tight relative z-10">{resource.title}</h4>
+          </div>
+        )}
 
       <div className="p-6 md:p-8 flex flex-col flex-1">
         <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">
@@ -96,6 +111,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
       </div>
     </div>
   );
+};
 
   return (
     <div className="bg-white text-dark font-sans animate-fadeIn min-h-screen">
