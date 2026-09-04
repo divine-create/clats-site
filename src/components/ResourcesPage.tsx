@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Download, ChevronRight, Book, Shield, Bot, Layout, ArrowRight } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { Download, ChevronRight, ChevronLeft, Book, Shield, Bot, Layout, ArrowRight } from 'lucide-react';
 import guide1Cover from '../assets/images/guide-1-cover-image.png';
 import guide2Cover from '../assets/images/guide-2-cover-image.png';
 
@@ -48,6 +48,14 @@ const CATEGORIES: ResourceCategory[] = ['All', 'Parent Guide', 'Educators', 'Chi
 
 export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
   const [activeCategory, setActiveCategory] = useState<ResourceCategory>('All');
+  const scrollRef = useRef<HTMLDivElement>(null);
+  
+  const scrollCarousel = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = window.innerWidth > 768 ? 650 : 320;
+      scrollRef.current.scrollBy({ left: direction === 'left' ? -scrollAmount : scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   const featuredResources = RESOURCES_DATA.filter(r => r.featured);
   const filteredResources = activeCategory === 'All' 
@@ -129,16 +137,33 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
 
       {/* FEATURED CAROUSEL */}
       <section className="py-24 bg-white border-b border-gray-100">
-        <div className="max-w-7xl mx-auto px-6 mb-12">
-          <h2 className="text-3xl font-display font-bold text-dark mb-4">Featured Resources</h2>
-          <p className="text-dark-light text-lg max-w-2xl">
-            Explore our latest free resources designed to help you and your child learn, grow and navigate a changing world.
-          </p>
+        <div className="max-w-7xl mx-auto px-6 mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <h2 className="text-3xl font-display font-bold text-dark mb-4">Featured Resources</h2>
+            <p className="text-dark-light text-lg max-w-2xl">
+              Explore our latest free resources designed to help you and your child learn, grow and navigate a changing world.
+            </p>
+          </div>
+          
+          <div className="hidden md:flex items-center gap-3">
+            <button 
+              onClick={() => scrollCarousel('left')}
+              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-dark-light hover:text-dark hover:border-dark hover:bg-gray-50 transition-all cursor-pointer bg-white"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+            <button 
+              onClick={() => scrollCarousel('right')}
+              className="w-12 h-12 rounded-full border border-gray-200 flex items-center justify-center text-dark-light hover:text-dark hover:border-dark hover:bg-gray-50 transition-all cursor-pointer bg-white"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
+          </div>
         </div>
         
         <div className="pl-6 md:pl-0">
           <div className="max-w-7xl mx-auto">
-            <div className="flex gap-6 overflow-x-auto pb-12 pt-4 snap-x snap-mandatory hide-scrollbar pr-6" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+            <div ref={scrollRef} className="flex gap-6 overflow-x-auto pb-12 pt-4 snap-x snap-mandatory hide-scrollbar pr-6" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
               {featuredResources.map(resource => (
                 <ResourceCard key={resource.id} resource={resource} isFeatured={true} />
               ))}
