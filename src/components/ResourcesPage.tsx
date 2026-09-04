@@ -41,16 +41,6 @@ const RESOURCES_DATA: Resource[] = [
     downloadUrl: '/assets/resources/screen-time-guide.pdf',
     featured: true,
     colorClass: 'bg-purple/10 border-purple/20 text-purple'
-  },
-  {
-    id: 'res-3',
-    title: "Digital Citizenship & Online Safety Checklist",
-    category: 'Digital Safety',
-    shortDesc: 'A quick checklist to ensure your child is interacting safely and respectfully online.',
-    image: '/assets/resources/safety-checklist.pdf',
-    downloadUrl: '/assets/resources/safety-checklist.pdf',
-    featured: true,
-    colorClass: 'bg-yellow/10 border-yellow/20 text-yellow-600'
   }
 ];
 
@@ -71,11 +61,11 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
       <div className={`group bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden ${isFeatured ? 'min-w-[300px] md:min-w-[400px] snap-center shrink-0' : 'h-full'}`}>
         
         {hasImage ? (
-          <div className="aspect-[4/3] w-full border-b bg-gray-50 overflow-hidden">
+          <div className={`aspect-[4/3] w-full border-b ${resource.colorClass} overflow-hidden p-6 lg:p-8 flex items-center justify-center`}>
             <img 
               src={resource.image} 
               alt={resource.title} 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+              className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500 drop-shadow-xl rounded-sm" 
               loading="lazy" 
             />
           </div>
