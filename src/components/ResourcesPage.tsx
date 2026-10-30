@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Download, ChevronRight, ChevronLeft, Book, Shield, Bot, Layout, ArrowRight } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Download, ChevronRight, ChevronLeft, Book, ArrowRight, X, ShoppingBag, ExternalLink } from 'lucide-react';
 import guide1Cover from '../assets/images/guide-1-cover-image.png';
 import guide2Cover from '../assets/images/guide-2-cover-image.png';
 
@@ -8,7 +8,7 @@ interface ResourcesPageProps {
   awardXP?: (pts: number, id: string) => void;
 }
 
-type ResourceCategory = 'All' | 'Parent Guide' | 'Educators' | 'Children' | 'AI & Technology' | 'Digital Safety';
+type ResourceCategory = 'All' | 'Parent Guide' | "Children's Storybooks" | 'Educators' | 'Children' | 'AI & Technology' | 'Digital Safety';
 
 interface Resource {
   id: string;
@@ -16,10 +16,24 @@ interface Resource {
   category: ResourceCategory;
   shortDesc: string;
   image: string;
+  /** Free resources: path to the downloadable file. Leave empty for paid resources. */
   downloadUrl: string;
   featured: boolean;
   colorClass: string;
+  /** 'free' (default) shows DOWNLOAD NOW; 'paid' shows PURCHASE NOW and opens the platform chooser. */
+  type?: 'free' | 'paid';
+  ageRange?: string;
+  format?: string;
+  pages?: number;
+  /** Optional display price. Not set because no existing price data was provided. */
+  price?: string;
+  /** Paid resources: checkout links. Leave '' until the real URL is available. */
+  checkout?: { selar: string; gumroad: string };
 }
+
+// Cover images for paid storybooks live in /public/assets/images/books/ (drop the real artwork in with these exact names).
+const BOOK_COVER_1 = '/assets/images/books/kobe-chibi-little-christmas-gift.png';
+const BOOK_COVER_2 = '/assets/images/books/kobe-chibi-helpful-little-robot.png';
 
 const RESOURCES_DATA: Resource[] = [
   {
@@ -41,14 +55,64 @@ const RESOURCES_DATA: Resource[] = [
     downloadUrl: '/assets/pdfs/screen-time-guide.pdf',
     featured: true,
     colorClass: 'bg-purple/10 border-purple/20 text-purple'
+  },
+  {
+    id: 'book-1',
+    type: 'paid',
+    title: "Kobe & Chibi's Little Christmas Gift",
+    category: "Children's Storybooks",
+    shortDesc: 'A heartwarming Christmas story for little learners, celebrating creativity, kindness and the joy of making something together. Join Kobe and Chibi on a festive adventure that reminds every child that the most special gifts are made with love.',
+    image: BOOK_COVER_1,
+    downloadUrl: '',
+    ageRange: 'Ages 2–5',
+    format: 'Digital Book',
+    featured: false,
+    colorClass: 'bg-yellow/10 border-yellow/20 text-yellow',
+    checkout: { selar: 'https://selar.com/y5s347d3n2', gumroad: 'https://clatspublishing.gumroad.com/l/tngozt' }
+  },
+  {
+    id: 'book-2',
+    type: 'paid',
+    title: 'Kobe & Chibi and the Helpful Little Robot',
+    category: "Children's Storybooks",
+    shortDesc: "Join Kobe and Chibi on an exciting adventure with a helpful little robot. Through the story, children explore the importance of clear instructions, problem-solving, experimentation and trying again when things don't go as planned.",
+    image: BOOK_COVER_2,
+    downloadUrl: '',
+    ageRange: 'Ages 2–5',
+    format: 'Digital PDF',
+    pages: 26,
+    featured: false,
+    colorClass: 'bg-turquoise/10 border-turquoise/20 text-turquoise',
+    checkout: { selar: 'https://selar.com/24vr7472i2', gumroad: 'https://clatspublishing.gumroad.com/l/ekzjk' }
   }
 ];
 
-const CATEGORIES: ResourceCategory[] = ['All', 'Parent Guide', 'Educators', 'Children', 'AI & Technology', 'Digital Safety'];
+const CATEGORIES: ResourceCategory[] = ['All', 'Parent Guide', "Children's Storybooks", 'Educators', 'Children', 'AI & Technology', 'Digital Safety'];
 
 export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
   const [activeCategory, setActiveCategory] = useState<ResourceCategory>('All');
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [purchaseResource, setPurchaseResource] = useState<Resource | null>(null);
+  const closeBtnRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!purchaseResource) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setPurchaseResource(null); };
+    document.addEventListener('keydown', onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeBtnRef.current?.focus();
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [purchaseResource]);
+
+  const openCheckout = (url: string) => {
+    if (!url) return;
+    window.open(url, '_blank', 'noopener,noreferrer');
+    setPurchaseResource(null);
+  };
   
   const scrollCarousel = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -65,6 +129,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
 
   const ResourceCard = ({ resource, isFeatured = false }: { resource: Resource, isFeatured?: boolean }) => {
     const hasImage = resource.image && !resource.image.endsWith('.pdf');
+    const isPaid = resource.type === 'paid';
     
     // Featured Layout (Wide Side-by-Side Card)
     if (isFeatured) {
@@ -92,9 +157,10 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
     // Standard Layout (Stacked Card)
     return (
       <div className="group bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden h-full">
-        <div className={`h-56 w-full ${resource.colorClass} border-b border-gray-100 p-8 flex items-center justify-center relative overflow-hidden`}>
+        <div className={`${isPaid ? 'aspect-video' : 'h-56 p-8'} w-full ${resource.colorClass} border-b border-gray-100 flex items-center justify-center relative overflow-hidden`}>
+          
           {hasImage ? (
-            <img src={resource.image} alt={resource.title} className="w-full h-full object-contain drop-shadow-xl rounded-sm group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+            <img src={resource.image} alt={isPaid ? `Cover of ${resource.title}` : resource.title} onError={(e) => { e.currentTarget.style.visibility = 'hidden'; }} className={`relative w-full h-full ${isPaid ? 'object-cover' : 'object-contain drop-shadow-xl rounded-sm'} group-hover:scale-105 transition-transform duration-500`} loading="lazy" />
           ) : (
             <>
               <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]"></div>
@@ -105,10 +171,23 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
         <div className="p-6 md:p-8 flex flex-col flex-1">
           <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">{resource.category}</span>
           <h3 className="text-xl font-display font-bold text-dark mb-3 line-clamp-2 group-hover:text-turquoise transition-colors leading-tight">{resource.title}</h3>
-          <p className="text-dark-light text-sm leading-relaxed mb-8 flex-1 line-clamp-3">{resource.shortDesc}</p>
-          <a href={resource.downloadUrl} download target="_blank" rel="noreferrer" className="mt-auto w-full bg-soft hover:bg-turquoise hover:text-white text-dark font-bold text-[13px] uppercase tracking-wider py-4 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 border-none">
-            <Download className="w-4 h-4" /> Download Now
-          </a>
+          <p className="text-dark-light text-sm leading-relaxed mb-6 flex-1 line-clamp-5">{resource.shortDesc}</p>
+          {isPaid && (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {[resource.ageRange, resource.format, resource.pages ? `${resource.pages} pages` : null, resource.price].filter(Boolean).map(tag => (
+                <span key={tag as string} className="text-[11px] font-bold text-dark-light bg-soft border border-gray-100 rounded-full px-3 py-1">{tag}</span>
+              ))}
+            </div>
+          )}
+          {isPaid ? (
+            <button type="button" onClick={() => setPurchaseResource(resource)} className="mt-auto w-full bg-turquoise hover:bg-turquoise/90 active:scale-[0.98] text-white font-bold text-[13px] uppercase tracking-wider py-4 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 border-none">
+              <ShoppingBag className="w-4 h-4" /> Purchase Now
+            </button>
+          ) : (
+            <a href={resource.downloadUrl} download target="_blank" rel="noreferrer" className="mt-auto w-full bg-soft hover:bg-turquoise hover:text-white text-dark font-bold text-[13px] uppercase tracking-wider py-4 rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 border-none">
+              <Download className="w-4 h-4" /> Download Now
+            </a>
+          )}
         </div>
       </div>
     );
@@ -181,7 +260,7 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
           <div className="mb-16">
             <h2 className="text-3xl font-display font-bold text-dark mb-4">Explore All Resources</h2>
             <p className="text-dark-light text-lg mb-10 max-w-2xl">
-              Free resources created to support better learning, digital parenting and future-ready development.
+              Guides and storybooks created to support better learning, digital parenting and future-ready development.
             </p>
 
             {/* CATEGORY FILTER */}
@@ -237,6 +316,38 @@ export default function ResourcesPage({ onNavigate }: ResourcesPageProps) {
         </div>
       </section>
 
+
+      {/* PURCHASE MODAL */}
+      {purchaseResource && (
+        <div className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center p-0 sm:p-6" role="dialog" aria-modal="true" aria-labelledby="purchase-title">
+          <div className="absolute inset-0 bg-dark/50 backdrop-blur-sm" onClick={() => setPurchaseResource(null)}></div>
+          <div className="relative bg-white w-full sm:max-w-md rounded-t-[2rem] sm:rounded-[2rem] shadow-2xl p-6 sm:p-8 max-h-[92vh] overflow-y-auto animate-fadeIn">
+            <button ref={closeBtnRef} type="button" onClick={() => setPurchaseResource(null)} aria-label="Close" className="absolute top-4 right-4 w-10 h-10 rounded-full bg-soft hover:bg-gray-200 flex items-center justify-center text-dark cursor-pointer border-none transition-colors">
+              <X className="w-5 h-5" />
+            </button>
+            <p className="text-[11px] font-black uppercase tracking-widest text-turquoise mb-2 pr-10">{purchaseResource.title}</p>
+            <h2 id="purchase-title" className="text-2xl font-display font-bold text-dark mb-2 pr-10">Choose Your Purchase Platform</h2>
+            <p className="text-dark-light text-sm leading-relaxed mb-6">Select your preferred platform to purchase and receive your digital book.</p>
+
+            <div className="space-y-4">
+              {([
+                { key: 'selar', label: 'Purchase via Selar', note: 'Recommended for customers in Nigeria and buyers who prefer local payment options.', primary: true },
+                { key: 'gumroad', label: 'Purchase via Gumroad', note: 'Prefer to pay in USD? You can purchase through Gumroad.', primary: false },
+              ] as const).map(opt => {
+                const url = purchaseResource.checkout?.[opt.key] || '';
+                return (
+                  <div key={opt.key} className={`rounded-2xl border p-4 ${opt.primary ? 'border-turquoise/30 bg-turquoise/5' : 'border-purple/20 bg-purple/5'}`}>
+                    <button type="button" disabled={!url} onClick={() => openCheckout(url)} className={`w-full py-3.5 rounded-xl font-bold text-[14px] flex items-center justify-center gap-2 border-none transition-all ${url ? `${opt.primary ? 'bg-turquoise hover:bg-turquoise/90' : 'bg-purple hover:bg-purple/90'} text-white cursor-pointer active:scale-[0.98]` : 'bg-gray-200 text-gray-400 cursor-not-allowed'}`}>
+                      {opt.label} <ExternalLink className="w-4 h-4" />
+                    </button>
+                    <p className="text-xs text-dark-light leading-relaxed mt-3">{url ? opt.note : 'Checkout link coming soon.'}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
